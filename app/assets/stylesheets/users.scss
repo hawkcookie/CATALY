@@ -1,0 +1,18 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.icon_image {
+  width: 100px;
+  height: 100px;
+  //サイズ指定
+  border-radius: 80px;
+  //画像を丸くする
+  object-fit: cover;
+  //タテヨコ比を変えないままトリミング
+}
+
+.user_profile{
+  margin-right: auto;//ここで中央寄せを指定する。
+  margin-left : auto;
+  width:800px;
+}

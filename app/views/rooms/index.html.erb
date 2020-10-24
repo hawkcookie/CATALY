@@ -1,0 +1,22 @@
+
+<div class="DM_all_users">
+
+
+<p>メッセージ一覧</p>
+
+<% @anotherEntries.each do |e| %>
+  <%= link_to room_path(e.room.id) do %>
+    <p>■<%= e.user.name %></p>
+    <br><img src=<%= e.user.image %> class = "icon_image"></br>
+
+
+     <%= e.messages.order(created_at: :desc).take.try(:content) %><br>
+
+
+  <%end%>
+
+<% end %>
+
+<br><%= link_to "ユーザー一覧に戻る", "/" %></br>
+
+</div>

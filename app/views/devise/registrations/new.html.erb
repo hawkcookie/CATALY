@@ -1,0 +1,211 @@
+<div class="new_registration">
+
+
+<h2>新規登録</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+    <div class="field">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    </div>
+
+
+    <div class="field">
+      <%= f.label :name %> <br />
+      <%= f.text_field :name %>
+    </div>
+
+
+    <div class="field">
+      <%= f.label :password %>
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "new-password" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    </div>
+
+
+    <!--出身大学-->
+    <div class="field">
+      <%= f.label :出身大学 %> <br />
+      <%= f.text_field :uni %>
+    </div>
+
+    <!--画像登録-->
+    <div class="field">
+      <%= f.label :image %><br/>
+      <%= f.file_field :image %>
+    </div>
+
+　<!--チェックボックス-->
+
+    <div class="field">
+      <%= f.label :sex %><br />
+      <%= f.label :"男性" %>
+      <%= f.radio_button :sex, :"男性" %>
+      <%= f.label :"女性" %>
+      <%= f.radio_button :sex, :"女性" %>
+      <%= f.label :"その他" %>
+      <%= f.radio_button :sex, :"その他" %>
+   </div>
+
+   <div class="field">
+     <%= f.label :annual %><br />
+     <%= f.label :"1年目" %>
+     <%= f.radio_button :annual, :"1年目" %>
+     <%= f.label :"2-5年目" %>
+     <%= f.radio_button :annual, :"2-5年目" %>
+     <%= f.label :"6-10年目" %>
+     <%= f.radio_button :annual, :"6-10年目" %>
+     <%= f.label :"11-20年目" %>
+     <%= f.radio_button :annual, :"11-20年目" %>
+     <%= f.label :"21-30年目" %>
+     <%= f.radio_button :annual, :"21-30年目" %>
+     <%= f.label :"31年目以上" %>
+     <%= f.radio_button :annual, :"31年目以上" %>
+  </div>
+
+   <div class="field">
+     <%= f.label :work %><br />
+     <%= f.label :"幼稚園教員" %>
+     <%= f.radio_button :work, :"幼稚園教員" %>
+     <%= f.label :"公立小学教員" %>
+     <%= f.radio_button :work, :"公立小学教員" %>
+     <%= f.label :"私立小学教員" %>
+     <%= f.radio_button :work, :"私立小学教員" %>
+     <%= f.label :"公立中学教員" %>
+     <%= f.radio_button :work, :"公立中学教員" %>
+     <%= f.label :"私立中学教員" %>
+     <%= f.radio_button :work, :"私立中学教員" %>
+     <%= f.label :"公立高校教員" %>
+     <%= f.radio_button :work, :"公立高校教員" %>
+     <%= f.label :"私立高校教員" %>
+     <%= f.radio_button :work, :"私立高校教員" %>
+     <%= f.label :"大学教員" %>
+     <%= f.radio_button :work, :"大学教員" %>
+     <%= f.label :"塾講師" %>
+     <%= f.radio_button :work, :"塾講師" %>
+     <%= f.label :"教材開発" %>
+     <%= f.radio_button :work, :"教材開発" %>
+     <%= f.label :"学生" %>
+     <%= f.radio_button :work, :"学生" %>
+     <%= f.label :"NPO団体" %>
+     <%= f.radio_button :work, :"NPO団体" %>
+     <%= f.label :"知育ゲームメーカー" %>
+     <%= f.radio_button :work, :"知育ゲームメーカー" %>
+     <%= f.label :"事務職員" %>
+     <%= f.radio_button :work, :"事務職員" %>
+     <%= f.label :"その他" %>
+     <%= f.radio_button :work, :"その他" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :location %><br />
+    <%= f.label :"北海道" %>
+    <%= f.radio_button :location, :"北海道" %>
+    <%= f.label :"東北地方" %>
+    <%= f.radio_button :location, :"東北地方" %>
+    <%= f.label :"関東地方" %>
+    <%= f.radio_button :location, :"関東地方" %>
+    <%= f.label :"中部地方" %>
+    <%= f.radio_button :location, :"中部地方" %>
+    <%= f.label :"近畿地方" %>
+    <%= f.radio_button :location, :"近畿地方" %>
+    <%= f.label :"中国地方" %>
+    <%= f.radio_button :location, :"中国地方" %>
+    <%= f.label :"四国地方" %>
+    <%= f.radio_button :location, :"四国地方" %>
+    <%= f.label :"九州地方" %>
+    <%= f.radio_button :location, :"九州地方" %>
+    <%= f.label :"沖縄" %>
+    <%= f.radio_button :location, :"沖縄" %>
+    <%= f.label :"その他" %>
+    <%= f.radio_button :location, :"その他" %>
+ </div>
+
+
+ <div class="field">
+   <%= f.label :subject %><br />
+   <%= f.label :"国語" %>
+   <%= f.radio_button :subject, :"国語" %>
+   <%= f.label :"算数・数学" %>
+   <%= f.radio_button :subject, :"算数・数学" %>
+   <%= f.label :"理科" %>
+   <%= f.radio_button :subject, :"理科" %>
+   <%= f.label :"社会" %>
+   <%= f.radio_button :subject, :"社会" %>
+   <%= f.label :"音楽" %>
+   <%= f.radio_button :subject, :"音楽" %>
+   <%= f.label :"技術" %>
+   <%= f.radio_button :subject, :"技術" %>
+   <%= f.label :"家庭科" %>
+   <%= f.radio_button :subject, :"家庭科" %>
+   <%= f.label :"体育" %>
+   <%= f.radio_button :subject, :"体育" %>
+   <%= f.label :"保険" %>
+   <%= f.radio_button :subject, :"保険" %>
+   <%= f.label :"その他" %>
+   <%= f.radio_button :subject, :"その他" %>
+</div>
+
+<div class="field">
+  <%= f.label :club %><br />
+  <%= f.label :"なし" %>
+  <%= f.radio_button :club, :"なし" %>
+  <%= f.label :"サッカー" %>
+  <%= f.radio_button :club, :"サッカー" %>
+  <%= f.label :"野球" %>
+  <%= f.radio_button :club, :"野球" %>
+  <%= f.label :"バスケットボール" %>
+  <%= f.radio_button :club, :"バスケットボール" %>
+  <%= f.label :"テニス" %>
+  <%= f.radio_button :club, :"テニス" %>
+  <%= f.label :"卓球" %>
+  <%= f.radio_button :club, :"卓球" %>
+  <%= f.label :"陸上" %>
+  <%= f.radio_button :club, :"陸上" %>
+  <%= f.label :"バトミントン" %>
+  <%= f.radio_button :club, :"バトミントン" %>
+  <%= f.label :"ハンドボール" %>
+  <%= f.radio_button :club, :"ハンドボール" %>
+  <%= f.label :"体操" %>
+  <%= f.radio_button :club, :"体操" %>
+  <%= f.label :"水泳" %>
+  <%= f.radio_button :club, :"水泳" %>
+  <%= f.label :"柔道" %>
+  <%= f.radio_button :club, :"柔道" %>
+  <%= f.label :"剣道" %>
+  <%= f.radio_button :club, :"剣道" %>
+  <%= f.label :"弓道" %>
+  <%= f.radio_button :club, :"弓道" %>
+  <%= f.label :"茶道" %>
+  <%= f.radio_button :club, :"茶道" %>
+  <%= f.label :"美術" %>
+  <%= f.radio_button :club, :"美術" %>
+  <%= f.label :"その他" %>
+  <%= f.radio_button :club, :"その他" %>
+
+</div>
+
+<!--自由記述欄-->
+<div class="field">
+  <%= f.label :free_profile %><br/>
+  <%= f.text_area :free_profile %>
+</div>
+
+   <div class="actions">
+     <%= f.submit "新規登録" %>
+   </div>
+  <% end %>
+
+<%= render "devise/shared/links" %>
+
+
+</div>

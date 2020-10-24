@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CATALY</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+
+<!--共通部分-->
+  <body>
+
+    <% if user_signed_in? %>  <!-- ログイン時に下記を表示する -->
+    <div class="header">
+
+      <div class="menu">
+
+            <%= link_to "/" do %>
+              <%= image_tag 'cataly_logo.png', class: 'logo'%>
+            <% end %>
+
+
+      <div class="float_basic_information">
+
+          <%= link_to "DM一覧", "/rooms/:id/index" %> <!-- DM一覧に遷移する -->
+
+          <%= link_to "通知", "/users/notifications" %> <!-- 通知に遷移する（未開発） -->
+
+          <% if unchecked_notifications.any? %>
+            <i class="fa fa-circle" style="color: gold;"></i>
+          <% end %>
+
+
+          <%= link_to "/users/#{current_user.id}/show" do %>
+            <img src=<%= current_user.image %> class = "icon_image_header">   <!-- マイページに遷移する -->
+          <% end %>
+
+      </div>
+      </div>
+  </div>
+
+<% else %>
+<div class="header">
+  <div class="menu">
+<%= link_to "/" do %>
+  <%= image_tag 'cataly_logo.png', class: 'logo'%>
+<% end %>
+<div class="login_new">
+
+  <%= link_to "ログイン", new_user_session_path, class: 'post' %> <!-- ログイン画面に移行する -->
+  <%= link_to "新規登録", new_user_registration_path, class: 'post' %> <!-- 新規登録画面に移行する -->
+
+  </div>
+</div>
+</div>
+
+
+
+
+  <% end %>
+
+    <%= yield %>
+  </body>
+</html>

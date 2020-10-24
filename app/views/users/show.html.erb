@@ -1,0 +1,49 @@
+
+<div class="user_profile">
+
+<h1>プロフィール</h1>
+
+<% if @user.id == current_user.id %>
+  <%= link_to "編集", "/users/edit" %> <!-- 編集ページに遷移する -->
+<% end%>
+
+<h3>ユーザー名</h3>
+<%= @user.name %>
+<br><img src=<%= @user.image %> class = "icon_image"></br>
+<h3>性別</h3>
+<%= @user.sex %>
+<h3>職業</h3>
+<%= @user.work %>
+<h3>メールアドレス</h3>
+<%= @user.email %>
+<h3>出身大学</h3>
+<%= @user.uni %>
+<h3>年次</h3>
+<%= @user.annual %>
+<h3>お住まい</h3>
+<%= @user.location %>
+<h3>専門科目</h3>
+<%= @user.subject %>
+<h3>部活（サークル）顧問</h3>
+<%= @user.club %>
+<h3>自由記述欄</h3>
+<%= @user.free_profile %>
+
+
+
+<% if @user.id == current_user.id %>
+
+<% else %>
+  <% if @isRoom == true %>
+    <p><a href="/rooms/<%= @roomId %>">チャットへ</a>
+  <% else %>
+    <%= form_for @room do |f| %>
+      <%= fields_for @entry do |e| %>
+        <%= e.hidden_field :user_id, :value=> @user.id %>
+      <% end %>
+      <%= f.submit "チャットを始める" %>
+    <% end %>
+  <% end %>
+<% end %>
+
+</div>
