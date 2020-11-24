@@ -25,5 +25,5 @@ production:
   <<: *default
   adapter: postgresql
   encoding: unicode
-  pool: 5
+  pool: 30
   #database: db/production.sqlite3
