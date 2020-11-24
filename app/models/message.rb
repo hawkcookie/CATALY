@@ -3,7 +3,7 @@ class Message < ApplicationRecord
   belongs_to :room
   has_many :entries, through: :room
   has_many :notifications, dependent: :destroy
-
+  validates :content, presence: true
 
 
   def create_notification_message!(current_user,message_id)

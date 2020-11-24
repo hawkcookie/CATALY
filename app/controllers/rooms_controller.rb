@@ -19,23 +19,11 @@ class RoomsController < ApplicationController
   end
 
 #ログインユーザーのDM一覧
-def index
-  @room = Room.all
-  @entries=Entry.all
-  @users =User.all
-  @currentEntries = current_user.entries
-  myRoomIds = []
+  def index
+      @rooms = current_user.rooms.joins(:messages).includes(:messages).order("messages.created_at DESC")
 
-
-  @currentEntries.each do |entry|
-    myRoomIds << entry.room.id
   end
 
-  @anotherEntries = Entry.where(room_id: myRoomIds).where('user_id != ?',@current_user.id).order(created_at: :DESC)
-
-end
-
-#whereのmyroomIdsが見つかっていない？
 
 
 end

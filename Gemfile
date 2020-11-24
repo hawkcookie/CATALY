@@ -18,7 +18,7 @@ gem 'uglifier', '>= 1.3.0'
 
 gem 'font-awesome-sass'
 
-
+gem 'rails-i18n'
 gem 'carrierwave'
 gem 'rmagick'
 gem 'mini_magick'

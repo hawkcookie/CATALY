@@ -1,25 +1,35 @@
 <div class="new_registration">
 
+<div class="button">
 
-<h2>新規登録</h2>
+  <div class="research_title">
+    <h2>新規登録</h2>
+  </div>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
 
     <div class="field">
-      <%= f.label :email %><br />
+      <div class="my_profile_content">
+        <%= f.label :email %><br />
+      </div>
       <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
     </div>
 
 
     <div class="field">
+      <div class="my_profile_content">
       <%= f.label :name %> <br />
+      </div>
       <%= f.text_field :name %>
     </div>
 
 
     <div class="field">
+      <div class="my_profile_content">
       <%= f.label :password %>
+      </div>
       <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> characters minimum)</em>
       <% end %><br />
@@ -27,185 +37,142 @@
     </div>
 
     <div class="field">
+      <div class="my_profile_content">
       <%= f.label :password_confirmation %><br />
+      </div>
       <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
     </div>
 
 
     <!--出身大学-->
     <div class="field">
+      <div class="my_profile_content">
       <%= f.label :出身大学 %> <br />
+      </div>
       <%= f.text_field :uni %>
     </div>
 
     <!--画像登録-->
     <div class="field">
-      <%= f.label :image %><br/>
+      <div class="my_profile_content">
+      <%= f.label :トップ画像 %><br/>
+      </div>
       <%= f.file_field :image %>
     </div>
 
 　<!--チェックボックス-->
 
     <div class="field">
+      <div class="my_profile_content">
       <%= f.label :sex %><br />
-      <%= f.label :"男性" %>
-      <%= f.radio_button :sex, :"男性" %>
-      <%= f.label :"女性" %>
-      <%= f.radio_button :sex, :"女性" %>
-      <%= f.label :"その他" %>
-      <%= f.radio_button :sex, :"その他" %>
+      </div>
+      <label><%= f.radio_button :sex, :"男性" %>男性</label>
+      <label><%= f.radio_button :sex, :"女性" %>女性</label>
+      <label><%= f.radio_button :sex, :"その他" %>その他</label>
    </div>
 
+
    <div class="field">
+     <div class="my_profile_content">
      <%= f.label :annual %><br />
-     <%= f.label :"1年目" %>
-     <%= f.radio_button :annual, :"1年目" %>
-     <%= f.label :"2-5年目" %>
-     <%= f.radio_button :annual, :"2-5年目" %>
-     <%= f.label :"6-10年目" %>
-     <%= f.radio_button :annual, :"6-10年目" %>
-     <%= f.label :"11-20年目" %>
-     <%= f.radio_button :annual, :"11-20年目" %>
-     <%= f.label :"21-30年目" %>
-     <%= f.radio_button :annual, :"21-30年目" %>
-     <%= f.label :"31年目以上" %>
-     <%= f.radio_button :annual, :"31年目以上" %>
+     </div>
+     <label><%= f.radio_button :annual, :"1年目" %>1年目</label>
+     <label><%= f.radio_button :annual, :"2-5年目" %>2-5年目</label>
+     <label><%= f.radio_button :annual, :"6-10年目" %>6-10年目</label>
+     <label><%= f.radio_button :annual, :"11-20年目" %>11-20年目</label>
+     <label><%= f.radio_button :annual, :"21-30年目" %>21-30年目</label>
+     <label><%= f.radio_button :annual, :"31年目以上" %>31年目以上</label>
   </div>
 
    <div class="field">
+     <div class="my_profile_content">
      <%= f.label :work %><br />
-     <%= f.label :"幼稚園教員" %>
-     <%= f.radio_button :work, :"幼稚園教員" %>
-     <%= f.label :"公立小学教員" %>
-     <%= f.radio_button :work, :"公立小学教員" %>
-     <%= f.label :"私立小学教員" %>
-     <%= f.radio_button :work, :"私立小学教員" %>
-     <%= f.label :"公立中学教員" %>
-     <%= f.radio_button :work, :"公立中学教員" %>
-     <%= f.label :"私立中学教員" %>
-     <%= f.radio_button :work, :"私立中学教員" %>
-     <%= f.label :"公立高校教員" %>
-     <%= f.radio_button :work, :"公立高校教員" %>
-     <%= f.label :"私立高校教員" %>
-     <%= f.radio_button :work, :"私立高校教員" %>
-     <%= f.label :"大学教員" %>
-     <%= f.radio_button :work, :"大学教員" %>
-     <%= f.label :"塾講師" %>
-     <%= f.radio_button :work, :"塾講師" %>
-     <%= f.label :"教材開発" %>
-     <%= f.radio_button :work, :"教材開発" %>
-     <%= f.label :"学生" %>
-     <%= f.radio_button :work, :"学生" %>
-     <%= f.label :"NPO団体" %>
-     <%= f.radio_button :work, :"NPO団体" %>
-     <%= f.label :"知育ゲームメーカー" %>
-     <%= f.radio_button :work, :"知育ゲームメーカー" %>
-     <%= f.label :"事務職員" %>
-     <%= f.radio_button :work, :"事務職員" %>
-     <%= f.label :"その他" %>
-     <%= f.radio_button :work, :"その他" %>
+     </div>
+     <label><%= f.radio_button :work, :"幼稚園教員" %>幼稚園教員</label>
+     <label><%= f.radio_button :work, :"公立小学教員" %>公立小学教員</label>
+     <label><%= f.radio_button :work, :"私立小学教員" %>私立小学教員</label>
+     <label><%= f.radio_button :work, :"公立中学教員" %>公立中学教員</label>
+     <label><%= f.radio_button :work, :"私立中学教員" %>私立中学教員</label>
+     <label><%= f.radio_button :work, :"公立高校教員" %>公立高校教員</label>
+     <label><%= f.radio_button :work, :"私立高校教員" %>私立高校教員</label>
+     <label><%= f.radio_button :work, :"大学教員" %>大学教員</label>
+     <label><%= f.radio_button :work, :"塾講師" %>塾講師</label>
+     <label><%= f.radio_button :work, :"教材開発" %>教材開発</label>
+     <label><%= f.radio_button :work, :"学生" %>学生</label>
+     <label><%= f.radio_button :work, :"NPO団体" %>NPO団体</label>
+     <label><%= f.radio_button :work, :"知育ゲームメーカー" %>知育ゲームメーカー</label>
+     <label><%= f.radio_button :work, :"事務職員" %>事務職員</label>
+     <label><%= f.radio_button :work, :"その他" %>その他</label>
   </div>
 
   <div class="field">
+    <div class="my_profile_content">
     <%= f.label :location %><br />
-    <%= f.label :"北海道" %>
-    <%= f.radio_button :location, :"北海道" %>
-    <%= f.label :"東北地方" %>
-    <%= f.radio_button :location, :"東北地方" %>
-    <%= f.label :"関東地方" %>
-    <%= f.radio_button :location, :"関東地方" %>
-    <%= f.label :"中部地方" %>
-    <%= f.radio_button :location, :"中部地方" %>
-    <%= f.label :"近畿地方" %>
-    <%= f.radio_button :location, :"近畿地方" %>
-    <%= f.label :"中国地方" %>
-    <%= f.radio_button :location, :"中国地方" %>
-    <%= f.label :"四国地方" %>
-    <%= f.radio_button :location, :"四国地方" %>
-    <%= f.label :"九州地方" %>
-    <%= f.radio_button :location, :"九州地方" %>
-    <%= f.label :"沖縄" %>
-    <%= f.radio_button :location, :"沖縄" %>
-    <%= f.label :"その他" %>
-    <%= f.radio_button :location, :"その他" %>
+    </div>
+    <label><%= f.radio_button :location, :"北海道" %>北海道</label>
+    <label><%= f.radio_button :location, :"東北地方" %>東北地方</label>
+    <label><%= f.radio_button :location, :"関東地方" %>関東地方</label>
+    <label><%= f.radio_button :location, :"中部地方" %>中部地方</label>
+    <label><%= f.radio_button :location, :"近畿地方" %>近畿地方</label>
+    <label><%= f.radio_button :location, :"中国地方" %>中国地方</label>
+    <label><%= f.radio_button :location, :"四国地方" %>四国地方</label>
+    <label><%= f.radio_button :location, :"九州地方" %>九州地方</label>
+    <label><%= f.radio_button :location, :"沖縄" %>沖縄</label>
+    <label><%= f.radio_button :location, :"その他" %>その他</label>
  </div>
 
 
  <div class="field">
-   <%= f.label :subject %><br />
-   <%= f.label :"国語" %>
-   <%= f.radio_button :subject, :"国語" %>
-   <%= f.label :"算数・数学" %>
-   <%= f.radio_button :subject, :"算数・数学" %>
-   <%= f.label :"理科" %>
-   <%= f.radio_button :subject, :"理科" %>
-   <%= f.label :"社会" %>
-   <%= f.radio_button :subject, :"社会" %>
-   <%= f.label :"音楽" %>
-   <%= f.radio_button :subject, :"音楽" %>
-   <%= f.label :"技術" %>
-   <%= f.radio_button :subject, :"技術" %>
-   <%= f.label :"家庭科" %>
-   <%= f.radio_button :subject, :"家庭科" %>
-   <%= f.label :"体育" %>
-   <%= f.radio_button :subject, :"体育" %>
-   <%= f.label :"保険" %>
-   <%= f.radio_button :subject, :"保険" %>
-   <%= f.label :"その他" %>
-   <%= f.radio_button :subject, :"その他" %>
+   <div class="my_profile_content">
+     <%= f.label :subject %><br />
+    </div>
+   <label><%= f.radio_button :subject, :"国語" %>国語</label>
+   <label><%= f.radio_button :subject, :"算数・数学" %>算数・数学</label>
+   <label><%= f.radio_button :subject, :"理科" %>理科</label>
+   <label><%= f.radio_button :subject, :"社会" %>社会</label>
+   <label><%= f.radio_button :subject, :"音楽" %>音楽</label>
+   <label><%= f.radio_button :subject, :"技術" %>技術</label>
+   <label><%= f.radio_button :subject, :"家庭科" %>家庭科</label>
+   <label><%= f.radio_button :subject, :"体育" %>体育</label>
+   <label><%= f.radio_button :subject, :"保健" %>保健</label>
+   <label><%= f.radio_button :subject, :"その他" %>その他</label>
 </div>
 
 <div class="field">
-  <%= f.label :club %><br />
-  <%= f.label :"なし" %>
-  <%= f.radio_button :club, :"なし" %>
-  <%= f.label :"サッカー" %>
-  <%= f.radio_button :club, :"サッカー" %>
-  <%= f.label :"野球" %>
-  <%= f.radio_button :club, :"野球" %>
-  <%= f.label :"バスケットボール" %>
-  <%= f.radio_button :club, :"バスケットボール" %>
-  <%= f.label :"テニス" %>
-  <%= f.radio_button :club, :"テニス" %>
-  <%= f.label :"卓球" %>
-  <%= f.radio_button :club, :"卓球" %>
-  <%= f.label :"陸上" %>
-  <%= f.radio_button :club, :"陸上" %>
-  <%= f.label :"バトミントン" %>
-  <%= f.radio_button :club, :"バトミントン" %>
-  <%= f.label :"ハンドボール" %>
-  <%= f.radio_button :club, :"ハンドボール" %>
-  <%= f.label :"体操" %>
-  <%= f.radio_button :club, :"体操" %>
-  <%= f.label :"水泳" %>
-  <%= f.radio_button :club, :"水泳" %>
-  <%= f.label :"柔道" %>
-  <%= f.radio_button :club, :"柔道" %>
-  <%= f.label :"剣道" %>
-  <%= f.radio_button :club, :"剣道" %>
-  <%= f.label :"弓道" %>
-  <%= f.radio_button :club, :"弓道" %>
-  <%= f.label :"茶道" %>
-  <%= f.radio_button :club, :"茶道" %>
-  <%= f.label :"美術" %>
-  <%= f.radio_button :club, :"美術" %>
-  <%= f.label :"その他" %>
-  <%= f.radio_button :club, :"その他" %>
+  <div class="my_profile_content">
+    <label><%= f.label :club %><br />
+  </div>
+  <label><%= f.radio_button :club, :"なし" %>なし</label>
+  <label><%= f.radio_button :club, :"サッカー" %>サッカー</label>
+  <label><%= f.radio_button :club, :"野球" %>野球</label>
+  <label><%= f.radio_button :club, :"バスケットボール" %>バスケットボール</label>
+  <label><%= f.radio_button :club, :"テニス" %>テニス</label>
+  <label><%= f.radio_button :club, :"卓球" %>卓球</label>
+  <label><%= f.radio_button :club, :"陸上" %>陸上</label>
+  <label><%= f.radio_button :club, :"バトミントン" %>バトミントン</label>
+  <label><%= f.radio_button :club, :"ハンドボール" %>ハンドボール</label>
+  <label><%= f.radio_button :club, :"体操" %>体操</label>
+  <label><%= f.radio_button :club, :"水泳" %>水泳</label>
+  <label><%= f.radio_button :club, :"柔道" %>柔道</label>
+  <label><%= f.radio_button :club, :"剣道" %>剣道</label>
+  <label><%= f.radio_button :club, :"弓道" %>弓道</label>
+  <label><%= f.radio_button :club, :"茶道" %>茶道</label>
+  <label><%= f.radio_button :club, :"美術" %>美術</label>
+  <label><%= f.radio_button :club, :"その他" %>その他</label>
 
 </div>
 
 <!--自由記述欄-->
 <div class="field">
-  <%= f.label :free_profile %><br/>
+  <div class="my_profile_content">
+    <%= f.label :free_profile %><br/>
+  </div>
   <%= f.text_area :free_profile %>
 </div>
 
    <div class="actions">
-     <%= f.submit "新規登録" %>
+     <%= f.submit "新規登録", :class => 'btn_new' %>
    </div>
   <% end %>
-
-<%= render "devise/shared/links" %>
-
-
+</div>
 </div>

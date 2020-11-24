@@ -25,17 +25,31 @@
 
       <div class="float_basic_information">
 
-          <%= link_to "DM一覧", "/rooms/:id/index" %> <!-- DM一覧に遷移する -->
+          <div class="envelope">
+            <%= link_to  "/rooms/:id/index" do %>
+              <div class="envelope_normal">
+                <i class="far fa-envelope"></i>
+              </div>
+            <% end %><!-- DM一覧に遷移する -->
+          </div>
 
-          <%= link_to "通知", "/users/notifications" %> <!-- 通知に遷移する（未開発） -->
+
+
+        <!--  <%= link_to "通知", "/users/notifications" %> -->  <!-- 通知に遷移する（未開発） -->
 
           <% if unchecked_notifications.any? %>
             <i class="fa fa-circle" style="color: gold;"></i>
           <% end %>
 
 
-          <%= link_to "/users/#{current_user.id}/show" do %>
-            <img src=<%= current_user.image %> class = "icon_image_header">   <!-- マイページに遷移する -->
+          <%= link_to "/users/#{current_user.id}/show" do %> <!-- マイページに遷移する -->
+            <% if current_user.sex == "男性" %>
+              <img src=<%= current_user.image %> class = "icon_image_men_header">
+            <% elsif current_user.sex  == "女性"%>
+              <img src=<%= current_user.image %> class = "icon_image_women_header">
+            <%else%>
+              <img src=<%= current_user.image %> class = "icon_image_other_header">
+            <% end %>
           <% end %>
 
       </div>
@@ -43,19 +57,22 @@
   </div>
 
 <% else %>
-<div class="header">
-  <div class="menu">
-<%= link_to "/" do %>
-  <%= image_tag 'cataly_logo.png', class: 'logo'%>
-<% end %>
-<div class="login_new">
+  <div class="header">
+    <div class="menu">
+      <%= link_to "/" do %>
+        <%= image_tag 'cataly_logo.png', class: 'logo'%>
+      <% end %>
+        <div class="login_new">
+          <div class="login">
+            <%= link_to "ログイン", new_user_session_path, class: 'post' %> <!-- ログイン画面に移行する -->
+          </div>
+          <div class="new">
+            <%= link_to "新規登録", new_user_registration_path, class: 'post' %> <!-- 新規登録画面に移行する -->
+          </div>
+        </div>
 
-  <%= link_to "ログイン", new_user_session_path, class: 'post' %> <!-- ログイン画面に移行する -->
-  <%= link_to "新規登録", new_user_registration_path, class: 'post' %> <!-- 新規登録画面に移行する -->
-
+    </div>
   </div>
-</div>
-</div>
 
 
 

@@ -1,0 +1,14 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        name: 名前
+        image: トップ画像
+        sex: 性別
+        work: 職業
+        location: お住まい
+        annual: 年次
+        subject: 専門科目
+        club: 部活（サークル）顧問
+        free_profile: 自由記述欄
+        email: メールアドレス

@@ -1,22 +1,30 @@
 
-<div class="DM_all_users">
+<div class="dm_list">
+  <% @rooms.each do |room| %>
+    <div class="dm_list__content">
+      <%= link_to room_path(room), class: "dm_list__content__link"  do%>
+        <div class="dm_list__content__link__box">
+          <p class="dm_list__content__link__box__image">
+            <%= image_user(room) %></p>
+        </div>
+      <%end%>
+
+      <div class="chat_name_messege">
+
+      <p class="dm_list__content__link__box__name">
+        <%= opponent_user(room) %></p>
+      <p class="dm_list__content_time__link__box__name">
+        <%= most_new_message_preview(room) %></p>
+
+        </div>
 
 
-<p>メッセージ一覧</p>
-
-<% @anotherEntries.each do |e| %>
-  <%= link_to room_path(e.room.id) do %>
-    <p>■<%= e.user.name %></p>
-    <br><img src=<%= e.user.image %> class = "icon_image"></br>
-
-
-     <%= e.messages.order(created_at: :desc).take.try(:content) %><br>
-
-
+      <div class="chat_time">
+      <%= most_new_message_time(room) %>
+      </div>
+    </div>
   <%end%>
 
-<% end %>
 
-<br><%= link_to "ユーザー一覧に戻る", "/" %></br>
 
 </div>

@@ -1,108 +1,134 @@
-
-
 <% if user_signed_in? %> <!-- ユーザーがログインしているか調べる -->
 
 <div class="all_index">
 
   <!-- ユーザーがログインしていた時の処理 -->
+
 <div class="button">
-<h3>検索🔎</h3>
-
+  <div class="research_title">
+    <h2>検索🔎</h2>
+  </div>
 　<!--検索機能　ボックス-->
-  <%= search_form_for @q,url:"/" do |f| %>
-    <br><%= f.label :name_cont, "フリーワード" %></br>
-    <%= f.search_field :name_or_uni_or_free_profile_cont %>
 
+  <div class="research_title">
+    <%= search_form_for @q,url:"/" do |f| %>
+    <i class="fas fa-pencil-alt"></i><%= f.label :name_cont, " フリーワード" %>
+  </div>
+
+      <%= f.search_field :name_or_uni_or_free_profile_cont , placeholder: "大学名、プロフィール内容", class: "research_text"%>
 
 　<!--検索機能　チェックボックス-->
-<br>
-  <br><%= "性別" %></br>
-    <label> <%= f.check_box :sex_eq_any ,{ multiple: true, include_hidden: false },1 %>男性</label>
-    <label> <%= f.check_box :sex_eq_any ,{ multiple: true, include_hidden: false },2 %>女性</label>
-    <label> <%= f.check_box :sex_eq_any ,{ multiple: true, include_hidden: false },3 %>その他</label>
-</br>
-
-<br>
-    <br><%= "職業" %></br>
-    <label><%= f.check_box :work_eq_any ,{ multiple: true, include_hidden: false },4 %>幼稚園教員</label>
-    <label><%= f.check_box :work_eq_any ,{ multiple: true, include_hidden: false },5 %>公立小学教員</label>
-    <label><%= f.check_box :work_eq_any ,{ multiple: true, include_hidden: false },6 %>私立小学教員</label>
-    <label><%= f.check_box :work_eq_any ,{ multiple: true, include_hidden: false },7 %>公立中学教員</label>
-    <label><%= f.check_box :work_eq_any ,{ multiple: true, include_hidden: false },8 %>私立中学教員</label>
-    <label><%= f.check_box :work_eq_any ,{ multiple: true, include_hidden: false },9 %>公立高校教員</label>
-    <label><%= f.check_box :work_eq_any ,{ multiple: true, include_hidden: false },10 %>私立高校教員</label>
-    <label><%= f.check_box :work_eq_any ,{ multiple: true, include_hidden: false },11 %>大学教員</label>
-    <label><%= f.check_box :work_eq_any ,{ multiple: true, include_hidden: false },12 %>塾講師</label>
-    <label><%= f.check_box :work_eq_any ,{ multiple: true, include_hidden: false },13 %>教材開発</label>
-    <label><%= f.check_box :work_eq_any ,{ multiple: true, include_hidden: false },14 %>学生</label>
-    <label><%= f.check_box :work_eq_any ,{ multiple: true, include_hidden: false },15 %>NPO団体</label>
-    <label><%= f.check_box :work_eq_any ,{ multiple: true, include_hidden: false },16 %>知育ゲームメーカー</label>
-    <label><%= f.check_box :work_eq_any ,{ multiple: true, include_hidden: false },17 %>事務職員</label>
-    <label><%= f.check_box :work_eq_any ,{ multiple: true, include_hidden: false },18 %>その他</label>
-</br>
 
 
-<br>
-<br><%= "お住まい" %></br>
-<label><%= f.check_box :location_eq_any ,{ multiple: true, include_hidden: false },19 %>北海道</label>
-<label><%= f.check_box :location_eq_any ,{ multiple: true, include_hidden: false },20 %>東北地方</label>
-<label><%= f.check_box :location_eq_any ,{ multiple: true, include_hidden: false },21 %>関東地方</label>
-<label><%= f.check_box :location_eq_any ,{ multiple: true, include_hidden: false },22 %>中部地方</label>
-<label><%= f.check_box :location_eq_any ,{ multiple: true, include_hidden: false },23 %>近畿地方</label>
-<label><%= f.check_box :location_eq_any ,{ multiple: true, include_hidden: false },24 %>中国地方</label>
-<label><%= f.check_box :location_eq_any ,{ multiple: true, include_hidden: false },25 %>四国地方</label>
-<label><%= f.check_box :location_eq_any ,{ multiple: true, include_hidden: false },26 %>九州地方</label>
-<label><%= f.check_box :location_eq_any ,{ multiple: true, include_hidden: false },27 %>沖縄</label>
-<label><%= f.check_box :location_eq_any ,{ multiple: true, include_hidden: false },28 %>その他</label>
-</br>
 
-<br>
-  <br><%= "年次" %></br>
-    <label><%= f.check_box :annual_eq_any ,{ multiple: true, include_hidden: false },29 %>1年目</label>
-    <label><%= f.check_box :annual_eq_any ,{ multiple: true, include_hidden: false },30 %>2-5年目</label>
-    <label><%= f.check_box :annual_eq_any ,{ multiple: true, include_hidden: false },31 %>6-10年目</label>
-    <label><%= f.check_box :annual_eq_any ,{ multiple: true, include_hidden: false },32 %>11-20年目</label>
-    <label><%= f.check_box :annual_eq_any ,{ multiple: true, include_hidden: false },33 %>21-30年目</label>
-    <label><%= f.check_box :annual_eq_any ,{ multiple: true, include_hidden: false },34 %>31年目以上</label>
-</br>
+        <div class="research_title">
+          <i class="fas fa-briefcase"></i><%= " 職業" %>
+        </div>
 
-<br><%= "専門科目" %></br>
-  <label><%= f.check_box :subject_eq_any ,{ multiple: true, include_hidden: false },35 %>国語</label>
-  <label><%= f.check_box :subject_eq_any ,{ multiple: true, include_hidden: false },36 %>算数・数学</label>
-  <label><%= f.check_box :subject_eq_any ,{ multiple: true, include_hidden: false },37 %>理科</label>
-  <label><%= f.check_box :subject_eq_any ,{ multiple: true, include_hidden: false },38 %>社会</label>
-  <label><%= f.check_box :subject_eq_any ,{ multiple: true, include_hidden: false },39 %>音楽</label>
-  <label><%= f.check_box :subject_eq_any ,{ multiple: true, include_hidden: false },40 %>技術</label>
-  <label><%= f.check_box :subject_eq_any ,{ multiple: true, include_hidden: false },41 %>家庭科</label>
-  <label><%= f.check_box :subject_eq_any ,{ multiple: true, include_hidden: false },42 %>体育</label>
-  <label><%= f.check_box :subject_eq_any ,{ multiple: true, include_hidden: false },43 %>保険</label>
-  <label><%= f.check_box :subject_eq_any ,{ multiple: true, include_hidden: false },44 %>その他</label>
+      <div class="research_check">
+        <%= f.check_box :work_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},4 %><label for="q_work_eq_any_4" class="checkbox02" checked="checked">幼稚園教員</label>
+        <%= f.check_box :work_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},5 %><label for="q_work_eq_any_5" class="checkbox02" checked="checked">公立小学教員</label>
+        <%= f.check_box :work_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},6 %><label for="q_work_eq_any_6" class="checkbox02" checked="checked">私立小学教員</label>
+        <%= f.check_box :work_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},7 %><label for="q_work_eq_any_7" class="checkbox02" checked="checked">公立中学教員</label>
+        <%= f.check_box :work_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},8 %><label for="q_work_eq_any_8" class="checkbox02" checked="checked">私立中学教員</label>
+        <%= f.check_box :work_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},9 %><label for="q_work_eq_any_9" class="checkbox02" checked="checked">公立高校教員</label>
+        <%= f.check_box :work_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},10 %><label for="q_work_eq_any_10" class="checkbox02" checked="checked">私立高校教員</label>
+        <%= f.check_box :work_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},11 %><label for="q_work_eq_any_11" class="checkbox02" checked="checked">大学教員</label>
+        <%= f.check_box :work_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},12 %><label for="q_work_eq_any_12" class="checkbox02" checked="checked">塾講師</label>
+        <%= f.check_box :work_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},13 %><label for="q_work_eq_any_13" class="checkbox02" checked="checked">教材開発</label>
+        <%= f.check_box :work_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},14 %><label for="q_work_eq_any_14" class="checkbox02" checked="checked">学生</label>
+        <%= f.check_box :work_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},15 %><label for="q_work_eq_any_15" class="checkbox02" checked="checked">NPO団体</label>
+        <%= f.check_box :work_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},16 %><label for="q_work_eq_any_16" class="checkbox02" checked="checked">知育ゲームメーカー</label>
+        <%= f.check_box :work_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},17 %><label for="q_work_eq_any_17" class="checkbox02" checked="checked">事務職員</label>
+        <%= f.check_box :work_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},18 %><label for="q_work_eq_any_18" class="checkbox02" checked="checked">その他</label>
+    </div>
 
-</br>
 
-<br><%="部活（サークル）顧問" %></br>
-  <label><%= f.check_box :club_eq_any ,{ multiple: true, include_hidden: false },45 %>なし</label>
-  <label><%= f.check_box :club_eq_any ,{ multiple: true, include_hidden: false },46 %>サッカー</label>
-  <label><%= f.check_box :club_eq_any ,{ multiple: true, include_hidden: false },47 %>野球</label>
-  <label><%= f.check_box :club_eq_any ,{ multiple: true, include_hidden: false },48 %>バスケットボール</label>
-  <label><%= f.check_box :club_eq_any ,{ multiple: true, include_hidden: false },49 %>テニス</label>
-  <label><%= f.check_box :club_eq_any ,{ multiple: true, include_hidden: false },50 %>卓球</label>
-  <label><%= f.check_box :club_eq_any ,{ multiple: true, include_hidden: false },51 %>陸上</label>
-  <label><%= f.check_box :club_eq_any ,{ multiple: true, include_hidden: false },52 %>バトミントン</label>
-  <label><%= f.check_box :club_eq_any ,{ multiple: true, include_hidden: false },53 %>ハンドボール</label>
-  <label><%= f.check_box :club_eq_any ,{ multiple: true, include_hidden: false },54 %>体操</label>
-  <label><%= f.check_box :club_eq_any ,{ multiple: true, include_hidden: false },55 %>水泳</label>
-  <label><%= f.check_box :club_eq_any ,{ multiple: true, include_hidden: false },56 %>柔道</label>
-  <label><%= f.check_box :club_eq_any ,{ multiple: true, include_hidden: false },57 %>剣道</label>
-  <label><%= f.check_box :club_eq_any ,{ multiple: true, include_hidden: false },58 %>弓道</label>
-  <label><%= f.check_box :club_eq_any ,{ multiple: true, include_hidden: false },59 %>茶道</label>
-  <label><%= f.check_box :club_eq_any ,{ multiple: true, include_hidden: false },60 %>美術</label>
-  <label><%= f.check_box :club_eq_any ,{ multiple: true, include_hidden: false },61 %>その他</label>
-</br>
 
-<div class="research_button">
-  <%= f.submit "検索" %>
-</div>
+
+    <div class="research_title">
+      <i class="fas fa-house-user"></i><%= " お住まい" %>
+      </div>
+      <div class="research_check">
+      <%= f.check_box :location_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},19 %><label for="q_location_eq_any_19" class="checkbox02" checked="checked">北海道</label>
+      <%= f.check_box :location_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},20 %><label for="q_location_eq_any_20" class="checkbox02" checked="checked">東北地方</label>
+      <%= f.check_box :location_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},21 %><label for="q_location_eq_any_21" class="checkbox02" checked="checked">関東地方</label>
+      <%= f.check_box :location_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},22 %><label for="q_location_eq_any_22" class="checkbox02" checked="checked">中部地方</label>
+      <%= f.check_box :location_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},23 %><label for="q_location_eq_any_23" class="checkbox02" checked="checked">近畿地方</label>
+      <%= f.check_box :location_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},24 %><label for="q_location_eq_any_24" class="checkbox02" checked="checked">中国地方</label>
+      <%= f.check_box :location_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},25 %><label for="q_location_eq_any_25" class="checkbox02" checked="checked">四国地方</label>
+      <%= f.check_box :location_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},26 %><label for="q_location_eq_any_26" class="checkbox02" checked="checked">九州地方</label>
+      <%= f.check_box :location_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},27 %><label for="q_location_eq_any_27" class="checkbox02" checked="checked">沖縄</label>
+      <%= f.check_box :location_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},28 %><label for="q_location_eq_any_28" class="checkbox02" checked="checked">その他</label>
+    </div>
+
+    <div class="research_title">
+    <i class="fas fa-clock"></i><%= " 年次" %>
+      </div>
+      <div class="research_check">
+      <%= f.check_box :annual_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},29 %><label for="q_annual_eq_any_29" class="checkbox02" checked="checked">1年目</label>
+      <%= f.check_box :annual_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},30 %><label for="q_annual_eq_any_30" class="checkbox02" checked="checked">2-5年目</label>
+      <%= f.check_box :annual_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},31 %><label for="q_annual_eq_any_31" class="checkbox02" checked="checked">6-10年目</label>
+      <%= f.check_box :annual_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},32 %><label for="q_annual_eq_any_32" class="checkbox02" checked="checked">11-20年目</label>
+      <%= f.check_box :annual_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},33 %><label for="q_annual_eq_any_33" class="checkbox02" checked="checked">21-30年目</label>
+      <%= f.check_box :annual_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},34 %><label for="q_annual_eq_any_34" class="checkbox02" checked="checked">31年目以上</label>
+    </div>
+
+    <div class="research_title">
+      <i class="fas fa-book-open"></i><%= " 専門科目" %>
+      </div>
+      <div class="research_check">
+      <%= f.check_box :subject_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},35 %><label for="q_subject_eq_any_35" class="checkbox02" checked="checked">国語</label>
+      <%= f.check_box :subject_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},36 %><label for="q_subject_eq_any_36" class="checkbox02" checked="checked">算数・数学</label>
+      <%= f.check_box :subject_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},37 %><label for="q_subject_eq_any_37" class="checkbox02" checked="checked">理科</label>
+      <%= f.check_box :subject_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},38 %><label for="q_subject_eq_any_38" class="checkbox02" checked="checked">社会</label>
+      <%= f.check_box :subject_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},39 %><label for="q_subject_eq_any_39" class="checkbox02" checked="checked">音楽</label>
+      <%= f.check_box :subject_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},40 %><label for="q_subject_eq_any_40" class="checkbox02" checked="checked">技術</label>
+      <%= f.check_box :subject_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},41 %><label for="q_subject_eq_any_41" class="checkbox02" checked="checked">家庭科</label>
+      <%= f.check_box :subject_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},42 %><label for="q_subject_eq_any_42" class="checkbox02" checked="checked">体育</label>
+      <%= f.check_box :subject_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},43 %><label for="q_subject_eq_any_43" class="checkbox02" checked="checked">保健</label>
+      <%= f.check_box :subject_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},44 %><label for="q_subject_eq_any_44" class="checkbox02" checked="checked">その他</label>
+      </div>
+
+
+
+    <div class="research_title">
+      <i class="fas fa-futbol"></i><%=" 部活（サークル）顧問" %>
+      </div>
+      <div class="research_check">
+      <%= f.check_box :club_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},45 %><label for="q_club_eq_any_45" class="checkbox02" checked="checked">なし</label>
+      <%= f.check_box :club_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},46 %><label for="q_club_eq_any_46" class="checkbox02" checked="checked">サッカー</label>
+      <%= f.check_box :club_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},47 %><label for="q_club_eq_any_47" class="checkbox02" checked="checked">野球</label>
+      <%= f.check_box :club_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},48 %><label for="q_club_eq_any_48" class="checkbox02" checked="checked">バスケットボール</label>
+      <%= f.check_box :club_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},49 %><label for="q_club_eq_any_49" class="checkbox02" checked="checked">テニス</label>
+      <%= f.check_box :club_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},50 %><label for="q_club_eq_any_50" class="checkbox02" checked="checked">卓球</label>
+      <%= f.check_box :club_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},51 %><label for="q_club_eq_any_51" class="checkbox02" checked="checked">陸上</label>
+      <%= f.check_box :club_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},52 %><label for="q_club_eq_any_52" class="checkbox02" checked="checked">バトミントン</label>
+      <%= f.check_box :club_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},53 %><label for="q_club_eq_any_53" class="checkbox02" checked="checked">ハンドボール</label>
+      <%= f.check_box :club_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},54 %><label for="q_club_eq_any_54" class="checkbox02" checked="checked">体操</label>
+      <%= f.check_box :club_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},55 %><label for="q_club_eq_any_55" class="checkbox02" checked="checked">水泳</label>
+      <%= f.check_box :club_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},56 %><label for="q_club_eq_any_56" class="checkbox02" checked="checked">柔道</label>
+      <%= f.check_box :club_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},57 %><label for="q_club_eq_any_57" class="checkbox02" checked="checked">剣道</label>
+      <%= f.check_box :club_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},58 %><label for="q_club_eq_any_58" class="checkbox02" checked="checked">弓道</label>
+      <%= f.check_box :club_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},59 %><label for="q_club_eq_any_59" class="checkbox02" checked="checked">茶道</label>
+      <%= f.check_box :club_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},60 %><label for="q_club_eq_any_60" class="checkbox02" checked="checked">美術</label>
+      <%= f.check_box :club_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},61 %><label for="q_club_eq_any_61" class="checkbox02" checked="checked">その他</label>
+    </div>
+
+    <div class="research_title">
+      <i class="fas fa-transgender-alt"></i><%= " 性別" %>
+    </div>
+    <div class="research_check">
+    <%= f.check_box :sex_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},1 %><label for="q_sex_eq_any_1" class="checkbox02" checked="checked">男性</label>
+    <%= f.check_box :sex_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},2 %><label for="q_sex_eq_any_2" class="checkbox02">女性</label>
+    <%= f.check_box :sex_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},3 %><label for="q_sex_eq_any_3" class="checkbox02">その他</label>
+  </div>
+
+
+  <%= f.submit "検索" , :class => 'research_button',:id=>'research_button'%>
+
+  <h2>登録ユーザー数</h2><%=@all_users.count %>
+
 </div>
 
   <% end %>
@@ -114,7 +140,15 @@
       <h1>ユーザー一覧</h1>
           <% @users.each do |user| %>
             <div class="all_users_user">
-                <br><img src=<%= user.image %> class = "icon_image">
+
+              <% if user.sex == "男性" %>
+                <br><img src=<%= user.image %> class = "icon_image_men"></br>
+              <% elsif user.sex == "女性"%>
+                <br><img src=<%= user.image %> class = "icon_image_women"></br>
+              <%else%>
+                <br><img src=<%= user.image %> class = "icon_image_other"></br>
+              <% end %>
+
                 <br><%= link_to(user.name, "/users/#{user.id}/show") %></br>
                 <br><%= user.work %></br>
                 <br><%= user.uni %></br>
@@ -146,105 +180,134 @@
 
   <div class="all_index">
 
+
+    <%= image_tag 'cataly_promotion.png', :class => "cataly_promotion" %>
+
     <!-- ユーザーがログインしていた時の処理 -->
   <div class="button">
   <h3>検索🔎</h3>
 
-  　<!--検索機能　ボックス-->
-    <%= search_form_for @q,url:"/" do |f| %>
-      <br><%= f.label :name_cont, "フリーワード" %></br>
-      <%= f.search_field :name_or_uni_or_free_profile_cont %>
+  <!--検索機能　ボックス-->
 
+    <%= search_form_for @q,url:"/" do |f| %>
+    <i class="fas fa-pencil-alt"></i><%= f.label :name_cont, " フリーワード" %>
+
+        <%= f.search_field :name_or_uni_or_free_profile_cont , placeholder: "大学名、プロフィール内容", class: "research_text"%>
 
   　<!--検索機能　チェックボックス-->
-  <br>
-    <br><%= "性別" %></br>
-      <label> <%= f.check_box :sex_eq_any ,{ multiple: true, include_hidden: false },1 %>男性</label>
-      <label> <%= f.check_box :sex_eq_any ,{ multiple: true, include_hidden: false },2 %>女性</label>
-      <label> <%= f.check_box :sex_eq_any ,{ multiple: true, include_hidden: false },3 %>その他</label>
-  </br>
-
-  <br>
-      <br><%= "職業" %></br>
-      <label><%= f.check_box :work_eq_any ,{ multiple: true, include_hidden: false },4 %>幼稚園教員</label>
-      <label><%= f.check_box :work_eq_any ,{ multiple: true, include_hidden: false },5 %>公立小学教員</label>
-      <label><%= f.check_box :work_eq_any ,{ multiple: true, include_hidden: false },6 %>私立小学教員</label>
-      <label><%= f.check_box :work_eq_any ,{ multiple: true, include_hidden: false },7 %>公立中学教員</label>
-      <label><%= f.check_box :work_eq_any ,{ multiple: true, include_hidden: false },8 %>私立中学教員</label>
-      <label><%= f.check_box :work_eq_any ,{ multiple: true, include_hidden: false },9 %>公立高校教員</label>
-      <label><%= f.check_box :work_eq_any ,{ multiple: true, include_hidden: false },10 %>私立高校教員</label>
-      <label><%= f.check_box :work_eq_any ,{ multiple: true, include_hidden: false },11 %>大学教員</label>
-      <label><%= f.check_box :work_eq_any ,{ multiple: true, include_hidden: false },12 %>塾講師</label>
-      <label><%= f.check_box :work_eq_any ,{ multiple: true, include_hidden: false },13 %>教材開発</label>
-      <label><%= f.check_box :work_eq_any ,{ multiple: true, include_hidden: false },14 %>学生</label>
-      <label><%= f.check_box :work_eq_any ,{ multiple: true, include_hidden: false },15 %>NPO団体</label>
-      <label><%= f.check_box :work_eq_any ,{ multiple: true, include_hidden: false },16 %>知育ゲームメーカー</label>
-      <label><%= f.check_box :work_eq_any ,{ multiple: true, include_hidden: false },17 %>事務職員</label>
-      <label><%= f.check_box :work_eq_any ,{ multiple: true, include_hidden: false },18 %>その他</label>
-  </br>
 
 
-  <br>
-  <br><%= "お住まい" %></br>
-  <label><%= f.check_box :location_eq_any ,{ multiple: true, include_hidden: false },19 %>北海道</label>
-  <label><%= f.check_box :location_eq_any ,{ multiple: true, include_hidden: false },20 %>東北地方</label>
-  <label><%= f.check_box :location_eq_any ,{ multiple: true, include_hidden: false },21 %>関東地方</label>
-  <label><%= f.check_box :location_eq_any ,{ multiple: true, include_hidden: false },22 %>中部地方</label>
-  <label><%= f.check_box :location_eq_any ,{ multiple: true, include_hidden: false },23 %>近畿地方</label>
-  <label><%= f.check_box :location_eq_any ,{ multiple: true, include_hidden: false },24 %>中国地方</label>
-  <label><%= f.check_box :location_eq_any ,{ multiple: true, include_hidden: false },25 %>四国地方</label>
-  <label><%= f.check_box :location_eq_any ,{ multiple: true, include_hidden: false },26 %>九州地方</label>
-  <label><%= f.check_box :location_eq_any ,{ multiple: true, include_hidden: false },27 %>沖縄</label>
-  <label><%= f.check_box :location_eq_any ,{ multiple: true, include_hidden: false },28 %>その他</label>
-  </br>
 
-  <br>
-    <br><%= "年次" %></br>
-      <label><%= f.check_box :annual_eq_any ,{ multiple: true, include_hidden: false },29 %>1年目</label>
-      <label><%= f.check_box :annual_eq_any ,{ multiple: true, include_hidden: false },30 %>2-5年目</label>
-      <label><%= f.check_box :annual_eq_any ,{ multiple: true, include_hidden: false },31 %>6-10年目</label>
-      <label><%= f.check_box :annual_eq_any ,{ multiple: true, include_hidden: false },32 %>11-20年目</label>
-      <label><%= f.check_box :annual_eq_any ,{ multiple: true, include_hidden: false },33 %>21-30年目</label>
-      <label><%= f.check_box :annual_eq_any ,{ multiple: true, include_hidden: false },34 %>31年目以上</label>
-  </br>
+          <div class="research_title">
+            <i class="fas fa-briefcase"></i><%= " 職業" %>
+          </div>
 
-  <br><%= "専門科目" %></br>
-    <label><%= f.check_box :subject_eq_any ,{ multiple: true, include_hidden: false },35 %>国語</label>
-    <label><%= f.check_box :subject_eq_any ,{ multiple: true, include_hidden: false },36 %>算数・数学</label>
-    <label><%= f.check_box :subject_eq_any ,{ multiple: true, include_hidden: false },37 %>理科</label>
-    <label><%= f.check_box :subject_eq_any ,{ multiple: true, include_hidden: false },38 %>社会</label>
-    <label><%= f.check_box :subject_eq_any ,{ multiple: true, include_hidden: false },39 %>音楽</label>
-    <label><%= f.check_box :subject_eq_any ,{ multiple: true, include_hidden: false },40 %>技術</label>
-    <label><%= f.check_box :subject_eq_any ,{ multiple: true, include_hidden: false },41 %>家庭科</label>
-    <label><%= f.check_box :subject_eq_any ,{ multiple: true, include_hidden: false },42 %>体育</label>
-    <label><%= f.check_box :subject_eq_any ,{ multiple: true, include_hidden: false },43 %>保険</label>
-    <label><%= f.check_box :subject_eq_any ,{ multiple: true, include_hidden: false },44 %>その他</label>
+        <div class="research_check">
+          <%= f.check_box :work_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},4 %><label for="q_work_eq_any_4" class="checkbox02" checked="checked">幼稚園教員</label>
+          <%= f.check_box :work_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},5 %><label for="q_work_eq_any_5" class="checkbox02" checked="checked">公立小学教員</label>
+          <%= f.check_box :work_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},6 %><label for="q_work_eq_any_6" class="checkbox02" checked="checked">私立小学教員</label>
+          <%= f.check_box :work_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},7 %><label for="q_work_eq_any_7" class="checkbox02" checked="checked">公立中学教員</label>
+          <%= f.check_box :work_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},8 %><label for="q_work_eq_any_8" class="checkbox02" checked="checked">私立中学教員</label>
+          <%= f.check_box :work_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},9 %><label for="q_work_eq_any_9" class="checkbox02" checked="checked">公立高校教員</label>
+          <%= f.check_box :work_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},10 %><label for="q_work_eq_any_10" class="checkbox02" checked="checked">私立高校教員</label>
+          <%= f.check_box :work_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},11 %><label for="q_work_eq_any_11" class="checkbox02" checked="checked">大学教員</label>
+          <%= f.check_box :work_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},12 %><label for="q_work_eq_any_12" class="checkbox02" checked="checked">塾講師</label>
+          <%= f.check_box :work_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},13 %><label for="q_work_eq_any_13" class="checkbox02" checked="checked">教材開発</label>
+          <%= f.check_box :work_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},14 %><label for="q_work_eq_any_14" class="checkbox02" checked="checked">学生</label>
+          <%= f.check_box :work_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},15 %><label for="q_work_eq_any_15" class="checkbox02" checked="checked">NPO団体</label>
+          <%= f.check_box :work_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},16 %><label for="q_work_eq_any_16" class="checkbox02" checked="checked">知育ゲームメーカー</label>
+          <%= f.check_box :work_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},17 %><label for="q_work_eq_any_17" class="checkbox02" checked="checked">事務職員</label>
+          <%= f.check_box :work_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},18 %><label for="q_work_eq_any_18" class="checkbox02" checked="checked">その他</label>
+      </div>
 
-  </br>
 
-  <br><%="部活（サークル）顧問" %></br>
-    <label><%= f.check_box :club_eq_any ,{ multiple: true, include_hidden: false },45 %>なし</label>
-    <label><%= f.check_box :club_eq_any ,{ multiple: true, include_hidden: false },46 %>サッカー</label>
-    <label><%= f.check_box :club_eq_any ,{ multiple: true, include_hidden: false },47 %>野球</label>
-    <label><%= f.check_box :club_eq_any ,{ multiple: true, include_hidden: false },48 %>バスケットボール</label>
-    <label><%= f.check_box :club_eq_any ,{ multiple: true, include_hidden: false },49 %>テニス</label>
-    <label><%= f.check_box :club_eq_any ,{ multiple: true, include_hidden: false },50 %>卓球</label>
-    <label><%= f.check_box :club_eq_any ,{ multiple: true, include_hidden: false },51 %>陸上</label>
-    <label><%= f.check_box :club_eq_any ,{ multiple: true, include_hidden: false },52 %>バトミントン</label>
-    <label><%= f.check_box :club_eq_any ,{ multiple: true, include_hidden: false },53 %>ハンドボール</label>
-    <label><%= f.check_box :club_eq_any ,{ multiple: true, include_hidden: false },54 %>体操</label>
-    <label><%= f.check_box :club_eq_any ,{ multiple: true, include_hidden: false },55 %>水泳</label>
-    <label><%= f.check_box :club_eq_any ,{ multiple: true, include_hidden: false },56 %>柔道</label>
-    <label><%= f.check_box :club_eq_any ,{ multiple: true, include_hidden: false },57 %>剣道</label>
-    <label><%= f.check_box :club_eq_any ,{ multiple: true, include_hidden: false },58 %>弓道</label>
-    <label><%= f.check_box :club_eq_any ,{ multiple: true, include_hidden: false },59 %>茶道</label>
-    <label><%= f.check_box :club_eq_any ,{ multiple: true, include_hidden: false },60 %>美術</label>
-    <label><%= f.check_box :club_eq_any ,{ multiple: true, include_hidden: false },61 %>その他</label>
-  </br>
 
-  <div class="research_button">
-    <%= f.submit "検索" %>
-  </div>
+
+      <div class="research_title">
+        <i class="fas fa-house-user"></i><%= " お住まい" %>
+        </div>
+        <div class="research_check">
+        <%= f.check_box :location_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},19 %><label for="q_location_eq_any_19" class="checkbox02" checked="checked">北海道</label>
+        <%= f.check_box :location_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},20 %><label for="q_location_eq_any_20" class="checkbox02" checked="checked">東北地方</label>
+        <%= f.check_box :location_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},21 %><label for="q_location_eq_any_21" class="checkbox02" checked="checked">関東地方</label>
+        <%= f.check_box :location_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},22 %><label for="q_location_eq_any_22" class="checkbox02" checked="checked">中部地方</label>
+        <%= f.check_box :location_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},23 %><label for="q_location_eq_any_23" class="checkbox02" checked="checked">近畿地方</label>
+        <%= f.check_box :location_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},24 %><label for="q_location_eq_any_24" class="checkbox02" checked="checked">中国地方</label>
+        <%= f.check_box :location_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},25 %><label for="q_location_eq_any_25" class="checkbox02" checked="checked">四国地方</label>
+        <%= f.check_box :location_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},26 %><label for="q_location_eq_any_26" class="checkbox02" checked="checked">九州地方</label>
+        <%= f.check_box :location_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},27 %><label for="q_location_eq_any_27" class="checkbox02" checked="checked">沖縄</label>
+        <%= f.check_box :location_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},28 %><label for="q_location_eq_any_28" class="checkbox02" checked="checked">その他</label>
+      </div>
+
+      <div class="research_title">
+      <i class="fas fa-clock"></i><%= " 年次" %>
+        </div>
+        <div class="research_check">
+        <%= f.check_box :annual_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},29 %><label for="q_annual_eq_any_29" class="checkbox02" checked="checked">1年目</label>
+        <%= f.check_box :annual_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},30 %><label for="q_annual_eq_any_30" class="checkbox02" checked="checked">2-5年目</label>
+        <%= f.check_box :annual_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},31 %><label for="q_annual_eq_any_31" class="checkbox02" checked="checked">6-10年目</label>
+        <%= f.check_box :annual_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},32 %><label for="q_annual_eq_any_32" class="checkbox02" checked="checked">11-20年目</label>
+        <%= f.check_box :annual_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},33 %><label for="q_annual_eq_any_33" class="checkbox02" checked="checked">21-30年目</label>
+        <%= f.check_box :annual_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},34 %><label for="q_annual_eq_any_34" class="checkbox02" checked="checked">31年目以上</label>
+      </div>
+
+      <div class="research_title">
+        <i class="fas fa-book-open"></i><%= " 専門科目" %>
+        </div>
+        <div class="research_check">
+        <%= f.check_box :subject_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},35 %><label for="q_subject_eq_any_35" class="checkbox02" checked="checked">国語</label>
+        <%= f.check_box :subject_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},36 %><label for="q_subject_eq_any_36" class="checkbox02" checked="checked">算数・数学</label>
+        <%= f.check_box :subject_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},37 %><label for="q_subject_eq_any_37" class="checkbox02" checked="checked">理科</label>
+        <%= f.check_box :subject_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},38 %><label for="q_subject_eq_any_38" class="checkbox02" checked="checked">社会</label>
+        <%= f.check_box :subject_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},39 %><label for="q_subject_eq_any_39" class="checkbox02" checked="checked">音楽</label>
+        <%= f.check_box :subject_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},40 %><label for="q_subject_eq_any_40" class="checkbox02" checked="checked">技術</label>
+        <%= f.check_box :subject_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},41 %><label for="q_subject_eq_any_41" class="checkbox02" checked="checked">家庭科</label>
+        <%= f.check_box :subject_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},42 %><label for="q_subject_eq_any_42" class="checkbox02" checked="checked">体育</label>
+        <%= f.check_box :subject_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},43 %><label for="q_subject_eq_any_43" class="checkbox02" checked="checked">保健</label>
+        <%= f.check_box :subject_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},44 %><label for="q_subject_eq_any_44" class="checkbox02" checked="checked">その他</label>
+        </div>
+
+
+
+      <div class="research_title">
+        <i class="fas fa-futbol"></i><%=" 部活（サークル）顧問" %>
+        </div>
+        <div class="research_check">
+        <%= f.check_box :club_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},45 %><label for="q_club_eq_any_45" class="checkbox02" checked="checked">なし</label>
+        <%= f.check_box :club_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},46 %><label for="q_club_eq_any_46" class="checkbox02" checked="checked">サッカー</label>
+        <%= f.check_box :club_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},47 %><label for="q_club_eq_any_47" class="checkbox02" checked="checked">野球</label>
+        <%= f.check_box :club_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},48 %><label for="q_club_eq_any_48" class="checkbox02" checked="checked">バスケットボール</label>
+        <%= f.check_box :club_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},49 %><label for="q_club_eq_any_49" class="checkbox02" checked="checked">テニス</label>
+        <%= f.check_box :club_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},50 %><label for="q_club_eq_any_50" class="checkbox02" checked="checked">卓球</label>
+        <%= f.check_box :club_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},51 %><label for="q_club_eq_any_51" class="checkbox02" checked="checked">陸上</label>
+        <%= f.check_box :club_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},52 %><label for="q_club_eq_any_52" class="checkbox02" checked="checked">バトミントン</label>
+        <%= f.check_box :club_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},53 %><label for="q_club_eq_any_53" class="checkbox02" checked="checked">ハンドボール</label>
+        <%= f.check_box :club_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},54 %><label for="q_club_eq_any_54" class="checkbox02" checked="checked">体操</label>
+        <%= f.check_box :club_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},55 %><label for="q_club_eq_any_55" class="checkbox02" checked="checked">水泳</label>
+        <%= f.check_box :club_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},56 %><label for="q_club_eq_any_56" class="checkbox02" checked="checked">柔道</label>
+        <%= f.check_box :club_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},57 %><label for="q_club_eq_any_57" class="checkbox02" checked="checked">剣道</label>
+        <%= f.check_box :club_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},58 %><label for="q_club_eq_any_58" class="checkbox02" checked="checked">弓道</label>
+        <%= f.check_box :club_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},59 %><label for="q_club_eq_any_59" class="checkbox02" checked="checked">茶道</label>
+        <%= f.check_box :club_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},60 %><label for="q_club_eq_any_60" class="checkbox02" checked="checked">美術</label>
+        <%= f.check_box :club_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},61 %><label for="q_club_eq_any_61" class="checkbox02" checked="checked">その他</label>
+      </div>
+
+      <div class="research_title">
+        <i class="fas fa-transgender-alt"></i><%= " 性別" %>
+      </div>
+      <div class="research_check">
+      <%= f.check_box :sex_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},1 %><label for="q_sex_eq_any_1" class="checkbox02" checked="checked">男性</label>
+      <%= f.check_box :sex_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},2 %><label for="q_sex_eq_any_2" class="checkbox02">女性</label>
+      <%= f.check_box :sex_eq_any ,{ multiple: true, include_hidden: false ,class: "research_check_box"},3 %><label for="q_sex_eq_any_3" class="checkbox02">その他</label>
+    </div>
+
+
+    <%= f.submit "検索" , :class => 'research_button',:id=>'research_button'%>
+
+  <h2>登録ユーザー数</h2><%=@all_users.count %>
+
+
+
   </div>
 
     <% end %>

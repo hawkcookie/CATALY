@@ -19,8 +19,151 @@
 
 body{
   background-color: #f4f5f0;
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
 }
 
+// メッセージページの相手ユーザーのプロフィール
+.chat_profile{
+      font-size:18px;
+}
+
+// メッセージ全体
+.all_message{
+
+}
+
+// 自分のメッセージ群
+.my_message{
+  margin-top: 20px;
+  margin-bottom: 30px;
+  text-align: right;
+  font-size:20px;
+}
+
+// 相手のメッセージ群
+.your_message{
+  margin-top: 20px;
+    margin-bottom: 30px;
+    font-size:20px;
+}
+
+
+//メッセージ内の時刻
+.user_right{
+display: block;
+font-size:8px;
+}
+
+// dm送信エリア（文字記載場所）
+.send{
+bottom: 0;
+width: 100%;
+text-align: center;
+  background: #f0eee4;
+  color: #a92f60;
+  margin-right: auto;//ここで中央寄せを指定する。
+  margin-left : auto;
+  width:800px;
+  position: fixed;
+}
+
+
+//自分のメッセージ
+.my_content{
+  padding: 0.6em;
+  border-radius: 10px;
+  background: #91C191;
+  display: inline-block;
+ color:white;
+}
+
+//相手のメッセージ
+.your_content{
+  padding: 0.6em;
+  border-radius: 10px;
+  background: #A5B4D6;
+  display: inline-block;
+   color:white;
+}
+
+/*DM全体*/
+.DM_all{
+  margin-right: auto;//ここで中央寄せを指定する。
+  margin-left : auto;
+  width:800px;
+    margin-bottom: 160px;
+}
+
+// 送信フォーム
+textarea {
+      width: 500px;
+      height: 100px;
+      border-radius: 10px;
+      border-color: #eee;
+}
+
+// チャットの送信ボタン
+.btn_send{
+  background:#A5B4D6;
+  color:#fff;
+  border:none;
+  position:relative;
+  height:50px;
+  font-size:30px;
+  padding:0 2em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
+  border-radius: 10px;
+  display: block;
+  margin: auto;
+}
+.btn_send:hover {
+    color: #ffffff;
+    background-color: #91C191	;
+    cursor: pointer;
+}
+
+// dm一覧全体
+.dm_list__content{
+  padding: 20px 30px;
+  background-color: white;
+  overflow: hidden;
+  box-shadow: 0 2px 6px #c1ced7;
+  display: table;
+  width: 700px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+// DM一メッセージ
+.dm_list__content_time__link__box__message{
+  display: inline-block;
+  width: 200px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+
+
+// DM一覧の名前と最新メッセージ
+.chat_name_messege{
+  width: 90%;
+padding-left: 25px;
+text-align: left;
+display: table-cell;
+vertical-align: middle;
+}
+
+//DM一覧の時間
+.chat_time{
+    text-align: right;
+    font-size: 8px;
+}
 
 .login_page{
   margin-right: auto;//ここで中央寄せを指定する。
@@ -33,9 +176,32 @@ body{
 .login_new{
   margin-right: auto;//ここで中央寄せを指定する。
   margin-left : auto;
-  font-size: 20px;
+  font-size: 18px;
   float: right;
+  display: inline-block;
 }
+
+.login{
+  display: inline-block;
+  padding: 5px;
+  margin:0;
+  color: black;/*文字色*/
+  background: #f0eee4;
+  border: solid 1px black;/*線*/
+  border-radius: 5px;/*角の丸み*/
+}
+
+.new{
+  display: inline-block;
+
+  padding: 5px;
+  margin:0;
+  color: black;/*文字色*/
+  background: #f0eee4;
+  border: solid 1px black;/*線*/
+  border-radius: 5px;/*角の丸み*/
+}
+
 
 /*新規登録ページ全体*/
 .new_registration{
@@ -48,7 +214,7 @@ body{
  .logo {
    width: 314px;
    height: 57px;
-   padding: 20px;
+   padding: 10px;
    cursor: pointer;
  }
 
@@ -71,9 +237,82 @@ body{
 }
 
 
+// icon画像の条件分岐（女性・男性・その他）
+.icon_image_men{
+  width: 100px;
+  height: 100px;
+  /*サイズ指定*/
+  border-radius: 80px;
+  /*画像を丸くする*/
+  object-fit: cover;
+  /*タテヨコ比を変えないままトリミング*/
+  border: 5px solid #8EB8FF;
+}
+
+// icon画像の条件分岐（女性・男性・その他
+.icon_image_women{
+  width: 100px;
+  height: 100px;
+  /*サイズ指定*/
+  border-radius: 80px;
+  /*画像を丸くする*/
+  object-fit: cover;
+  /*タテヨコ比を変えないままトリミング*/
+  border: 5px solid 	#FFABCE;
+}
+
+// icon画像の条件分岐（女性・男性・その他
+.icon_image_other{
+  width: 100px;
+  height: 100px;
+  /*サイズ指定*/
+  border-radius: 80px;
+  /*画像を丸くする*/
+  object-fit: cover;
+  /*タテヨコ比を変えないままトリミング*/
+  border: 5px solid 	#86F9C5;
+}
+
+.icon_image_men_header{
+  width: 50px;
+  height: 50px;
+  /*サイズ指定*/
+  border-radius: 80px;
+  /*画像を丸くする*/
+  object-fit: cover;
+  /*タテヨコ比を変えないままトリミング*/
+  border: 5px solid #8EB8FF;
+}
+
+// icon画像の条件分岐（女性・男性・その他
+.icon_image_women_header{
+  width: 50px;
+  height: 50px;
+  /*サイズ指定*/
+  border-radius: 80px;
+  /*画像を丸くする*/
+  object-fit: cover;
+  /*タテヨコ比を変えないままトリミング*/
+  border: 5px solid 	#FFABCE;
+}
+
+// icon画像の条件分岐（女性・男性・その他
+.icon_image_other_header{
+  width: 50px;
+  height: 50px;
+  /*サイズ指定*/
+  border-radius: 80px;
+  /*画像を丸くする*/
+  object-fit: cover;
+  /*タテヨコ比を変えないままトリミング*/
+  border: 5px solid 	#86F9C5;
+}
+
+
 /*上のヘッダー部分全て*/
 .header{
   background: #f0eee4;
+  height:80px;
 }
 
 /*全ユーザー*/
@@ -96,13 +335,19 @@ body{
 
 /*全ユーザー*/
 .all_users_user{
-  margin: 5px;
-  width:31%;
+  margin: 5px 10px;
+  width:27%;
   height: 200px;
-  border: 1px solid #0f4c81;
   float: left;
-  background-color: #c9d3dc;
+
   padding:0% 0% 10% 0%;
+
+  background-color: white;
+  overflow: hidden;
+  box-shadow: 0 2px 6px #c1ced7;
+  border-radius: 10px;
+  padding-left: 30px;
+  display: inline-block;
 }
 
 .all_index{
@@ -112,6 +357,15 @@ body{
   box-sizing: border-box;/*←全て含めてmin-height:100vhに*/
 }
 
+//説明トップ画像
+.cataly_promotion{
+  width: 100%;
+  max-width: 100%; /* 画像幅以上拡大しないようにする指定 */
+  width:1000px;
+  display: block;
+margin:auto;
+
+}
 
 /*ヘッダー部分の中身*/
 .menu{
@@ -133,14 +387,6 @@ body{
   display: wrap;
 }
 
-/*検索ラジオボタン*/
-.button {
-  font-family: "Helvetica Neue" , Helvetica , Arial , Verdana , Roboto , "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic" , "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro" , "Meiryo UI" , "メイリオ" , Meiryo , "ＭＳ Ｐゴシック" , "MS PGothic" , sans-serif;;
-  font-size: 20px;
-  margin-right: auto;//ここで中央寄せを指定する。
-  margin-left : auto;
-  width:800px;
-}
 
 
 /*一番下の一覧*/
@@ -155,15 +401,10 @@ position: absolute;/*←絶対位置*/
   bottom: 0; /*下に固定*/
 }
 
-/*DM全体*/
-.DM_all{
-  margin-right: auto;//ここで中央寄せを指定する。
-  margin-left : auto;
-  width:800px;
-}
+
 
 /*DM一覧*/
-.DM_all_users{
+.dm_list{
   margin-right: auto;//ここで中央寄せを指定する。
   margin-left : auto;
   width:800px;
@@ -174,6 +415,225 @@ position: absolute;/*←絶対位置*/
   margin-right: auto;//ここで中央寄せを指定する。
   margin-left : auto;
   width:800px;
+}
+
+// チャットの送信ボタン
+.btn_new{
+  background:#1AAB8A;
+  color:#fff;
+  border:none;
+  position:relative;
+  height:50px;
+  font-size:30px;
+  padding:0 2em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
+  border-radius: 10px;
+  display: block;
+}
+.btn_new:hover {
+    color: #ffffff;
+    background-color: #A4C6FF	;
+    cursor: pointer;
+}
+
+// プロフィール画面
+.my_profile{
+padding: 20px 30px;
+background-color: white;
+overflow: hidden;
+box-shadow: 0 2px 6px #c1ced7;
+display: table;
+width: 700px;
+margin-top: 10px;
+margin-bottom: 10px;
+border-radius: 10px;
+margin-top: 20px;
+}
+
+// プロフィールの各大項目
+.my_profile_content{
+  margin-top: 10px;
+    margin-bottom:30px;
+    background:#1AAB8A;
+    padding: 10px;
+    border-radius: 10px;
+    font-size:15px;
+    color: #ffffff;
+}
+
+// プロフィール編集ボタン
+.btn_edit_my_profile{
+  background:#1AAB8A;
+  color:#fff;
+  border:none;
+  height:50px;
+  font-size:25px;
+  padding:15px;
+  cursor:pointer;
+  outline:none;
+  border-radius: 10px;
+  text-align: right;
+  display: inline;
+}
+
+.btn_edit_my_profile:hover {
+    color: #ffffff;
+    background-color: #A4C6FF	;
+    cursor: pointer;
+}
+
+// ユーザーの検索ボタン
+.research_button{
+  background:#A5B4D6;
+  color:#fff;
+  border:none;
+  height:50px;
+  font-size:30px;
+  padding:0 2em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
+  border-radius: 10px;
+  display: block;
+  margin: 50px;
+}
+
+.research_button:hover {
+    color: #ffffff;
+    background-color: #91C191	;
+    cursor: pointer;
+}
+
+/*検索ラジオボタン*/
+.button {
+  font-family: "Helvetica Neue" , Helvetica , Arial , Verdana , Roboto , "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic" , "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro" , "Meiryo UI" , "メイリオ" , Meiryo , "ＭＳ Ｐゴシック" , "MS PGothic" , sans-serif;;
+  font-size: 20px;
+  margin-right: auto;//ここで中央寄せを指定する。
+  margin-left : auto;
+  width:800px;
+
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+  background-color: white;
+
+  box-shadow: 0 2px 6px #c1ced7;
+  border-radius: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+
+}
+
+// 検索フォームの項目（性別など）
+.research_title{
+position: relative;
+margin-bottom: 7px;
+margin-top: 7px;
+}
+// ドット下線
+.research_title:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  background: -webkit-repeating-linear-gradient(-45deg, #A5B4D6, #A5B4D6 2px, #fff 2px, #fff 4px);
+  background: repeating-linear-gradient(-45deg, #A5B4D6, #A5B4D6 2px, #fff 2px, #fff 4px);
+}
+
+// フリーワードの検索ボックス
+.research_text{
+  width: 700px;
+}
+
+// 検索のチェック項目
+.research_check{
+  padding-right:100px;
+}
+
+.research_check_box{
+  margin-right: 20px;
+  display: inline-block;
+}
+
+
+// ここからチェックボックスを足掻いています
+
+input[type=checkbox] {
+      display: none;
+}
+.checkbox02 {
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-block;
+    padding: 5px 30px;
+    position: relative;
+    width: auto;
+}
+.checkbox02::before {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    content: '';
+    display: block;
+    height: 16px;
+    left: 5px;
+    margin-top: -8px;
+    position: absolute;
+    top: 50%;
+    width: 16px;
+}
+.checkbox02::after {
+    border-right: 6px solid #00cccc;
+    border-bottom: 3px solid #00cccc;
+    content: '';
+    display: block;
+    height: 20px;
+    left: 7px;
+    margin-top: -16px;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    transform: rotate(45deg);
+    width: 9px;
+}
+input[type=checkbox]:checked + .checkbox02::before {
+    border-color: #666;
+}
+input[type=checkbox]:checked + .checkbox02::after {
+    opacity: 1;
+}
+
+// クリック時のカラー変更
+.field {
+  padding: 25px;
+  transition: background 0.5s ease;
+  &:focus-within {
+    background: #EEE8AA;
+  }
+}
+
+// ヘッダー_メッセージアイコン
+.envelope{
+  font-size: 50px;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.envelope :hover{
+  color: #91C191;
+  transition: 0.2s ;
+}
+
+
+
+
+
+a {
+  color: black;
 }
 
 label{

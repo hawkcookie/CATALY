@@ -1,34 +1,64 @@
 
 <div class="user_profile">
+<div class="my_profile">
+<div class="research_title">
+<h2>プロフィール</h2>
+</div>
 
-<h1>プロフィール</h1>
+
+
 
 <% if @user.id == current_user.id %>
-  <%= link_to "編集", "/users/edit" %> <!-- 編集ページに遷移する -->
+  <%= link_to "編集", "/users/edit" , class: 'btn_edit_my_profile'%> <!-- 編集ページに遷移する -->
 <% end%>
 
-<h3>ユーザー名</h3>
+<div class="my_profile_content">
+  <h3>お名前</h3>
+</div>
 <%= @user.name %>
-<br><img src=<%= @user.image %> class = "icon_image"></br>
-<h3>性別</h3>
-<%= @user.sex %>
-<h3>職業</h3>
-<%= @user.work %>
-<h3>メールアドレス</h3>
-<%= @user.email %>
-<h3>出身大学</h3>
-<%= @user.uni %>
-<h3>年次</h3>
-<%= @user.annual %>
-<h3>お住まい</h3>
-<%= @user.location %>
-<h3>専門科目</h3>
-<%= @user.subject %>
-<h3>部活（サークル）顧問</h3>
-<%= @user.club %>
-<h3>自由記述欄</h3>
-<%= @user.free_profile %>
 
+  <% if @user.sex == "男性" %>
+    <br><img src=<%= @user.image %> class = "icon_image_men"></br>
+  <% elsif @user.sex == "女性"%>
+    <br><img src=<%= @user.image %> class = "icon_image_women"></br>
+  <%else%>
+    <br><img src=<%= @user.image %> class = "icon_image_other"></br>
+  <% end %>
+
+  <div class="my_profile_content">
+    <h3>性別</h3>
+  </div>
+  <%= @user.sex %>
+  <div class="my_profile_content">
+    <h3>職業</h3>
+  </div>
+  <%= @user.work %>
+  <div class="my_profile_content">
+    <h3>出身大学</h3>
+  </div>
+  <%= @user.uni %>
+
+  <div class="my_profile_content">
+    <h3>年次</h3>
+  </div>
+  <%= @user.annual %>
+  <div class="my_profile_content">
+    <h3>お住まい</h3>
+  </div>
+  <%= @user.location %>
+  <div class="my_profile_content">
+    <h3>専門科目</h3>
+  </div>
+  <%= @user.subject %>
+  <div class="my_profile_content">
+    <h3>部活（サークル）顧問</h3>
+  </div>
+  <%= @user.club %>
+  <div class="my_profile_content">
+    <h3>自由記述欄</h3>
+  </div>
+    <%= simple_format(@user.free_profile) %>
+</div>
 
 
 <% if @user.id == current_user.id %>
