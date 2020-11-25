@@ -22,8 +22,8 @@ test:
 
 production:
   #以下、heroku練習用_datebaseのコメントアウトもherokuを実行するためにコメントアウトした。
+  #database: db/production.sqlite3
   <<: *default
   adapter: postgresql
   encoding: unicode
-  pool: 30
-  #database: db/production.sqlite3
+  pool: 5

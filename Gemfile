@@ -54,13 +54,13 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-
-end
-
 #以下、heroku練習用
-group :development, :test do
   gem 'sqlite3' #do ~ end内部に追加。他のgemは残してください。
+
 end
+
+
+
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
@@ -85,7 +85,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'kaminari'
 
 # 以下、heroku練習用
-
 group :production do
   gem 'pg'
 end
