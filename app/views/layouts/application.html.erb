@@ -35,13 +35,6 @@
 
 
 
-        <!--  <%= link_to "通知", "/users/notifications" %> -->  <!-- 通知に遷移する（未開発） -->
-
-          <% if unchecked_notifications.any? %>
-            <i class="fa fa-circle" style="color: gold;"></i>
-          <% end %>
-
-
           <%= link_to "/users/#{current_user.id}/show" do %> <!-- マイページに遷移する -->
             <% if current_user.sex == "男性" %>
               <img src=<%= current_user.image %> class = "icon_image_men_header">
