@@ -8,10 +8,21 @@ CarrierWave.configure do |config|
   config.fog_directory  = 'cataly-backet'
   config.fog_credentials = {
     provider: 'AWS',
-    aws_access_key_id: ENV['AKIAUSMSHC3D57R5AU3Q'],
-    aws_secret_access_key: ENV['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'],
-    region: ENV['ap-northeast-1'],
+    provider: 'AWS',
+    aws_access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+    aws_secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
+    region: ENV['AWS_REGION'],
     path_style: true
+  }
+
+
+
+end
+
+    # aws_access_key_id: ENV['AKIAUSMSHC3D57R5AU3Q'],
+    # aws_secret_access_key: ENV['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'],
+    # region: ENV['ap-northeast-1'],
+
 
     # aws_access_key_id: Rails.application.secrets.aws_access_key_id,
     # aws_secret_access_key: Rails.application.secrets.aws_secret_access_key,
@@ -20,10 +31,3 @@ CarrierWave.configure do |config|
     # config.fog_directory  = 'cataly-backet'
     # config.asset_host = 'https://s3-ap-northeast1.amazonaws.com/cataly-backet' #url間違い
     # config.asset_host = 'https://cataly-backet.s3.amazonaws.com' #このように修正
-
-
-  }
-
-
-
-end
