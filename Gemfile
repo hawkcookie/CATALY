@@ -24,6 +24,8 @@ gem 'uglifier', '>= 1.3.0'
 
 gem 'font-awesome-sass'
 
+gem 'dotenv-rails'
+
 gem 'rails-i18n'
 gem 'carrierwave'
 #gem 'rmagick'
@@ -50,6 +52,9 @@ gem "jquery-rails"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
+
+
+gem 'fog-aws'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

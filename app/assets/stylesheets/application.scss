@@ -367,6 +367,88 @@ margin:auto;
 
 }
 
+// 説明アイコン一覧
+.cataly_promotion_icon{
+  margin-right: auto;//ここで中央寄せを指定する。
+  margin-left : auto;
+  width:950px;
+
+}
+
+// 各種アイコン詳細設定
+.for_teacher_promotion{
+    width: 20%;
+    height: auto;
+
+}
+
+.notification_off_promotion{
+  width: 20%;
+  height: auto;
+}
+
+.anonymous_promotion{
+  width: 20%;
+  height: auto;
+}
+
+.for_teacher_all{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: #F5F5F5;
+  box-shadow: 0 2px 6px #c1ced7;
+  border-radius: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  display:flex;/* flexbox */
+  align-items: center; /* 垂直方向 */
+}
+
+.notification_off_all{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: #F5F5F5;
+  box-shadow: 0 2px 6px #c1ced7;
+  border-radius: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  display:flex;/* flexbox */
+  align-items: center; /* 垂直方向 */
+}
+
+.anonymous_all{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: #F5F5F5;
+  box-shadow: 0 2px 6px #c1ced7;
+  border-radius: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  display:flex;/* flexbox */
+  align-items: center; /* 垂直方向 */
+}
+
+.for_teacher_sentence{
+margin-left: 10px;
+}
+
+.notification_off_sentence{
+  margin-left: 10px;
+}
+
+.anonymous_sentence{
+  margin-left: 10px;
+}
+
 /*ヘッダー部分の中身*/
 .menu{
   margin-right: auto;//ここで中央寄せを指定する。
