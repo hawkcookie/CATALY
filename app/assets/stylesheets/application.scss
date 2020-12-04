@@ -176,6 +176,7 @@ vertical-align: middle;
 .login_new{
   margin-right: auto;//ここで中央寄せを指定する。
   margin-left : auto;
+  margin-top:20px;
   font-size: 18px;
   float: right;
   display: inline-block;
@@ -184,22 +185,20 @@ vertical-align: middle;
 .login{
   display: inline-block;
   padding: 5px;
-  margin:0;
-  color: black;/*文字色*/
+  margin:10;
   background: #f0eee4;
   border: solid 1px black;/*線*/
-  border-radius: 5px;/*角の丸み*/
+  border-radius: 3px;/*角の丸み*/
+
 }
 
 .new{
   display: inline-block;
-
   padding: 5px;
   margin:0;
-  color: black;/*文字色*/
   background: #f0eee4;
   border: solid 1px black;/*線*/
-  border-radius: 5px;/*角の丸み*/
+  border-radius: 3px;/*角の丸み*/
 }
 
 
@@ -461,7 +460,7 @@ margin-left: 10px;
 * {
     margin: 0px;
     padding: 0px;
-
+  font-family: "Helvetica Neue" , Helvetica , Arial , Verdana , Roboto , "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic" , "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro" , "Meiryo UI" , "メイリオ" , Meiryo , "ＭＳ Ｐゴシック" , "MS PGothic" , sans-serif;;
 }
 
 
@@ -699,10 +698,11 @@ input[type=checkbox]:checked + .checkbox02::after {
 }
 
 // ヘッダー_メッセージアイコン
-.envelope{
+.envelope, .bell{
   font-size: 50px;
   display: inline-block;
   margin-right: 10px;
+  position:  relative;
 }
 
 .envelope :hover{
@@ -710,7 +710,37 @@ input[type=checkbox]:checked + .checkbox02::after {
   transition: 0.2s ;
 }
 
+.bell :hover{
+  color: #91C191;
+  transition: 0.2s ;
+}
 
+// 通知機能_css
+.notification_circle {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  color: #91C191;
+  font-size: 20px;
+}
+
+// 通知機能ページ
+.notification_all{
+  margin-right: auto;//ここで中央寄せを指定する。
+  margin-left : auto;
+  width:800px;
+  font-size: 20px;
+
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: #F5F5F5;
+  box-shadow: 0 2px 6px #c1ced7;
+  border-radius: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
 
 
 

@@ -354,7 +354,15 @@
         <h1>ユーザー一覧</h1>
             <% @users.each do |user| %>
               <div class="all_users_user">
-                  <br><img src=<%= user.image %> class = "icon_image">
+
+                <% if user.sex == "男性" %>
+                  <br><img src=<%= user.image %> class = "icon_image_men"></br>
+                <% elsif user.sex == "女性"%>
+                  <br><img src=<%= user.image %> class = "icon_image_women"></br>
+                <%else%>
+                  <br><img src=<%= user.image %> class = "icon_image_other"></br>
+                <% end %>
+
                   <br><%= link_to(user.name, "/users/#{user.id}/show") %></br>
                   <br><%= user.work %></br>
                   <br><%= user.uni %></br>
