@@ -12,15 +12,15 @@ Rails.application.routes.draw do
   get "users/:id/show" => "users#show"
 
 #通知機能
-get "/users/notifications" => "notifications#index"
+  get "/users/notifications" => "notifications#index"
 
 
-  #ログインユーザーのDM一覧
+#ログインユーザーのDM一覧
    get "rooms/:id/index"=>"rooms#index"
 
 # 編集内容のルーティング
   get "users/edit" =>"users#edit"
-  
+
 #チャットルームのルーティング
   resources :users, :only => [:index, :show, :destroy]
   resources :messages, :only => [:create]
