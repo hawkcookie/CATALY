@@ -15,6 +15,6 @@ class CreateNotifications < ActiveRecord::Migration[5.2]
     add_index :notifications, :visitor_id
     add_index :notifications, :visited_id
     add_index :notifications, :post_id
-    add_index :notifications, :comment_id
+    add_index :notifications, :message_id
   end
 end
