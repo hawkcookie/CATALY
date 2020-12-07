@@ -29,3 +29,7 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+AWS_ACCESS_KEY_ID='AKIAUSMSHC3D57R5AU3Q'
+AWS_SECRET_ACCESS_KEY='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'
+AWS_DEFAULT_REGION='ap-northeast-1'
