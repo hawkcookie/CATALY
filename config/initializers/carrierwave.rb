@@ -7,7 +7,6 @@ if Rails.env.production?
     config.cache_dir = "#{Rails.root}/tmp/uploads"
     config.storage :fog
     config.fog_provider = 'fog/aws'
-    config.fog_directory  = 'cataly-backet'
     config.fog_credentials = {
       provider: 'AWS',
       aws_access_key_id: ENV['AWS_ACCESS_KEY_ID'],
