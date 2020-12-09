@@ -36,4 +36,6 @@ class User < ApplicationRecord
 
   has_many :rooms, through: :entries
 
+mount_uploader :image, ImageUploader
+
 end

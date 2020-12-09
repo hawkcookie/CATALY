@@ -2,7 +2,9 @@ require 'carrierwave/storage/abstract'
 require 'carrierwave/storage/file'
 require 'carrierwave/storage/fog'
 
+if Rails.env.production?
 CarrierWave.configure do |config|
+    config.cache_dir = "#{Rails.root}/tmp/uploads"
   config.storage :fog
   config.fog_provider = 'fog/aws'
   config.fog_directory  = 'cataly-backet'
@@ -13,10 +15,11 @@ CarrierWave.configure do |config|
     region: ENV['ap-northeast-1'],
     path_style: true
   }
-
+  config.fog_directory  = ENV['S3_BUCKET']
 
 
 end
+
 
 
 
