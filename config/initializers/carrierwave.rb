@@ -9,12 +9,12 @@ require 'carrierwave/storage/fog'
     config.fog_provider = 'fog/aws'
     config.fog_credentials = {
       provider: 'AWS',
-      aws_access_key_id: ENV['AWS_ACCESS_KEY_ID']||'AKIAUSMSHC3D57R5AU3Q',
-      aws_secret_access_key: ENV['AWS_SECRET_ACCESS_KEY']||'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',
-      region: ENV['AWS_DEFAULT_REGION']||'ap-northeast-1',
+      aws_access_key_id: 'AKIAUSMSHC3D57R5AU3Q',
+      aws_secret_access_key: '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',
+      region: 'ap-northeast-1',
       path_style: true
     }
-    config.fog_directory  = ENV['S3_BUCKET']||'cataly-backet'
+    config.fog_directory  = 'cataly-backet'
 
   end
 #end
