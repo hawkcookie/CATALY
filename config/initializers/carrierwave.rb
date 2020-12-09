@@ -2,22 +2,22 @@ require 'carrierwave/storage/abstract'
 require 'carrierwave/storage/file'
 require 'carrierwave/storage/fog'
 
-if Rails.env.production?
+#if Rails.env.production?
   CarrierWave.configure do |config|
     config.cache_dir = "#{Rails.root}/tmp/uploads"
     config.storage :fog
     config.fog_provider = 'fog/aws'
     config.fog_credentials = {
       provider: 'AWS',
-      aws_access_key_id: ENV['AWS_ACCESS_KEY_ID'],
-      aws_secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
-      region: ENV['AWS_DEFAULT_REGION'],
+      aws_access_key_id: ENV['AWS_ACCESS_KEY_ID']||'AKIAUSMSHC3D57R5AU3Q',
+      aws_secret_access_key: ENV['AWS_SECRET_ACCESS_KEY']||'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',
+      region: ENV['AWS_DEFAULT_REGION']||'ap-northeast-1',
       path_style: true
     }
-    config.fog_directory  = ENV['S3_BUCKET']
+    config.fog_directory  = ENV['S3_BUCKET']||'cataly-backet'
 
   end
-end
+#end
 
 
 
