@@ -8,7 +8,6 @@ CarrierWave.configure do |config|
   config.fog_directory  = 'cataly-backet'
   config.fog_credentials = {
     provider: 'AWS',
-    provider: 'AWS',
     aws_access_key_id: ENV['AKIAUSMSHC3D57R5AU3Q'],
     aws_secret_access_key: ENV['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'],
     region: ENV['ap-northeast-1'],
