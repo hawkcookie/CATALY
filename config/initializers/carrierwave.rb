@@ -2,7 +2,7 @@ require 'carrierwave/storage/abstract'
 require 'carrierwave/storage/file'
 require 'carrierwave/storage/fog'
 
-#if Rails.env.production?
+if Rails.env.production?
   CarrierWave.configure do |config|
     config.cache_dir = "#{Rails.root}/tmp/uploads"
     config.storage :fog
@@ -17,7 +17,7 @@ require 'carrierwave/storage/fog'
     config.fog_directory  = 'cataly-backet'
 
   end
-#end
+end
 
 
 
