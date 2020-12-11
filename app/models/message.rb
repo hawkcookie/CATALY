@@ -10,7 +10,7 @@ class Message < ApplicationRecord
 
     temp_ids = Entry.where(room_id: id).where.not(user_id: current_user.id).distinct
     temp_ids.each do |temp_id|
-      save_notification_comment!(current_user, message_id, temp_id['room_id'])
+      save_notification_message!(current_user, message_id, temp_id['room_id'])
     end
 
     save_notification_message!(current_user, message_id, room_id) if temp_ids.blank?
