@@ -14,11 +14,11 @@ default: &default
 
 development:
   <<: *default
-  database: MyApp_development
+  database: CATALY_development
 
 test:
   <<: *default
-  database: MyApp_test
+  database: CATALY_test
 production:
   #以下、heroku練習用_datebaseのコメントアウトもherokuを実行するためにコメントアウトした。
   #database: db/production.sqlite3
