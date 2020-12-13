@@ -13,9 +13,11 @@ class RoomsController < ApplicationController
       @messages = @room.messages
       @message = Message.new
       @entries = @room.entries
+      current_user.passive_notifications.where(room_id: @room).update(checked: true)
     else
       redirect_back(fallback_location: root_path)
     end
+
   end
 
 #ログインユーザーのDM一覧

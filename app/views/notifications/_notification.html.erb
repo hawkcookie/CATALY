@@ -1,13 +1,18 @@
-
+<% visitor = notification.visitor %>
 <div class="notification_all">
-  <% visitor = notification.visitor %>
-  <% visited = notification.visited %>
-  <div>
-    <% if notification.action=='dm' %>
-      <%= link_to user_path(visitor) do %>
-      <%= visitor.name %>さんから
-    メッセージが届きました。
-      <% end %>
+  <% if notification.action=='dm' %>
+    <% if notification.checked? %>
+      <div class="read">
+        <%= link_to user_path(visitor) do %>
+        <%= visitor.name %>さんからメッセージが届きました。
+        <% end %>
+      </div>
+    <% else %>
+      <div class="unread">
+        <%= link_to user_path(visitor) do %>
+        <b><%= visitor.name %>さんからメッセージが届きました。</b>
+        <% end %>
+      </div>
     <% end %>
-  </div>
+  <% end %>
 </div>

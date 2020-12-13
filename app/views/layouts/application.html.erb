@@ -32,22 +32,13 @@
                 <i class="far fa-envelope"></i>
               </div>
             <% end %><!-- DM一覧に遷移する -->
-          </div>
 
-          <div class="bell">
-              <%=  link_to  "/users/notifications"  do %>
-                  <i class="far fa-bell"></i>
-              <% end %>
-
-
-              <% if unchecked_notifications.any? %>
+            <% if unchecked_notifications.any? %>
                 <div class="notification_circle">
                   <i class="fa fa-circle"></i>
                 </div>
-              <% end %>
+            <% end %>
           </div>
-
-
 
           <%= link_to "/users/#{current_user.id}/show" do %> <!-- マイページに遷移する -->
             <% if current_user.sex == "男性" %>
@@ -89,3 +80,10 @@
     <%= yield %>
   </body>
 </html>
+
+
+<!-- <div class="bell"> -->
+    <%#=  link_to  "/users/notifications"  do %>
+        <!-- <i class="far fa-bell"></i> -->
+    <%# end %>
+<!-- </div> -->
