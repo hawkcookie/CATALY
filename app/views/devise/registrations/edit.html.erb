@@ -215,6 +215,17 @@
   </div>
 
 
+  <div class="field">
+  <div class="my_profile_content">
+    <label><%= f.label :ユーザー一覧への表示を許可頂けますか？ %><br />
+  </div>
+  <label><%= f.radio_button :consalting, :"はい" %>はい</label>
+  <label><%= f.radio_button :consalting, :"いいえ" %>いいえ</label>
+<br>※進路に悩んでいる教育学部の学生や視野・知識を広げたい先生から連絡が受け取れる状態になります。
+
+</div>
+
+
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>

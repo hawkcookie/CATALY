@@ -11,6 +11,9 @@ class User < ApplicationRecord
   enum annual: { "1年目": 29, "2-5年目": 30 ,"6-10年目": 31, "11-20年目": 32, "21-30年目": 33, "31年目以上": 34},_suffix: true
   enum subject: { "国語": 35,"算数・数学": 36,"理科": 37,"社会": 38,"音楽": 39,"技術": 40,"家庭科": 41,"体育": 42,"保険": 43,"その他": 44},_suffix: true
   enum club: { "なし": 45,"サッカー": 46,"野球": 47,"バスケットボール": 48,"テニス": 49,"卓球": 50,"陸上": 51,"バトミントン": 52,"ハンドボール": 53,"体操": 54,"水泳": 55,"柔道": 56,"剣道": 57,"弓道": 58,"茶道": 59,"美術": 60,"その他": 61},_suffix: true
+  enum consalting: { "はい": 62,"いいえ": 63},_suffix: true
+
+
 
 
     validates :name, presence: true #追記
@@ -21,6 +24,7 @@ class User < ApplicationRecord
     validates :annual, presence: true #追記
     validates :subject, presence: true #追記
     validates :club, presence: true #追記
+    validates :consalting, presence: true #追記
 
 #プロフィール画像
   mount_uploader :image, ImageUploader
