@@ -57,8 +57,7 @@
   <div class="my_profile_content">
     <h3>自由記述欄</h3>
   </div>
-    <%= simple_format(@user.free_profile) %>
-
+    <%= safe_join(@user.free_profile.split("\n"), tag(:br)) %>
 
 
 </div>

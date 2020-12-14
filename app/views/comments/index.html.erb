@@ -6,7 +6,7 @@
 
 <div class="button">
   <div class="research_title">
-    <h2>検索🔎</h2>
+    <h2><i class="fas fa-search"></i>検索</h2>
   </div>
 　<!--検索機能　ボックス-->
 
@@ -138,25 +138,25 @@
       <h1>ユーザー一覧</h1>
 
 
-          <% @users.each do |user| %>
-            <% if user.consalting == "はい" %>
+ <% @users.each do |user| %>
+     <% if user.consalting == "はい" %>
+        <%= link_to "/users/#{user.id}/show" do %>
             <div class="all_users_user">
+                <% if user.sex == "男性" %>
+                  <br><img src=<%= user.image %> class = "icon_image_men"></br>
+                <% elsif user.sex == "女性"%>
+                  <br><img src=<%= user.image %> class = "icon_image_women"></br>
+                <%else%>
+                  <br><img src=<%= user.image %> class = "icon_image_other"></br>
+                <% end %>
 
-              <% if user.sex == "男性" %>
-                <br><img src=<%= user.image %> class = "icon_image_men"></br>
-              <% elsif user.sex == "女性"%>
-                <br><img src=<%= user.image %> class = "icon_image_women"></br>
-              <%else%>
-                <br><img src=<%= user.image %> class = "icon_image_other"></br>
-              <% end %>
-
-                <br><%= link_to(user.name, "/users/#{user.id}/show") %></br>
+                <br><%= user.name %></br>
                 <br><%= user.work %></br>
                 <br><%= user.uni %></br>
             </div>
-          <% end %>
-
+        <% end %>
      <% end %>
+  <% end %>
   </div>
 
       <div class="kaminari">
@@ -167,7 +167,11 @@
 
         <%= link_to '退会', user_path(current_user), method: :delete %>
         <%= link_to "ログアウト", destroy_user_session_path, method: :delete %> <!-- ログアウトをする -->
-
+        <div class="twitter">
+        <%= link_to  "https://twitter.com/Cataly_teacher",target: :_blank do %>
+        <i class="fab fa-twitter-square"></i>
+        </div>
+      <% end %><!-- twitterに遷移する -->
       </div>
 
   </div>
@@ -223,7 +227,7 @@
 
     <!-- ユーザーがログインしていた時の処理 -->
   <div class="button">
-  <h3>検索🔎</h3>
+  <h3><i class="fas fa-search"></i>検索</h3>
 
   <!--検索機能　ボックス-->
 
@@ -352,24 +356,30 @@
     <!--ユーザー一覧-->
     <div class="all_users">
 
-        <h1>ユーザー一覧</h1>
-            <% @users.each do |user| %>
-              <div class="all_users_user">
 
-                <% if user.sex == "男性" %>
-                  <br><img src=<%= user.image %> class = "icon_image_men"></br>
-                <% elsif user.sex == "女性"%>
-                  <br><img src=<%= user.image %> class = "icon_image_women"></br>
-                <%else%>
-                  <br><img src=<%= user.image %> class = "icon_image_other"></br>
-                <% end %>
+    <h1>ユーザー一覧</h1>
 
-                  <br><%= link_to(user.name, "/users/#{user.id}/show") %></br>
-                  <br><%= user.work %></br>
-                  <br><%= user.uni %></br>
-              </div>
-            <% end %>
-        </div>
+
+    <% @users.each do |user| %>
+        <% if user.consalting == "はい" %>
+           <%= link_to "/users/#{user.id}/show" do %>
+               <div class="all_users_user">
+                   <% if user.sex == "男性" %>
+                     <br><img src=<%= user.image %> class = "icon_image_men"></br>
+                   <% elsif user.sex == "女性"%>
+                     <br><img src=<%= user.image %> class = "icon_image_women"></br>
+                   <%else%>
+                     <br><img src=<%= user.image %> class = "icon_image_other"></br>
+                   <% end %>
+   
+                   <br><%= user.name %></br>
+                   <br><%= user.work %></br>
+                   <br><%= user.uni %></br>
+               </div>
+           <% end %>
+        <% end %>
+     <% end %>
+     </div>
 
         <div class="kaminari">
           <%= paginate @users %>

@@ -174,10 +174,6 @@ vertical-align: middle;
 
 /*ログイン・新規登録ボタン*/
 .login_new{
-  margin-right: auto;//ここで中央寄せを指定する。
-  margin-left : auto;
-  margin-top:20px;
-  font-size: 18px;
   float: right;
   display: inline-block;
 }
@@ -185,20 +181,25 @@ vertical-align: middle;
 .login{
   display: inline-block;
   padding: 5px;
-  margin:10;
   background: #f0eee4;
-  border: solid 1px black;/*線*/
-  border-radius: 3px;/*角の丸み*/
-
+  border: solid 1.8px black;/*線*/
+  border-radius: 6px;/*角の丸み*/
+  margin-right: auto;//ここで中央寄せを指定する。
+  margin-left : auto;
+  margin-top:20px;
+  font-size: 18px;
 }
 
 .new{
   display: inline-block;
   padding: 5px;
-  margin:0;
   background: #f0eee4;
-  border: solid 1px black;/*線*/
-  border-radius: 3px;/*角の丸み*/
+  border: solid 1.8px black;/*線*/
+  border-radius: 6px;/*角の丸み*/
+  margin-right: auto;//ここで中央寄せを指定する。
+  margin-left : auto;
+  margin-top:20px;
+  font-size: 18px;
 }
 
 
@@ -545,6 +546,8 @@ margin-top: 20px;
     color: #ffffff;
 }
 
+
+
 // プロフィール編集ボタン
 .btn_edit_my_profile{
   background:#1AAB8A;
@@ -672,8 +675,8 @@ input[type=checkbox] {
     width: 16px;
 }
 .checkbox02::after {
-    border-right: 6px solid #00cccc;
-    border-bottom: 3px solid #00cccc;
+    border-right: 6px solid #91C191;
+    border-bottom: 3px solid #91C191;
     content: '';
     display: block;
     height: 20px;
