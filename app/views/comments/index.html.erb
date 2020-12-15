@@ -359,7 +359,6 @@
 
     <h1>ユーザー一覧</h1>
 
-
     <% @users.each do |user| %>
         <% if user.consalting == "はい" %>
            <%= link_to "/users/#{user.id}/show" do %>

@@ -521,54 +521,7 @@ position: absolute;/*←絶対位置*/
     cursor: pointer;
 }
 
-// プロフィール画面
-.my_profile{
-padding: 20px 30px;
-background-color: white;
-overflow: hidden;
-box-shadow: 0 2px 6px #c1ced7;
-display: table;
-width: 700px;
-margin-top: 10px;
-margin-bottom: 10px;
-border-radius: 10px;
-margin-top: 20px;
-}
 
-// プロフィールの各大項目
-.my_profile_content{
-  margin-top: 10px;
-    margin-bottom:30px;
-    background:#1AAB8A;
-    padding: 10px;
-    border-radius: 10px;
-    font-size:15px;
-    color: #ffffff;
-}
-
-
-
-// プロフィール編集ボタン
-.btn_edit_my_profile{
-  background:#1AAB8A;
-  color:#fff;
-  border:none;
-  height:50px;
-  font-size:25px;
-  padding:10px;
-  margin-top:20px;
-  cursor:pointer;
-  outline:none;
-  border-radius: 10px;
-
-  display: inline;
-}
-
-.btn_edit_my_profile:hover {
-    color: #ffffff;
-    background-color: #A4C6FF	;
-    cursor: pointer;
-}
 
 // ユーザーの検索ボタン
 .research_button{
@@ -620,6 +573,7 @@ position: relative;
 margin-bottom: 7px;
 margin-top: 7px;
 }
+
 // ドット下線
 .research_title:after {
   content: "";
@@ -646,6 +600,7 @@ margin-top: 7px;
   margin-right: 20px;
   display: inline-block;
 }
+
 
 
 // ここからチェックボックスを足掻いています
@@ -708,7 +663,7 @@ input[type=checkbox]:checked + .checkbox02::after {
 .envelope, .bell{
   font-size: 50px;
   display: inline-block;
-  margin-right: 10px;
+
   position:  relative;
 }
 
@@ -769,3 +724,186 @@ a {
 label{
   cursor: pointer;
 }
+
+
+    // 狭いブラウザとタブレット向け
+    @media (max-width: 1020px) and (min-width: 768px) {
+     // ヘッダー帯部分
+     .header{
+      height:50px;
+      }
+
+      // ヘッダー帯部分
+      .header{
+        height:70px;
+       }
+
+     /*catalyロゴ*/
+      .logo {
+        width: 314px;
+        height: 57px;
+        padding-top: 8px;
+      }
+
+      .menu{
+        width:690px;
+      }
+      .envelope, .bell{
+        font-size: 50px;
+      }
+
+      .icon_image_men_header{
+        width: 50px;
+        height: 50px;
+        /*サイズ指定*/
+        border-radius: 80px;
+        /*画像を丸くする*/
+        object-fit: cover;
+        /*タテヨコ比を変えないままトリミング*/
+        border: 5px solid #8EB8FF;
+        margin-right: 0px;
+      }
+      
+      // icon画像の条件分岐（女性・男性・その他
+      .icon_image_women_header{
+        width: 50px;
+        height: 50px;
+        /*サイズ指定*/
+        border-radius: 80px;
+        /*画像を丸くする*/
+        object-fit: cover;
+        /*タテヨコ比を変えないままトリミング*/
+        border: 3px solid 	#FFABCE;
+        margin-right: 0px;
+      }
+      
+      // icon画像の条件分岐（女性・男性・その他
+      .icon_image_other_header{
+        width: 50px;
+        height: 50px;
+        /*サイズ指定*/
+        border-radius: 80px;
+        /*画像を丸くする*/
+        object-fit: cover;
+        /*タテヨコ比を変えないままトリミング*/
+        border: 3px solid 	#86F9C5;
+        margin-right: 0px;
+      }
+
+      // ログインボタン
+      .login , .new{
+        display: inline-block;
+        padding: 5px;
+        background: #f0eee4;
+        border: solid 1.8px black;/*線*/
+        border-radius: 6px;/*角の丸み*/
+        margin-right: auto;//ここで中央寄せを指定する。
+        margin-left : auto;
+        margin-top:3px;
+        font-size: 16px;
+      }
+
+      /*ログイン・新規登録ボタン*/
+      .login_new{
+        margin-top: 15px;
+
+      }
+      
+      .twitter{
+        float:right;
+
+      }
+    
+    }
+
+
+
+    // =========================================================================
+    // =========================================================================
+   
+   
+    // css{スマホ向け}
+    @media (max-width: 767px) { 
+       // ヘッダー帯部分
+        .header{
+          height:70px;
+         }
+
+       /*catalyロゴ*/
+        .logo {
+          width: 192.5px;
+          height: 35px;
+          padding-top: 18px;
+        }
+
+        .menu{
+          width:360px;
+        }
+        .envelope, .bell{
+          font-size: 35px;
+        }
+
+        .icon_image_men_header{
+          width: 44px;
+          height: 44px;
+          /*サイズ指定*/
+          border-radius: 80px;
+          /*画像を丸くする*/
+          object-fit: cover;
+          /*タテヨコ比を変えないままトリミング*/
+          border: 5px solid #8EB8FF;
+          margin-right: 20px;
+        }
+        
+        // icon画像の条件分岐（女性・男性・その他
+        .icon_image_women_header{
+          width: 44px;
+          height: 44px;
+          /*サイズ指定*/
+          border-radius: 80px;
+          /*画像を丸くする*/
+          object-fit: cover;
+          /*タテヨコ比を変えないままトリミング*/
+          border: 3px solid 	#FFABCE;
+          margin-right: 20px;
+        }
+        
+        // icon画像の条件分岐（女性・男性・その他
+        .icon_image_other_header{
+          width: 44px;
+          height: 44px;
+          /*サイズ指定*/
+          border-radius: 80px;
+          /*画像を丸くする*/
+          object-fit: cover;
+          /*タテヨコ比を変えないままトリミング*/
+          border: 3px solid 	#86F9C5;
+          margin-right: 20px;
+        }
+
+        // ログインボタン
+        .login , .new{
+          display: inline-block;
+          padding: 5px;
+          background: #f0eee4;
+          border: solid 1.8px black;/*線*/
+          border-radius: 6px;/*角の丸み*/
+          margin-right: auto;//ここで中央寄せを指定する。
+          margin-left : auto;
+          margin-top:3px;
+          font-size: 10px;
+        }
+
+        /*ログイン・新規登録ボタン*/
+        .login_new{
+          margin-top: 15px;
+
+        }
+        
+        .twitter{
+          float:right;
+
+        }
+
+     }
+     

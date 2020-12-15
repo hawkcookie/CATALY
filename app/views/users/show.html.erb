@@ -1,9 +1,9 @@
 
 <div class="user_profile">
 <div class="my_profile">
-<div class="research_title">
-<h2>プロフィール</h2>
-</div>
+  <div class="research_title">
+    <h2>プロフィール</h2>
+  </div>
 
 
 
@@ -13,7 +13,7 @@
 <% end%>
 
 <div class="my_profile_content">
-  <h3>お名前</h3>
+  <h4>お名前</h4>
 </div>
 <%= @user.name %>
 
@@ -26,36 +26,36 @@
   <% end %>
 
   <div class="my_profile_content">
-    <h3>性別</h3>
+    <h4>性別</h4>
   </div>
   <%= @user.sex %>
   <div class="my_profile_content">
-    <h3>職業</h3>
+    <h4>職業</h4>
   </div>
   <%= @user.work %>
   <div class="my_profile_content">
-    <h3>出身大学</h3>
+    <h4>出身大学</h4>
   </div>
   <%= @user.uni %>
 
   <div class="my_profile_content">
-    <h3>年次</h3>
+    <h4>年次</h4>
   </div>
   <%= @user.annual %>
   <div class="my_profile_content">
-    <h3>お住まい</h3>
+    <h4>お住まい</h4>
   </div>
   <%= @user.location %>
   <div class="my_profile_content">
-    <h3>専門科目</h3>
+    <h4>専門科目</h4>
   </div>
   <%= @user.subject %>
   <div class="my_profile_content">
-    <h3>部活（サークル）顧問</h3>
+    <h4>部活（サークル）顧問</h4>
   </div>
   <%= @user.club %>
   <div class="my_profile_content">
-    <h3>自由記述欄</h3>
+    <h4>自由記述欄</h4>
   </div>
     <%= safe_join(@user.free_profile.split("\n"), tag(:br)) %>
 

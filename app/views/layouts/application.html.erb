@@ -9,6 +9,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= favicon_link_tag('favicon_icon.png') %>
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
   </head>
 
 
@@ -68,13 +69,14 @@
           <div class="new">
             <%= link_to "新規登録", new_user_registration_path, class: 'post' %> <!-- 新規登録画面に移行する -->
           </div>
+
           <div class="twitter">
               <%= link_to  "https://twitter.com/Cataly_teacher",target: :_blank do %>
               <i class="fab fa-twitter-square"></i>
               </div>
             <% end %><!-- twitterに遷移する -->
           </div>
-        </div>
+      </div>
 
     </div>
   </div>
