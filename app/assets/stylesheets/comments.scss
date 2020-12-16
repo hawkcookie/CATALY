@@ -9,3 +9,252 @@
 .users-heading{
   background-color: inherit;
 }
+
+// ユーザー一覧の見出し
+.user_all_title{
+  font-size: 30px;
+  }
+
+// フリーワードの検索ボックス
+.research_text{
+  width: 700px;
+}
+
+// 検索のチェック項目
+.research_check{
+  padding-right:100px;
+
+}
+
+.research_check_box{
+  margin-right: 20px;
+  display: inline-block;
+}
+
+// ここからチェックボックスを足掻いています
+
+input[type=checkbox] {
+  display: none;
+}
+.checkbox02 {
+box-sizing: border-box;
+cursor: pointer;
+display: inline-block;
+padding: 5px 30px;
+position: relative;
+width: auto;
+}
+.checkbox02::before {
+background: #fff;
+border: 1px solid #ccc;
+border-radius: 3px;
+content: '';
+display: block;
+height: 16px;
+left: 5px;
+margin-top: -8px;
+position: absolute;
+top: 50%;
+width: 16px;
+}
+.checkbox02::after {
+border-right: 6px solid #91C191;
+border-bottom: 3px solid #91C191;
+content: '';
+display: block;
+height: 20px;
+left: 7px;
+margin-top: -16px;
+opacity: 0;
+position: absolute;
+top: 50%;
+transform: rotate(45deg);
+width: 9px;
+}
+input[type=checkbox]:checked + .checkbox02::before {
+border-color: #666;
+}
+input[type=checkbox]:checked + .checkbox02::after {
+opacity: 1;
+}
+
+/*検索ラジオボタン*/
+.button {
+  font-family: "Helvetica Neue" , Helvetica , Arial , Verdana , Roboto , "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic" , "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro" , "Meiryo UI" , "メイリオ" , Meiryo , "ＭＳ Ｐゴシック" , "MS PGothic" , sans-serif;;
+  font-size: 20px;
+  margin-right: auto;//ここで中央寄せを指定する。
+  margin-left : auto;
+  width:800px;
+
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+  background-color: white;
+
+  box-shadow: 0 2px 6px #c1ced7;
+  border-radius: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 30px;
+  padding-top: 30px;
+
+}
+
+    /*全ユーザー*/
+    .all_users_user{
+      margin: 5px 10px;
+      width:27%;
+      height: 200px;
+      float: left;
+      padding:0% 0% 10% 0%;
+      background-color: white;
+      overflow: hidden;
+      box-shadow: 0 2px 6px #c1ced7;
+      border-radius: 10px;
+      padding-left: 30px;
+      display: inline-block;
+    }
+
+    .all_users{
+      margin-right: auto;//ここで中央寄せを指定する。
+      margin-left : auto;
+      width:800px;
+      padding-bottom: 950px;
+        }
+
+
+    .kaminari{
+      margin-right: auto;//ここで中央寄せを指定する。
+      margin-left : auto;
+      width:800px;
+        }
+
+ // ========================================================================
+  // =========================================================================
+
+    // 狭いブラウザとタブレット向け
+    @media (max-width: 1020px) and (min-width: 768px) {
+
+
+    }
+ 
+ 
+     // =========================================================================
+     // =========================================================================
+    
+    
+     // css{スマホ向け}
+     @media (max-width: 767px) { 
+
+    // フリーワードの検索ボックス
+    .research_text{
+       width: 330px;
+    }
+
+    // 検索のチェック項目
+    .research_check{
+      padding-right:100px;
+    }
+
+    .research_check_box{
+      margin-right: 20px;
+      display: inline-block;
+    }
+
+    // 検索フォームの項目（性別など）
+    .research_title{
+      position: relative;
+      margin-bottom: 7px;
+      margin-top: 7px;
+      font-size: 15px;
+    }
+  
+    // ドット下線
+    .research_title:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 50%;
+      height: 4px;
+      background: -webkit-repeating-linear-gradient(-45deg, #A5B4D6, #A5B4D6 2px, #fff 2px, #fff 4px);
+      background: repeating-linear-gradient(-45deg, #A5B4D6, #A5B4D6 2px, #fff 2px, #fff 4px);
+  }
+
+
+        // ここからチェックボックスを足掻いています
+
+  input[type=checkbox] {
+    display: none;
+  }
+
+    .checkbox02 {
+      box-sizing: border-box;
+      cursor: pointer;
+      display: inline-block;
+      padding-top:5px;
+      padding-left:25px;
+      padding-bottom: 5px;
+      padding-right: 0px;
+      position: relative;
+      width: auto;
+      font-size:15px;
+    }
+
+  /*検索ラジオボタン*/
+    .button {
+      font-family: "Helvetica Neue" , Helvetica , Arial , Verdana , Roboto , "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic" , "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro" , "Meiryo UI" , "メイリオ" , Meiryo , "ＭＳ Ｐゴシック" , "MS PGothic" , sans-serif;;
+      font-size: 10px;
+      width:350px;
+      background-color: white;
+      box-shadow: 0 2px 6px #c1ced7;
+      border-radius: 10px;
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-bottom: 10px;
+      padding-top: 2px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+ 
+    .checkbox02::before {
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      content: '';
+      display: block;
+      height: 16px;
+      left: 5px;
+      margin-top: -8px;
+      position: absolute;
+      top: 50%;
+      width: 16px;
+      }
+
+      .user_all_title{
+      font-size: 20px;
+      }
+
+    /*全ユーザー*/
+    .all_users{
+      margin-right: auto;//ここで中央寄せを指定する。
+      margin-left : auto;
+      width:400px;
+      padding-bottom: 950px;
+        }
+
+    /*全ユーザー*/
+    .all_users_user{
+      width:35%;
+      height: 200px;
+      float: left;
+      padding-bottom:37px;
+      background-color: white;
+      overflow: hidden;
+      box-shadow: 0 2px 6px #c1ced7;
+      border-radius: 10px;
+      display: inline-block;
+      font-size:14px;
+    }
+
+      }

@@ -1,3 +1,275 @@
 // Place all the styles related to the rooms controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+
+
+/*DM一覧*/
+.dm_list{
+    margin-right: auto;//ここで中央寄せを指定する。
+    margin-left : auto;
+    width:800px;
+  }
+
+
+  // dm一覧全体
+.dm_list__content{
+    padding: 20px 30px;
+    background-color: white;
+    overflow: hidden;
+    box-shadow: 0 2px 6px #c1ced7;
+    display: table;
+    width: 700px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+  }
+
+  // DM一覧の名前と最新メッセージ
+    .chat_name_messege{
+        width: 90%;
+        padding-left: 25px;
+        text-align: left;
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    // DM一メッセージ
+    .dm_list__content_time__link__box__message{
+        display: inline-block;
+        width: 110px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+             }
+
+    /*DM全体*/
+    .DM_all{
+        margin-right: auto;//ここで中央寄せを指定する。
+        margin-left : auto;
+        width:800px;
+        margin-bottom: 160px;
+     }
+
+
+     //自分のメッセージ
+    .my_content{
+    padding: 0.6em;
+    border-radius: 10px;
+    background: #91C191;
+    display: inline-block;
+    color:white;
+    }
+  
+    //相手のメッセージ
+    .your_content{
+      padding: 0.6em;
+      border-radius: 10px;
+      background: #A5B4D6;
+      display: inline-block;
+      color:white;
+    }
+
+    // 自分のメッセージ群
+    .my_message{
+    margin-top: 20px;
+    margin-bottom: 30px;
+    text-align: right;
+    font-size:20px;
+    }
+  
+  // 相手のメッセージ群
+    .your_message{
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-size:20px;
+    }
+  
+  
+    //メッセージ内の時刻
+    .user_right{
+    display: block;
+    font-size:8px;
+    }
+    
+    // メッセージページの相手ユーザーのプロフィール
+    .chat_profile{
+        font-size:18px;
+    }
+
+        // dm送信エリア（文字記載場所）
+        .send{
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            background: #f0eee4;
+            color: #a92f60;
+            margin-right: auto;//ここで中央寄せを指定する。
+            margin-left : auto;
+            width:800px;
+            position: fixed;
+        }
+
+        // 送信フォーム
+textarea {
+    width: 500px;
+    height: 100px;
+    border-radius: 10px;
+    border-color: #eee;
+}
+
+// チャットの送信ボタン
+.btn_send{
+background:#A5B4D6;
+color:#fff;
+border:none;
+position:relative;
+height:50px;
+font-size:30px;
+padding:0 2em;
+cursor:pointer;
+transition:800ms ease all;
+outline:none;
+border-radius: 10px;
+display: block;
+margin: auto;
+}
+.btn_send:hover {
+  color: #ffffff;
+  background-color: #91C191	;
+  cursor: pointer;
+}
+
+ // ========================================================================
+  // =========================================================================
+
+    // 狭いブラウザとタブレット向け
+    @media (max-width: 1020px) and (min-width: 768px) {
+
+
+    }
+ 
+ 
+     // =========================================================================
+     // =========================================================================
+    
+    
+     // css{スマホ向け}
+     @media (max-width: 767px) { 
+        /*DM一覧*/
+        .dm_list{
+            margin-right: auto;//ここで中央寄せを指定する。
+            margin-left : auto;
+            width:400px;
+            }
+
+
+        // dm一覧全体
+        .dm_list__content{
+            padding: 20px 30px;
+            background-color: white;
+            overflow: hidden;
+            box-shadow: 0 2px 6px #c1ced7;
+            display: table;
+            width: 250px;
+            margin: 10px;
+            border-radius: 10px;
+         }
+
+           // DM一覧の名前と最新メッセージ
+        .chat_name_messege{
+        width: 90%;
+        padding-left: 22px;
+        text-align: left;
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+         // DM一メッセージ
+        .dm_list__content_time__link__box__message{
+            display: inline-block;
+            width: 110px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+         }
+
+    /*DM全体*/
+    .DM_all{
+        margin-right: auto;//ここで中央寄せを指定する。
+        margin-left : auto;
+        width:360px;
+        margin-bottom: 160px;
+     }
+
+    // 自分のメッセージ群
+    .my_message{
+        margin-top: 20px;
+        margin-bottom: 30px;
+        text-align: right;
+        font-size:13px;
+        }
+      
+      // 相手のメッセージ群
+    .your_message{
+        margin-top: 20px;
+        margin-bottom: 30px;
+        font-size:13px;
+        }
+
+    // メッセージページの相手ユーザーのプロフィール
+    .chat_profile{
+        font-size:15px;
+    }
+
+    // dm送信エリア（文字記載場所）
+    .send{
+        bottom: 0;
+        width:90%;
+        text-align: center;
+        background: #f0eee4;
+        color: #a92f60;
+        margin-right: auto;//ここで中央寄せを指定する。
+        margin-left : auto;
+        width:360px;
+        position: fixed;
+        height: 130px;
+    }
+    
+// 送信フォーム
+textarea {
+    width: 340px;
+    height: 45px;
+    border-radius: 10px;
+    border-color: #eee;
+    margin:10px;
+}
+
+// チャットの送信ボタン
+.btn_send{
+background:#A5B4D6;
+color:#fff;
+border:none;
+position:relative;
+height:30px;
+font-size:20px;
+padding:0 2em;
+cursor:pointer;
+transition:800ms ease all;
+outline:none;
+border-radius: 10px;
+display: block;
+margin: 10px;
+float:right;
+margin-right:30px;
+}
+
+.btn_send:hover {
+  color: #ffffff;
+  background-color: #91C191	;
+  cursor: pointer;
+}
+
+      }

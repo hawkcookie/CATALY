@@ -356,8 +356,9 @@
     <!--ユーザー一覧-->
     <div class="all_users">
 
-
-    <h1>ユーザー一覧</h1>
+  <div class ="user_all_title">
+    <%= "ユーザー一覧" %>
+  </div>
 
     <% @users.each do |user| %>
         <% if user.consalting == "はい" %>
