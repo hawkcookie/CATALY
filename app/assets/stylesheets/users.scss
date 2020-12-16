@@ -12,8 +12,6 @@
 }
 
 .user_profile{
-  margin-right: auto;//ここで中央寄せを指定する。
-  margin-left : auto;
   width:800px;
 }
 
@@ -69,8 +67,16 @@
   }
 
 
+  /*編集画面*/
+  .edit{
+   margin-right: auto;//ここで中央寄せを指定する。
+   margin-left : auto;
+   width:800px;
+  }
 
 
+// =================================================================
+// =================================================================
 
     // 狭いブラウザとタブレット向け
     @media (max-width: 1020px) and (min-width: 768px) {
@@ -104,7 +110,7 @@
         } 
         
       .user_profile{
-        width:360px;
+        width:310px;
         }    
 
       .my_profile{
@@ -113,11 +119,20 @@
         overflow: hidden;
         box-shadow: 0 2px 6px #c1ced7;
         display: table;
-        width: 200px;
+        width: 360px;
         margin-bottom: 10px;
         border-radius: 10px;
         margin-top: 10px;
+        margin-right:5px;
+        margin-left: 5px;
         }
+
+    /*編集画面*/
+    .edit{
+      margin-right: 5px;//ここで中央寄せを指定する。
+      margin-left : 5px;
+      width:400px;
+      }
 
 
      }

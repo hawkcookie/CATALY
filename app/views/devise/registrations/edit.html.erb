@@ -72,7 +72,7 @@
 
       <label> <%= f.radio_button :annual, :"11-20年目" %>11-20年目</label>
 
-       <label><%= f.radio_button :annual, :"21-30年目" %>21-30年目</label>
+       <br><label><%= f.radio_button :annual, :"21-30年目" %>21-30年目</label>
 
        <label><%= f.radio_button :annual, :"31年目以上" %>31年目以上</label>
     </div>
@@ -88,13 +88,13 @@
 
        <label><%= f.radio_button :work, :"私立小学教員" %>私立小学教員</label>
 
-       <label><%= f.radio_button :work, :"公立中学教員" %>公立中学教員</label>
+       <br><label><%= f.radio_button :work, :"公立中学教員" %>公立中学教員</label>
 
        <label><%= f.radio_button :work, :"私立中学教員" %>私立中学教員</label>
 
        <label><%= f.radio_button :work, :"公立高校教員" %>公立高校教員</label>
 
-       <label><%= f.radio_button :work, :"私立高校教員" %>私立高校教員</label>
+       <br><label><%= f.radio_button :work, :"私立高校教員" %>私立高校教員</label>
 
        <label><%= f.radio_button :work, :"大学教員" %>大学教員</label>
 
@@ -102,13 +102,13 @@
 
        <label><%= f.radio_button :work, :"教材開発" %>教材開発</label>
 
-       <label><%= f.radio_button :work, :"学生" %>学生</label>
+       <br><label><%= f.radio_button :work, :"学生" %>学生</label>
 
        <label><%= f.radio_button :work, :"NPO団体" %>NPO団体</label>
 
        <label><%= f.radio_button :work, :"知育ゲームメーカー" %>知育ゲームメーカー</label>
 
-       <label><%= f.radio_button :work, :"事務職員" %>事務職員</label>
+       <br><label><%= f.radio_button :work, :"事務職員" %>事務職員</label>
 
        <label><%= f.radio_button :work, :"その他" %>その他</label>
     </div>
@@ -126,7 +126,7 @@
 
       <label><%= f.radio_button :location, :"中部地方" %>中部地方</label>
 
-      <label><%= f.radio_button :location, :"近畿地方" %>近畿地方</label>
+      <br><label><%= f.radio_button :location, :"近畿地方" %>近畿地方</label>
 
       <label><%= f.radio_button :location, :"中国地方" %>中国地方</label>
 
@@ -134,7 +134,7 @@
 
       <label><%= f.radio_button :location, :"九州地方" %>九州地方</label>
 
-      <label><%= f.radio_button :location, :"沖縄" %>沖縄</label>
+      <br><label><%= f.radio_button :location, :"沖縄" %>沖縄</label>
 
       <label><%= f.radio_button :location, :"その他" %>その他</label>
    </div>
@@ -154,7 +154,7 @@
 
      <label><%= f.radio_button :subject, :"音楽" %>音楽</label>
 
-     <label><%= f.radio_button :subject, :"技術" %>技術</label>
+     <br><label><%= f.radio_button :subject, :"技術" %>技術</label>
 
      <label><%= f.radio_button :subject, :"家庭科" %>家庭科</label>
 
@@ -178,7 +178,7 @@
 
     <label><%= f.radio_button :club, :"バスケットボール" %>バスケットボール</label>
 
-    <label><%= f.radio_button :club, :"テニス" %>テニス</label>
+    <br><label><%= f.radio_button :club, :"テニス" %>テニス</label>
 
     <label><%= f.radio_button :club, :"卓球" %>卓球</label>
 
@@ -186,7 +186,7 @@
 
     <label><%= f.radio_button :club, :"バトミントン" %>バトミントン</label>
 
-    <label><%= f.radio_button :club, :"ハンドボール" %>ハンドボール</label>
+    <br><label><%= f.radio_button :club, :"ハンドボール" %>ハンドボール</label>
 
     <label><%= f.radio_button :club, :"体操" %>体操</label>
 
@@ -196,7 +196,7 @@
 
     <label><%= f.radio_button :club, :"剣道" %>剣道</label>
 
-    <label><%= f.radio_button :club, :"弓道" %>弓道</label>
+    <br><label><%= f.radio_button :club, :"弓道" %>弓道</label>
 
     <label><%= f.radio_button :club, :"茶道" %>茶道</label>
 
@@ -214,16 +214,16 @@
     <%= f.text_area :free_profile %>
   </div>
 
-
   <div class="field">
-  <div class="my_profile_content">
-    <label><%= f.label :ユーザー一覧への表示を許可頂けますか？ %><br />
+    <div class="my_profile_content">
+      <label><%= f.label :ユーザー一覧への表示を許可頂けますか？ %><br />
+    </div>
+      <label><%= f.radio_button :consalting, :"はい" %>はい</label>
+      <label><%= f.radio_button :consalting, :"いいえ" %>いいえ</label>
+    <br>※進路に悩んでいる教育学部の学生や
+    <br>視野・知識を広げたい先生方からの連絡が
+    <br>受け取れる状態になります。
   </div>
-  <label><%= f.radio_button :consalting, :"はい" %>はい</label>
-  <label><%= f.radio_button :consalting, :"いいえ" %>いいえ</label>
-<br>※進路に悩んでいる教育学部の学生や視野・知識を広げたい先生方からの連絡が受け取れる状態になります。
-
-</div>
 
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>

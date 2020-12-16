@@ -298,14 +298,6 @@ position: absolute;/*←絶対位置*/
 
 
 
-
-/*編集画面*/
-.edit{
-  margin-right: auto;//ここで中央寄せを指定する。
-  margin-left : auto;
-  width:800px;
-}
-
 // チャットの送信ボタン
 .btn_new{
   background:#1AAB8A;
@@ -378,13 +370,13 @@ margin-top: 7px;
 
 
 // クリック時のカラー変更
-.field {
-  padding: 25px;
-  transition: background 0.5s ease;
-  &:focus-within {
-    background: #EEE8AA;
-  }
-}
+// .field {
+//   padding: 25px;
+//   transition: background 0.5s ease;
+//   &:focus-within {
+//     background: #EEE8AA;
+//   }
+// }
 
 // ヘッダー_メッセージアイコン
 .envelope, .bell{
@@ -410,6 +402,17 @@ margin-top: 7px;
   transition: 0.2s ;
 }
 
+
+.twitter_end {
+  font-size: 30px;
+  display: inline-block;
+  padding-left:15px;
+  color: #00aced ;
+}
+.twitter_end :hover {
+  color: #00aced;
+  transition: 0.2s ;
+}
 
 .bell :hover{
   color: #91C191;
@@ -632,8 +635,12 @@ label{
         
         .twitter{
           float:right;
-
         }
+
+        .twitter_end{
+          display: inline-block;
+        }
+
 
         // 説明アイコン一覧
     .cataly_promotion_icon{
@@ -665,4 +672,6 @@ label{
       display:flex;/* flexbox */
       align-items: center; /* 垂直方向 */
     }
+
+
      }
