@@ -77,6 +77,10 @@
    width:800px;
   }
 
+  .back{
+    margin-bottom: 30px;
+    font-size:22px;
+  }
 
 // =================================================================
 // =================================================================
@@ -112,9 +116,11 @@
         width:320px;
         } 
         
-      .user_profile{
-        width:310px;
-        }    
+        .user_profile{
+          margin-left: auto;
+          margin-right: auto;
+          width:800px;
+        }
 
       .my_profile{
         padding: 20px 20px;
@@ -135,6 +141,12 @@
       margin-right: 5px;//ここで中央寄せを指定する。
       margin-left : 5px;
       width:400px;
+      }
+
+
+      .back{
+        margin-bottom: 20px;
+        font-size:18px;
       }
 
 

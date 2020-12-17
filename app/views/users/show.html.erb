@@ -60,22 +60,29 @@
     <%= safe_join(@user.free_profile.split("\n"), tag(:br)) %>
 
 
-</div>
 
 
-<% if @user.id == current_user.id %>
 
-<% else %>
-  <% if @isRoom == true %>
-    <p><a href="/rooms/<%= @roomId %>">チャットへ</a>
+
+  <% if @user.id == current_user.id %>
+
   <% else %>
-    <%= form_for @room do |f| %>
-      <%= fields_for @entry do |e| %>
-        <%= e.hidden_field :user_id, :value=> @user.id %>
+    <% if @isRoom == true %>
+      <div class="first_send_button">
+        <p><a href="/rooms/<%= @roomId %>"><font-color="white">チャットへ</font></a>
+      </div>
+    <% else %>
+      <%= form_for @room do |f| %>
+        <%= fields_for @entry do |e| %>
+          <%= e.hidden_field :user_id, :value=> @user.id %>
+        <% end %>
+      <div class="send_new_button">
+        <%= f.submit "メッセージを送る" %>
+      </div>
       <% end %>
-      <%= f.submit "チャットを始める" %>
     <% end %>
-  <% end %>
-<% end %>
 
+
+  <% end %>
+  </div>
 </div>

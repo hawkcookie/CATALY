@@ -3,11 +3,17 @@
 
 <div class="edit">
 <div class="my_profile">
-<div class="research_title">
-
-<h2>編集</h2>
-
+<div class="back">
+<%= link_to "<< Back", :back %>
 </div>
+    <div class="research_title">
+
+      <h2>編集</h2>
+
+    </div>
+
+
+
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
@@ -239,7 +245,7 @@
 
 </div>
 
-<%= link_to "Back", :back %>
+
 
 
 </div>
