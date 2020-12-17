@@ -17,6 +17,10 @@
  @import 'font-awesome';
 
 
+ input{
+   font-size: 16px;
+ }
+
 body{
   background-color: #f4f5f0;
   display: flex;
@@ -365,10 +369,6 @@ margin-top: 7px;
 }
 
 
-
-
-
-
 // クリック時のカラー変更
 // .field {
 //   padding: 25px;
@@ -377,6 +377,12 @@ margin-top: 7px;
 //     background: #EEE8AA;
 //   }
 // }
+
+
+
+.field {
+font-size:16px;
+}
 
 // ヘッダー_メッセージアイコン
 .envelope, .bell{
