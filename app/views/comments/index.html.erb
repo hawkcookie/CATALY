@@ -168,17 +168,22 @@
 
         <%= link_to '退会', user_path(current_user), method: :delete %>
         <%= link_to "ログアウト", destroy_user_session_path, method: :delete %> <!-- ログアウトをする -->
+        <%= link_to "利用規約", destroy_user_session_path, method: :delete %> 
+        <%= link_to "プライバシーポリシー", destroy_user_session_path, method: :delete %> 
+        
+        
+
         <div class="twitter_end">
-        <%= link_to  "https://twitter.com/Cataly_teacher",target: :_blank do %>
-        <i class="fab fa-twitter-square"></i>
+          <%= link_to  "https://twitter.com/Cataly_teacher",target: :_blank do %>
+          <i class="fab fa-twitter-square"></i>
         </div>
       <% end %><!-- twitterに遷移する -->
       </div>
 
   </div>
-<!--=========================================================================================
-==============================================================================================
-==============================================================================================
+<!--===================================================================================================
+========================================================================================================
+========================================================================================================
 -->
 
 
@@ -196,7 +201,7 @@
     <div class="for_teacher_all">
       <%= image_tag 'for_teacher_promotion.png', :class => "for_teacher_promotion" %>
       <div class="for_teacher_sentence">
-        <h2><strong>教育関係者向けコミュニティサービス</strong>　</h2>
+        <h2><strong>教育関係者向けコミュニケーションサービス</strong>　</h2>
         <br>同じ目標や悩みを持つ同士、経験豊富なメンターや次世代を担う若手と
         <br>チャットを通じてコミュニケーションが取れます
         <br>
@@ -218,7 +223,7 @@
       <%= image_tag 'notification_off_promotion.png', :class => "notification_off_promotion" %>
       <div class="notification_off_sentence">
         <h2><strong>自分の時間を大切にできる</strong>　</h2>
-        <br>通知機能を付けていないため、双方のペースでコミュニケーションが取れます
+        <br>メールによる通知機能を付けていないため、双方のペースでコミュニケーションが取れます
         <br>
       </div>
     </div>
