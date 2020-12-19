@@ -52,11 +52,11 @@ def image_user(room)
 
   # 相手ユーザーの画像を表示
   if entry[0].user.sex == "男性"
-    image_tag "#{image}", class: "icon_image_men"
+    image_tag "#{image}", class: "icon_image_men_dm"
   elsif entry[0].user.sex == "女性"
-    image_tag "#{image}", class: "icon_image_women"
+    image_tag "#{image}", class: "icon_image_women_dm"
   else entry[0].user.sex == "その他"
-    image_tag "#{image}", class: "icon_image_other"
+    image_tag "#{image}", class: "icon_image_other_dm"
   end
 end
 end

@@ -151,9 +151,9 @@
                   <br><img src=<%= user.image %> class = "icon_image_other"></br>
                 <% end %>
 
-                <br><%= user.name %></br>
-                <br><%= user.work %></br>
-                <br><%= user.uni %></br>
+                <br><i class="fas fa-file-signature"></i> <%= user.name %></br>
+                <br><i class="fas fa-briefcase"></i> <%= user.work %></br>
+                <br><i class="fas fa-university"></i> <%= user.uni %></br>
             </div>
         <% end %>
      <% end %>
@@ -166,10 +166,10 @@
 
       <div class="under">
 
-        <%= link_to '退会', user_path(current_user), method: :delete %>
-        <%= link_to "ログアウト", destroy_user_session_path, method: :delete %> <!-- ログアウトをする -->
-        <%= link_to "利用規約", destroy_user_session_path, method: :delete %> 
-        <%= link_to "プライバシーポリシー", destroy_user_session_path, method: :delete %> 
+        <%= link_to '退会', user_path(current_user), method: :delete %>/
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete %> /<!-- ログアウトをする -->
+        <br><%= link_to "利用規約", destroy_user_session_path, method: :delete %>/ 
+        <%= link_to "プライバシーポリシー", "https://www.kiyac.app/plivacypolicy/H6rB0RKR7nEDnfaNb3TJ" ,target: :_blank %> /
         
         
 
@@ -232,13 +232,16 @@
 
 
     <!-- ユーザーがログインしていた時の処理 -->
-  <div class="button">
-  <h3><i class="fas fa-search"></i>検索</h3>
+    <div class="button">
+    <div class="research_title">
+      <h2><i class="fas fa-search"></i>検索</h2>
+    </div>
+  　<!--検索機能　ボックス-->
 
-  <!--検索機能　ボックス-->
-
+  <div class="research_title">
     <%= search_form_for @q,url:"/" do |f| %>
     <i class="fas fa-pencil-alt"></i><%= f.label :name_cont, " フリーワード" %>
+  </div>
 
         <%= f.search_field :name_or_uni_or_free_profile_cont , placeholder: "大学名、プロフィール内容", class: "research_text"%>
 
@@ -378,9 +381,9 @@
                      <br><img src=<%= user.image %> class = "icon_image_other"></br>
                    <% end %>
    
-                   <br><%= user.name %></br>
-                   <br><%= user.work %></br>
-                   <br><%= user.uni %></br>
+                   <br><i class="fas fa-file-signature"></i> <%= user.name %></br>
+                   <br><i class="fas fa-briefcase"></i> <%= user.work %></br>
+                   <br><i class="fas fa-university"></i> <%= user.uni %></br>
                </div>
            <% end %>
         <% end %>
@@ -392,9 +395,19 @@
         </div>
 
         <!-フッターのためのdiv定義-->
-        <div class="under">
+    <div class="under">
 
-        </div>
+          <%= link_to "ログイン", new_user_session_path, class: 'post' %> <!-- ログイン画面に移行する -->/
+          <%= link_to "新規登録", new_user_registration_path, class: 'post' %> <!-- 新規登録画面に移行する -->/
+          <br><%= link_to "利用規約", destroy_user_session_path, method: :delete %>/
+          <%= link_to "プライバシーポリシー", "https://www.kiyac.app/plivacypolicy/H6rB0RKR7nEDnfaNb3TJ" ,target: :_blank %> /
+        
+          <div class="twitter_end">
+            <%= link_to  "https://twitter.com/Cataly_teacher",target: :_blank do %>
+            <i class="fab fa-twitter-square"></i>
+          </div>
+        <% end %><!-- twitterに遷移する -->
+      </div>
 
     </div>
 

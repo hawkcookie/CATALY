@@ -63,25 +63,26 @@
 
 
 
+<% if @user.consalting == "はい" %>
 
-  <% if @user.id == current_user.id %>
+<% if @user.id == current_user.id %>
 
   <% else %>
-    <% if @isRoom == true %>
-      <div class="first_send_button">
-        <p><a href="/rooms/<%= @roomId %>"><font-color="white">チャットへ</font></a>
-      </div>
-    <% else %>
-      <%= form_for @room do |f| %>
-        <%= fields_for @entry do |e| %>
+      <% if @isRoom == true %>
+        <div class="first_send_button">
+          <p><a href="/rooms/<%= @roomId %>"><font-color="white">チャットへ</font></a>
+        </div>
+      <% else %>
+        <%= form_for @room do |f| %>
+          <%= fields_for @entry do |e| %>
           <%= e.hidden_field :user_id, :value=> @user.id %>
         <% end %>
-      <div class="send_new_button">
-        <%= f.submit "メッセージを送る" %>
-      </div>
+        <div class="send_new_button">
+          <%= f.submit "メッセージを送る" %>
+        </div>
       <% end %>
-    <% end %>
-
+   <% end %>
+<% end %>
 
   <% end %>
   </div>
