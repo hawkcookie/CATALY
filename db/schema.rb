@@ -82,6 +82,7 @@ ActiveRecord::Schema.define(version: 2020_12_13_070658) do
     t.integer "subject"
     t.text "free_profile"
     t.integer "consalting"
+    t.integer "position"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

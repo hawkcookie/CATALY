@@ -313,6 +313,7 @@ position: absolute;/*←絶対位置*/
   outline:none;
   border-radius: 10px;
   display: block;
+   margin-top:50px;
 }
 .btn_new:hover {
     color: #ffffff;
@@ -395,6 +396,13 @@ margin-top: 7px;
 // }
 
 
+.beta, .kiyaku{
+  margin-left:auto;
+  margin-right:auto;
+  color:#91C191;
+  width:800px;
+  font-size:15px;
+}
 
 .field {
 font-size:16px;
@@ -583,6 +591,19 @@ label{
    
     // css{スマホ向け}
     @media (max-width: 767px) { 
+
+
+
+
+      .beta, .kiyaku{
+        margin-left:auto;
+        margin-right:auto;
+        color:#91C191;
+        width:350px;
+        font-size:8px;
+      }
+
+
        // ヘッダー帯部分
         .header{
           height:70px;

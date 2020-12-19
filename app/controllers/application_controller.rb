@@ -11,9 +11,9 @@ protect_from_forgery with: :null_session
 before_action :authenticate_user!, only: [:/]
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name,:uni, :sex,:work,:image,:location,:annual,:club,:subject,:consalting,:free_profile ]) # 新規登録時(sign_up時)にnameというキーのパラメーターを追加で許可する
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name,:uni, :sex,:work,:image,:location,:annual,:club,:subject,:consalting,:free_profile,:position ]) # 新規登録時(sign_up時)にnameというキーのパラメーターを追加で許可する
     # アカウント編集の時にnameとprofileのストロングパラメータを追加
-    devise_parameter_sanitizer.permit(:account_update, keys: [:name,:uni, :sex,:work,:image,:location,:annual,:club,:subject,:consalting,:free_profile])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:name,:uni, :sex,:work,:image,:location,:annual,:club,:subject,:consalting,:free_profile,:position])
   end
 
 

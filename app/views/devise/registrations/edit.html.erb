@@ -69,80 +69,106 @@
        <div class="my_profile_content">
          <%= f.label :年次 %><br />
        </div>
-
-       <label><%= f.radio_button :annual, :"1年目" %>1年目</label>
-
-       <label><%= f.radio_button :annual, :"2-5年目" %>2-5年目</label>
-
-       <label><%= f.radio_button :annual, :"6-10年目" %>6-10年目</label>
-
-      <label> <%= f.radio_button :annual, :"11-20年目" %>11-20年目</label>
-
-       <br><label><%= f.radio_button :annual, :"21-30年目" %>21-30年目</label>
-
-       <label><%= f.radio_button :annual, :"31年目以上" %>31年目以上</label>
+     <label><%= f.radio_button :annual, :"0年目（学生）" %>0年目（学生）</label>
+     <label><%= f.radio_button :annual, :"1年目" %>1年目</label>
+     <label><%= f.radio_button :annual, :"2-5年目" %>2-5年目</label>
+     <label><%= f.radio_button :annual, :"6-10年目" %>6-10年目</label>
+     <label><%= f.radio_button :annual, :"11-20年目" %>11-20年目</label>
+     <label><%= f.radio_button :annual, :"21-30年目" %>21-30年目</label>
+     <label><%= f.radio_button :annual, :"31年目以上" %>31年目以上</label>
     </div>
 
      <div class="field">
        <div class="my_profile_content">
          <%= f.label :職業 %><br />
        </div>
-
-       <label><%= f.radio_button :work, :"幼稚園教員" %>幼稚園教員</label>
-
-       <label><%= f.radio_button :work, :"公立小学教員" %>公立小学教員</label>
-
-       <label><%= f.radio_button :work, :"私立小学教員" %>私立小学教員</label>
-
-       <br><label><%= f.radio_button :work, :"公立中学教員" %>公立中学教員</label>
-
-       <label><%= f.radio_button :work, :"私立中学教員" %>私立中学教員</label>
-
-       <label><%= f.radio_button :work, :"公立高校教員" %>公立高校教員</label>
-
-       <br><label><%= f.radio_button :work, :"私立高校教員" %>私立高校教員</label>
-
-       <label><%= f.radio_button :work, :"大学教員" %>大学教員</label>
-
-       <label><%= f.radio_button :work, :"塾講師" %>塾講師</label>
-
-       <label><%= f.radio_button :work, :"教材開発" %>教材開発</label>
-
-       <br><label><%= f.radio_button :work, :"学生" %>学生</label>
-
-       <label><%= f.radio_button :work, :"NPO団体" %>NPO団体</label>
-
-       <label><%= f.radio_button :work, :"知育ゲームメーカー" %>知育ゲームメーカー</label>
-
-       <br><label><%= f.radio_button :work, :"事務職員" %>事務職員</label>
-
-       <label><%= f.radio_button :work, :"その他" %>その他</label>
+     <label><%= f.radio_button :work, :"幼稚園教員" %>幼稚園教員</label>
+     <label><%= f.radio_button :work, :"保育園教員" %>保育園教員</label>
+     <label><%= f.radio_button :work, :"公立小学教員" %>公立小学教員</label>
+     <label><%= f.radio_button :work, :"私立小学教員" %>私立小学教員</label>
+     <label><%= f.radio_button :work, :"公立中学教員" %>公立中学教員</label>
+     <label><%= f.radio_button :work, :"私立中学教員" %>私立中学教員</label>
+     <label><%= f.radio_button :work, :"公立高校教員" %>公立高校教員</label>
+     <label><%= f.radio_button :work, :"私立高校教員" %>私立高校教員</label>
+     <label><%= f.radio_button :work, :"大学教員" %>大学教員</label>
+     <label><%= f.radio_button :work, :"塾講師" %>塾講師</label>
+     <label><%= f.radio_button :work, :"教材開発" %>教材開発</label>
+     <label><%= f.radio_button :work, :"学生" %>学生</label>
+     <label><%= f.radio_button :work, :"NPO団体" %>NPO団体</label>
+     <label><%= f.radio_button :work, :"メーカー" %>メーカー</label>
+     <label><%= f.radio_button :work, :"事務職員" %>事務職員</label>
+     <label><%= f.radio_button :work, :"その他" %>その他</label>
     </div>
+
+   <div class="field">
+     <div class="my_profile_content">
+     <%= f.label :職位 %><br />
+     </div>
+     <label><%= f.radio_button :position, :"校長" %>校長</label>
+     <label><%= f.radio_button :position, :"副校長" %>副校長</label>
+     <label><%= f.radio_button :position, :"教頭" %>教頭</label>
+     <label><%= f.radio_button :position, :"教務部" %>教務部</label>
+     <label><%= f.radio_button :position, :"生徒指導部" %>生徒指導部</label>
+     <label><%= f.radio_button :position, :"進路指導部" %>進路指導部</label>
+     <label><%= f.radio_button :position, :"保健安全指導部" %>保健安全指導部</label>
+     <label><%= f.radio_button :position, :"総務部" %>総務部</label>
+     <label><%= f.radio_button :position, :"教育相談部" %>教育相談部</label>
+     <label><%= f.radio_button :position, :"生活指導部" %>生活指導部</label>
+     <label><%= f.radio_button :position, :"その他" %>その他</label>
+  </div>
 
     <div class="field">
       <div class="my_profile_content">
         <%= f.label :お住まい %><br />
       </div>
-
-      <label><%= f.radio_button :location, :"北海道" %>北海道</label>
-
-      <label><%= f.radio_button :location, :"東北地方" %>東北地方</label>
-
-      <label><%= f.radio_button :location, :"関東地方" %>関東地方</label>
-
-      <label><%= f.radio_button :location, :"中部地方" %>中部地方</label>
-
-      <br><label><%= f.radio_button :location, :"近畿地方" %>近畿地方</label>
-
-      <label><%= f.radio_button :location, :"中国地方" %>中国地方</label>
-
-      <label><%= f.radio_button :location, :"四国地方" %>四国地方</label>
-
-      <label><%= f.radio_button :location, :"九州地方" %>九州地方</label>
-
-      <br><label><%= f.radio_button :location, :"沖縄" %>沖縄</label>
-
-      <label><%= f.radio_button :location, :"その他" %>その他</label>
+    <label><%= f.radio_button :location, :"北海道" %>北海道</label>
+    <label><%= f.radio_button :location, :"青森県" %>青森県</label>
+    <label><%= f.radio_button :location, :"岩手県" %>岩手県</label>
+    <label><%= f.radio_button :location, :"宮城県" %>宮城県</label>
+    <label><%= f.radio_button :location, :"秋田県" %>秋田県</label>
+    <label><%= f.radio_button :location, :"山形県" %>山形県</label>
+    <label><%= f.radio_button :location, :"福島県" %>福島県</label>
+    <label><%= f.radio_button :location, :"茨城県" %>茨城県</label>
+    <label><%= f.radio_button :location, :"栃木県" %>栃木県</label>
+    <label><%= f.radio_button :location, :"群馬県" %>群馬県</label>
+    <label><%= f.radio_button :location, :"埼玉県" %>埼玉県</label>
+    <label><%= f.radio_button :location, :"千葉県" %>千葉県</label>
+    <label><%= f.radio_button :location, :"東京県" %>東京県</label>
+    <label><%= f.radio_button :location, :"神奈川県" %>神奈川県</label>
+    <label><%= f.radio_button :location, :"新潟県" %>新潟県</label>
+    <label><%= f.radio_button :location, :"富山県" %>富山県</label>
+    <label><%= f.radio_button :location, :"石川県" %>石川県</label>
+    <label><%= f.radio_button :location, :"福井県" %>福井県</label>
+    <label><%= f.radio_button :location, :"山梨県" %>山梨県</label>
+    <label><%= f.radio_button :location, :"長野県" %>長野県</label>
+    <label><%= f.radio_button :location, :"岐阜県" %>岐阜県</label>
+    <label><%= f.radio_button :location, :"静岡県" %>静岡県</label>
+    <label><%= f.radio_button :location, :"愛知県" %>愛知県</label>
+    <label><%= f.radio_button :location, :"三重県" %>三重県</label>
+    <label><%= f.radio_button :location, :"滋賀県" %>滋賀県</label>
+    <label><%= f.radio_button :location, :"京都府" %>京都府</label>
+    <label><%= f.radio_button :location, :"大阪府" %>大阪府</label>
+    <label><%= f.radio_button :location, :"兵庫県" %>兵庫県</label>
+    <label><%= f.radio_button :location, :"奈良県" %>奈良県</label>
+    <label><%= f.radio_button :location, :"和歌山県" %>和歌山県</label>
+    <label><%= f.radio_button :location, :"鳥取県" %>鳥取県</label>
+    <label><%= f.radio_button :location, :"岡山県" %>岡山県</label>
+    <label><%= f.radio_button :location, :"広島県" %>広島県</label>
+    <label><%= f.radio_button :location, :"山口県" %>山口県</label>
+    <label><%= f.radio_button :location, :"徳島県" %>徳島県</label>
+    <label><%= f.radio_button :location, :"香川県" %>香川県</label>
+    <label><%= f.radio_button :location, :"愛媛県" %>愛媛県</label>
+    <label><%= f.radio_button :location, :"高知県" %>高知県</label>
+    <label><%= f.radio_button :location, :"福岡県" %>福岡県</label>
+    <label><%= f.radio_button :location, :"佐賀県" %>佐賀県</label>
+    <label><%= f.radio_button :location, :"長崎県" %>長崎県</label>
+    <label><%= f.radio_button :location, :"熊本県" %>熊本県</label>
+    <label><%= f.radio_button :location, :"大分県" %>大分県</label>
+    <label><%= f.radio_button :location, :"宮崎県" %>宮崎県</label>
+    <label><%= f.radio_button :location, :"鹿児島県" %>鹿児島県</label>
+    <label><%= f.radio_button :location, :"沖縄県" %>沖縄県</label>
+    <label><%= f.radio_button :location, :"海外" %>海外</label>
+    <label><%= f.radio_button :location, :"その他" %>その他</label>
    </div>
 
    <div class="field">
@@ -150,25 +176,16 @@
        <%= f.label :専門科目 %><br />
      </div>
 
-     <label><%= f.radio_button :subject, :"国語" %>国語</label>
-
-     <label><%= f.radio_button :subject, :"算数・数学" %>算数・数学</label>
-
-     <label><%= f.radio_button :subject, :"理科" %>理科</label>
-
-     <label><%= f.radio_button :subject, :"社会" %>社会</label>
-
-     <label><%= f.radio_button :subject, :"音楽" %>音楽</label>
-
-     <br><label><%= f.radio_button :subject, :"技術" %>技術</label>
-
-     <label><%= f.radio_button :subject, :"家庭科" %>家庭科</label>
-
-     <label><%= f.radio_button :subject, :"体育" %>体育</label>
-
-     <label><%= f.radio_button :subject, :"保険" %>保健</label>
-
-     <label><%= f.radio_button :subject, :"その他" %>その他</label>
+   <label><%= f.radio_button :subject, :"国語" %>国語</label>
+   <label><%= f.radio_button :subject, :"算数・数学" %>算数・数学</label>
+   <label><%= f.radio_button :subject, :"理科" %>理科</label>
+   <label><%= f.radio_button :subject, :"社会" %>社会</label>
+   <label><%= f.radio_button :subject, :"音楽" %>音楽</label>
+   <label><%= f.radio_button :subject, :"技術" %>技術</label>
+   <label><%= f.radio_button :subject, :"家庭科" %>家庭科</label>
+   <label><%= f.radio_button :subject, :"体育" %>体育</label>
+   <label><%= f.radio_button :subject, :"保健" %>保健</label>
+   <label><%= f.radio_button :subject, :"その他" %>その他</label>
   </div>
 
   <div class="field">
@@ -176,39 +193,26 @@
       <%= f.label :部活動 %><br />
     </div>
 
-    <label><%= f.radio_button :club, :"なし" %>なし</label>
-
-    <label><%= f.radio_button :club, :"サッカー" %>サッカー</label>
-
-    <label><%= f.radio_button :club, :"野球" %>野球</label>
-
-    <label><%= f.radio_button :club, :"バスケットボール" %>バスケットボール</label>
-
-    <br><label><%= f.radio_button :club, :"テニス" %>テニス</label>
-
-    <label><%= f.radio_button :club, :"卓球" %>卓球</label>
-
-    <label><%= f.radio_button :club, :"陸上" %>陸上</label>
-
-    <label><%= f.radio_button :club, :"バトミントン" %>バトミントン</label>
-
-    <br><label><%= f.radio_button :club, :"ハンドボール" %>ハンドボール</label>
-
-    <label><%= f.radio_button :club, :"体操" %>体操</label>
-
-    <label><%= f.radio_button :club, :"水泳" %>水泳</label>
-
-    <label><%= f.radio_button :club, :"柔道" %>柔道</label>
-
-    <label><%= f.radio_button :club, :"剣道" %>剣道</label>
-
-    <br><label><%= f.radio_button :club, :"弓道" %>弓道</label>
-
-    <label><%= f.radio_button :club, :"茶道" %>茶道</label>
-
-    <label><%= f.radio_button :club, :"美術" %>美術</label>
-
-    <label><%= f.radio_button :club, :"その他" %>その他</label>
+  <label><%= f.radio_button :club, :"なし" %>なし</label>
+  <label><%= f.radio_button :club, :"サッカー" %>サッカー</label>
+  <label><%= f.radio_button :club, :"野球" %>野球</label>
+  <label><%= f.radio_button :club, :"バスケットボール" %>バスケットボール</label>
+  <label><%= f.radio_button :club, :"テニス" %>テニス</label>
+  <label><%= f.radio_button :club, :"卓球" %>卓球</label>
+  <label><%= f.radio_button :club, :"陸上" %>陸上</label>
+  <label><%= f.radio_button :club, :"バトミントン" %>バトミントン</label>
+  <label><%= f.radio_button :club, :"ハンドボール" %>ハンドボール</label>
+  <label><%= f.radio_button :club, :"体操" %>体操</label>
+  <label><%= f.radio_button :club, :"水泳" %>水泳</label>
+  <label><%= f.radio_button :club, :"柔道" %>柔道</label>
+  <label><%= f.radio_button :club, :"剣道" %>剣道</label>
+  <label><%= f.radio_button :club, :"弓道" %>弓道</label>
+  <label><%= f.radio_button :club, :"茶道" %>茶道</label>
+  <label><%= f.radio_button :club, :"美術" %>美術</label>
+  <label><%= f.radio_button :club, :"書道" %>書道</label>
+  <label><%= f.radio_button :club, :"合唱" %>合唱</label>
+  <label><%= f.radio_button :club, :"吹奏楽" %>吹奏楽</label>
+  <label><%= f.radio_button :club, :"その他" %>その他</label>
 
   </div>
 
