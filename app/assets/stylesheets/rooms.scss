@@ -100,16 +100,14 @@
     }
 
         // dm送信エリア（文字記載場所）
-        .send{
-            bottom: 0;
-            width: 100%;
-            text-align: center;
-            background: #f0eee4;
-            color: #a92f60;
-            margin-right: auto;//ここで中央寄せを指定する。
-            margin-left : auto;
-            width:800px;
-            position: fixed;
+    .send{
+     bottom: 0;
+     text-align: center;
+     background: #f0eee4;
+     margin-right: auto;//ここで中央寄せを指定する。
+     margin-left : auto;
+     width:800px;
+     position: fixed;
         }
 
         // 送信フォーム
@@ -271,13 +269,11 @@ margin: auto;
     // dm送信エリア（文字記載場所）
     .send{
         bottom: 0;
-        width:100%;
         text-align: center;
         background: #f0eee4;
-        color: #a92f60;
         margin-right: auto;//ここで中央寄せを指定する。
         margin-left : auto;
-        width:400px;
+        width:100%;
         position: fixed;
         height: 150px;
     }

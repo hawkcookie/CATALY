@@ -66,32 +66,39 @@
 
 <% else %>
 
-<div class ="attention">
-  <h3 class="text-center">メッセージはまだありません。</h3>
-  <br>以下の行為を禁止しています。
-  <br>　・教育に関わる交流以外を目的としたマッチング
-  <br>　・性的もしくは卑猥な内容の発言
-  <br>上記に違反する事実や申し出がある場合は、お問い合わせフォームからご連絡してください。
-  <br>健全なサービス提供のため、運営がメッセージ内容を確認することがあります。
+     <div class ="attention">
+          <h3 class="text-center">メッセージはまだありません。</h3>
+          <br>以下の行為を禁止しています。
+          <br>　・教育に関わる交流以外を目的としたマッチング
+          <br>　・性的もしくは卑猥な内容の発言
+          <br>上記に違反する事実や申し出がある場合は、お問い合わせフォームからご連絡してください。
+          <br>健全なサービス提供のため、運営がメッセージ内容を確認することがあります。
+     </div>
 <% end %>
 </div>
 
-<div class="send">
 
-  <%= form_for @message do |f| %>
-    <%= f.text_area :content, :placeholder => "メッセージを入力して下さい" , :size => 70 %>
-      <%= f.hidden_field :room_id, :value => @room.id %>
-        <%= f.submit "送信" , :class => 'btn_send',:id=>'btn_send' %>
-
+      <div class="send">
+        <%= form_for @message do |f| %>
+          <%= f.text_area :content, :placeholder => "メッセージを入力して下さい" , :size => 70 %>
+          <%= f.hidden_field :room_id, :value => @room.id %>
+          <%= button_tag :type => "submit", :class =>"btn_send",:id=>'btn_send' do %>
+          <i class="fas fa-paper-plane"></i>
+        <% end %>
+      </div>
   <% end %>
-</div>
+
+
+
+
+
 
 <!--<%= link_to "DM一覧", "/rooms/:id/index" %>-->
 
 <!--<%= link_to "ユーザー一覧に戻る", "/" %>-->
 
 
-</div>
+
 
 <script type="text/javascript">
 $(function(){
