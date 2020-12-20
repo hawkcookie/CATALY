@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
 
-PER = 9
+PER = 6
 
 
   def index

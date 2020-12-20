@@ -168,14 +168,12 @@
     <label><%= f.radio_button :location, :"鹿児島県" %>鹿児島県</label>
     <label><%= f.radio_button :location, :"沖縄県" %>沖縄県</label>
     <label><%= f.radio_button :location, :"海外" %>海外</label>
-    <label><%= f.radio_button :location, :"その他" %>その他</label>
    </div>
 
    <div class="field">
      <div class="my_profile_content">
        <%= f.label :専門科目 %><br />
      </div>
-
    <label><%= f.radio_button :subject, :"国語" %>国語</label>
    <label><%= f.radio_button :subject, :"算数・数学" %>算数・数学</label>
    <label><%= f.radio_button :subject, :"理科" %>理科</label>
@@ -185,7 +183,8 @@
    <label><%= f.radio_button :subject, :"家庭科" %>家庭科</label>
    <label><%= f.radio_button :subject, :"体育" %>体育</label>
    <label><%= f.radio_button :subject, :"保健" %>保健</label>
-   <label><%= f.radio_button :subject, :"その他" %>その他</label>
+   <label><%= f.radio_button :subject, :"保健" %>なし（小学校教員）</label>
+   <label><%= f.radio_button :subject, :"その他" %>その他（特別支援など）</label>
   </div>
 
   <div class="field">
@@ -226,13 +225,13 @@
 
   <div class="field">
     <div class="my_profile_content">
-      <label><%= f.label :ユーザー一覧への表示を許可頂けますか？ %><br />
+      <label><%= f.label :ユーザー一覧へ表示しますか？ %><br />
     </div>
       <label><%= f.radio_button :consalting, :"はい" %>はい</label>
       <label><%= f.radio_button :consalting, :"いいえ" %>いいえ</label>
     <br>※進路に悩んでいる教育学部の学生や
-    <br>視野・知識を広げたい先生方からの連絡が
-    <br>受け取れる状態になります。
+    視野・知識を広げたい先生方からの連絡が
+    受け取れる状態になります。
   </div>
 
 
