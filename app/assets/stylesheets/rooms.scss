@@ -34,6 +34,7 @@
         text-align: left;
         display: table-cell;
         vertical-align: middle;
+        color:#707070;
     }
 
     // DM一メッセージ
@@ -43,6 +44,9 @@
         white-space: nowrap;
         text-overflow: ellipsis;
         overflow: hidden;
+        color:#707070;
+        margin-top:10px;
+        font-size:20px;
              }
 
     /*DM全体*/
@@ -236,6 +240,8 @@ margin: auto;
             white-space: nowrap;
             text-overflow: ellipsis;
             overflow: hidden;
+            margin-top:7px;
+            font-size:16px;
          }
 
     /*DM全体*/

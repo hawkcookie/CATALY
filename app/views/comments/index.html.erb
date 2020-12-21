@@ -33,27 +33,17 @@
             <i class="fas fa-briefcase"></i><%= " 職業" %>
           </div>
 
-        <div class="research_check">
-          <%= f.check_box :work_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 4 %><label for="q_work_eq_any_4" class="checkbox02" checked="checked">幼稚園教員</label>
-          <%= f.check_box :work_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 5 %><label for="q_work_eq_any_5" class="checkbox02" checked="checked">保育園教員</label>
-          <%= f.check_box :work_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 6 %><label for="q_work_eq_any_6" class="checkbox02" checked="checked">公立小学教員</label>
-          <%= f.check_box :work_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 7 %><label for="q_work_eq_any_7" class="checkbox02" checked="checked">私立小学教員</label>
-          <%= f.check_box :work_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 8 %><label for="q_work_eq_any_8" class="checkbox02" checked="checked">公立中学教員</label>
-          <%= f.check_box :work_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 9 %><label for="q_work_eq_any_9" class="checkbox02" checked="checked">私立中学教員</label>
-          <%= f.check_box :work_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 10 %><label for="q_work_eq_any_10" class="checkbox02" checked="checked">公立高校教員</label>
-          <%= f.check_box :work_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 11 %><label for="q_work_eq_any_11" class="checkbox02" checked="checked">私立高校教員</label>
-          <%= f.check_box :work_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 12 %><label for="q_work_eq_any_12" class="checkbox02" checked="checked">大学教員</label>
-          <%= f.check_box :work_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 13 %><label for="q_work_eq_any_13" class="checkbox02" checked="checked">塾講師</label>
-          <%= f.check_box :work_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 14 %><label for="q_work_eq_any_14" class="checkbox02" checked="checked">教材開発</label>
-          <%= f.check_box :work_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 15 %><label for="q_work_eq_any_15" class="checkbox02" checked="checked">学生</label>
-          <%= f.check_box :work_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 16 %><label for="q_work_eq_any_16" class="checkbox02" checked="checked">NPO団体</label>
-          <%= f.check_box :work_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 17 %><label for="q_work_eq_any_17" class="checkbox02" checked="checked">メーカー</label>
-          <%= f.check_box :work_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 18 %><label for="q_work_eq_any_18" class="checkbox02" checked="checked">事務職員</label>
-          <%= f.check_box :work_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 19 %><label for="q_work_eq_any_19" class="checkbox02" checked="checked">その他</label>
+      <div class="research_check">
+        <% if params[:q].present? %>
+          <%= f.collection_check_boxes(:work_eq_any, User.works, :last, :first, checked: params[:q][:work_eq_any]) do |b| %>
+          <%= b.label(class: "checkbox02 #{ 'checked' if params[:q][:work_eq_any].map{ |a| a.to_i }&.include?(b.object.last)}") { b.check_box(class: "research_check_box") + b.text } %>
+        <% end %>
+        <% else %>
+            <%= f.collection_check_boxes(:work_eq_any, User.works, :last, :first) do |b| %>
+            <%= b.label(class: "checkbox02 ") { b.check_box(class: "research_check_box") + b.text } %>
+          <% end %>
+        <% end %>
       </div>
-
-
-
 
       <div class="research_title">
         <i class="fas fa-user-check"></i><%= " 職位" %>
@@ -278,8 +268,8 @@
       <%= image_tag 'for_teacher_promotion.png', :class => "for_teacher_promotion" %>
       <div class="for_teacher_sentence">
         <h2><strong>教育関係者向けコミュニケーションサービス</strong>　</h2>
-        <br>同じ目標や悩みを持つ同士、経験豊富なメンターや次世代を担う若手と
-        チャットを通じてコミュニケーションが取れます
+        <br>同じ目標や悩みを持つ同士、経験豊富なメンターや次世代を担う若手と、
+        チャットを通じてコミュニケーションが取れます。
         
       </div>
     </div>
@@ -288,9 +278,11 @@
     <div class="anonymous_all">
       <%= image_tag 'anonymous_promotion.png', :class => "anonymous_promotion" %>
       <div class="anonymous_sentence">
-        <h2><strong>安心な匿名性</strong></h2>
-        <br>匿名を推奨しており、素直な気持ちで相談ができます
-        
+        <!--<h2><strong>安心な匿名性</strong></h2>
+        <br>匿名を推奨しており、素直な気持ちで相談ができます-->
+                
+        <h2><strong>心地よい自己開示</strong></h2>
+        <br>教育業界における様々なリスクを検討し、匿名を推奨しています。
       </div>
     </div>
 
@@ -298,9 +290,11 @@
     <div class="notification_off_all">
       <%= image_tag 'notification_off_promotion.png', :class => "notification_off_promotion" %>
       <div class="notification_off_sentence">
+        <!--<h2><strong>自分の時間を大切にできる</strong>　</h2>
+        <br>メールによる通知機能を付けていないため、双方のペースでコミュニケーションが取れます-->
+
         <h2><strong>自分の時間を大切にできる</strong>　</h2>
-        <br>メールによる通知機能を付けていないため、双方のペースでコミュニケーションが取れます
-        
+        <br>メールによる通知機能を付けていません。郵便ポストを開けるみたいに、自分のペースで連絡が確認できます。
       </div>
     </div>
 
@@ -331,8 +325,6 @@
         <%= f.search_field :name_or_uni_or_free_profile_cont , placeholder: "大学名、プロフィール内容", class: "research_text"%>
 
   　<!--検索機能　チェックボックス-->
-
-<!--windows_デザイン修正_謎の箱-->
 
 
        <div class="research_title">
@@ -568,16 +560,20 @@
 
 
 <!--ラジオボタンの取り消しjquery-->
+<!--ラジオボタンの取り消しjquery-->
 <script>
-var number;
-$(function(){
-  $('input').click(function(){
-      if($(this).val() == number) {
-          $(this).prop('checked', false);
-          number = 0;
+  var number;
+  $(function() {
+    $('input').click(function() {
+      if ($(this).val() == number || !$(this).is(':checked')) {
+        $(this).prop('checked', false);
+        number = 0;
+        $(this).parent().removeClass("checked");
       } else {
-          number = $(this).val();
+        number = $(this).val();
+        $(this).parent().addClass("checked");
       }
+    });
   });
-});
 </script>
+

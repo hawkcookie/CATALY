@@ -23,7 +23,7 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'mini_racer', platforms: :ruby
 
 gem 'font-awesome-sass'
-
+gem 'bootstrap', '~> 4.1.1'
 gem 'dotenv-rails'
 
 gem 'rails-i18n'
