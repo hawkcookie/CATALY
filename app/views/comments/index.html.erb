@@ -48,144 +48,88 @@
       <div class="research_title">
         <i class="fas fa-user-check"></i><%= " 職位" %>
         </div>
-        <div class="research_check">
-        <%= f.check_box :position_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 108 %><label for="q_position_eq_any_108" class="checkbox02" checked="checked">校長</label>
-        <%= f.check_box :position_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 109 %><label for="q_position_eq_any_109" class="checkbox02" checked="checked">副校長</label>
-        <%= f.check_box :position_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 110 %><label for="q_position_eq_any_110" class="checkbox02" checked="checked">教頭</label>
-        <%= f.check_box :position_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 111 %><label for="q_position_eq_any_111" class="checkbox02" checked="checked">教務部</label>
-        <%= f.check_box :position_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 112 %><label for="q_position_eq_any_112" class="checkbox02" checked="checked">生徒指導部</label>
-        <%= f.check_box :position_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 113 %><label for="q_position_eq_any_113" class="checkbox02" checked="checked">進路指導部</label>
-        <%= f.check_box :position_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 114 %><label for="q_position_eq_any_114" class="checkbox02" checked="checked">保健安全指導部</label>
-        <%= f.check_box :position_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 115 %><label for="q_position_eq_any_115" class="checkbox02" checked="checked">総務部</label>
-        <%= f.check_box :position_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 116 %><label for="q_position_eq_any_116" class="checkbox02" checked="checked">教育相談部</label>
-        <%= f.check_box :position_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 117 %><label for="q_position_eq_any_117" class="checkbox02" checked="checked">生活指導部</label>
-        <%= f.check_box :position_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 118 %><label for="q_position_eq_any_118" class="checkbox02" checked="checked">その他</label>
-        </div>
+
+      <div class="research_check">
+        <% if params[:q].present? %>
+          <%= f.collection_check_boxes(:position_eq_any, User.positions, :last, :first, checked: params[:q][:position_eq_any]) do |b| %>
+          <%= b.label(class: "checkbox02 #{ 'checked' if params[:q][:position_eq_any].map{ |a| a.to_i }&.include?(b.object.last)}") { b.check_box(class: "research_check_box") + b.text } %>
+        <% end %>
+        <% else %>
+            <%= f.collection_check_boxes(:position_eq_any, User.positions, :last, :first) do |b| %>
+            <%= b.label(class: "checkbox02 ") { b.check_box(class: "research_check_box") + b.text } %>
+          <% end %>
+        <% end %>
+      </div>
 
 
       <div class="research_title">
         <i class="fas fa-house-user"></i><%= " お住まい" %>
         </div>
-        <div class="research_check">
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 20 %><label for="q_location_eq_any_20" class="checkbox02" checked="checked">北海道</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 21 %><label for="q_location_eq_any_21" class="checkbox02" checked="checked">青森県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 22 %><label for="q_location_eq_any_22" class="checkbox02" checked="checked">岩手県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 23 %><label for="q_location_eq_any_23" class="checkbox02" checked="checked">宮城県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 24 %><label for="q_location_eq_any_24" class="checkbox02" checked="checked">秋田県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 25 %><label for="q_location_eq_any_25" class="checkbox02" checked="checked">山形県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 26 %><label for="q_location_eq_any_26" class="checkbox02" checked="checked">福島県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 27 %><label for="q_location_eq_any_27" class="checkbox02" checked="checked">茨城県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 28 %><label for="q_location_eq_any_28" class="checkbox02" checked="checked">栃木県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 29 %><label for="q_location_eq_any_29" class="checkbox02" checked="checked">群馬県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 30 %><label for="q_location_eq_any_30" class="checkbox02" checked="checked">埼玉県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 31 %><label for="q_location_eq_any_31" class="checkbox02" checked="checked">千葉県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 32 %><label for="q_location_eq_any_32" class="checkbox02" checked="checked">東京都</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 33 %><label for="q_location_eq_any_33" class="checkbox02" checked="checked">神奈川県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 34 %><label for="q_location_eq_any_34" class="checkbox02" checked="checked">新潟県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 35 %><label for="q_location_eq_any_35" class="checkbox02" checked="checked">富山県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 36 %><label for="q_location_eq_any_36" class="checkbox02" checked="checked">石川県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 37 %><label for="q_location_eq_any_37" class="checkbox02" checked="checked">福井県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 38 %><label for="q_location_eq_any_38" class="checkbox02" checked="checked">山梨県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 39 %><label for="q_location_eq_any_39" class="checkbox02" checked="checked">長野県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 40 %><label for="q_location_eq_any_40" class="checkbox02" checked="checked">岐阜県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 41 %><label for="q_location_eq_any_41" class="checkbox02" checked="checked">静岡県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 42 %><label for="q_location_eq_any_42" class="checkbox02" checked="checked">愛知県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 43 %><label for="q_location_eq_any_43" class="checkbox02" checked="checked">三重県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 44 %><label for="q_location_eq_any_44" class="checkbox02" checked="checked">滋賀県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 45 %><label for="q_location_eq_any_45" class="checkbox02" checked="checked">京都府</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 46 %><label for="q_location_eq_any_46" class="checkbox02" checked="checked">大阪府</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 47 %><label for="q_location_eq_any_47" class="checkbox02" checked="checked">兵庫県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 48 %><label for="q_location_eq_any_48" class="checkbox02" checked="checked">奈良県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 49 %><label for="q_location_eq_any_49" class="checkbox02" checked="checked">和歌山県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 50 %><label for="q_location_eq_any_50" class="checkbox02" checked="checked">鳥取県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 51 %><label for="q_location_eq_any_51" class="checkbox02" checked="checked">岡山県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 52 %><label for="q_location_eq_any_52" class="checkbox02" checked="checked">広島県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 53 %><label for="q_location_eq_any_53" class="checkbox02" checked="checked">山口県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 54 %><label for="q_location_eq_any_54" class="checkbox02" checked="checked">徳島県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 55 %><label for="q_location_eq_any_55" class="checkbox02" checked="checked">香川県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 56 %><label for="q_location_eq_any_56" class="checkbox02" checked="checked">愛媛県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 57 %><label for="q_location_eq_any_57" class="checkbox02" checked="checked">高知県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 58 %><label for="q_location_eq_any_58" class="checkbox02" checked="checked">福岡県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 59 %><label for="q_location_eq_any_59" class="checkbox02" checked="checked">佐賀県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 60 %><label for="q_location_eq_any_60" class="checkbox02" checked="checked">長崎県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 61 %><label for="q_location_eq_any_61" class="checkbox02" checked="checked">熊本県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 62 %><label for="q_location_eq_any_62" class="checkbox02" checked="checked">大分県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 63 %><label for="q_location_eq_any_63" class="checkbox02" checked="checked">宮崎県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 64 %><label for="q_location_eq_any_64" class="checkbox02" checked="checked">鹿児島県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 65 %><label for="q_location_eq_any_65" class="checkbox02" checked="checked">沖縄県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 66 %><label for="q_location_eq_any_66" class="checkbox02" checked="checked">海外</label>
-
-        
-      </div>
+ <% if params[:q].present? %>
+          <%= f.collection_check_boxes(:location_eq_any, User.locations, :last, :first, checked: params[:q][:location_eq_any]) do |b| %>
+          <%= b.label(class: "checkbox02 #{ 'checked' if params[:q][:location_eq_any].map{ |a| a.to_i }&.include?(b.object.last)}") { b.check_box(class: "research_check_box") + b.text } %>
+        <% end %>
+        <% else %>
+            <%= f.collection_check_boxes(:location_eq_any, User.locations, :last, :first) do |b| %>
+            <%= b.label(class: "checkbox02 ") { b.check_box(class: "research_check_box") + b.text } %>
+          <% end %>
+        <% end %>
 
 
       <div class="research_title">
       <i class="fas fa-clock"></i><%= " 年次" %>
         </div>
-        <div class="research_check">
-      <%= f.check_box :annual_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 68 %><label for="q_annual_eq_any_68" class="checkbox02" checked="checked">0年目（学生）</label>
-      <%= f.check_box :annual_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 69 %><label for="q_annual_eq_any_69" class="checkbox02" checked="checked">1年目</label>
-      <%= f.check_box :annual_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 70 %><label for="q_annual_eq_any_70" class="checkbox02" checked="checked">2-5年目</label>
-      <%= f.check_box :annual_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 71 %><label for="q_annual_eq_any_71" class="checkbox02" checked="checked">6-10年目</label>
-      <%= f.check_box :annual_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 72 %><label for="q_annual_eq_any_72" class="checkbox02" checked="checked">11-20年目</label>
-      <%= f.check_box :annual_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 73 %><label for="q_annual_eq_any_73" class="checkbox02" checked="checked">21-30年目</label>
-      <%= f.check_box :annual_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 74 %><label for="q_annual_eq_any_74" class="checkbox02" checked="checked">31年目以上</label>
-    </div>
+        <% if params[:q].present? %>
+          <%= f.collection_check_boxes(:annual_eq_any, User.annuals, :last, :first, checked: params[:q][:annual_eq_any]) do |b| %>
+          <%= b.label(class: "checkbox02 #{ 'checked' if params[:q][:annual_eq_any].map{ |a| a.to_i }&.include?(b.object.last)}") { b.check_box(class: "research_check_box") + b.text } %>
+        <% end %>
+        <% else %>
+            <%= f.collection_check_boxes(:annual_eq_any, User.annuals, :last, :first) do |b| %>
+            <%= b.label(class: "checkbox02 ") { b.check_box(class: "research_check_box") + b.text } %>
+          <% end %>
+        <% end %>
 
 
       <div class="research_title">
         <i class="fas fa-book-open"></i><%= " 専門科目" %>
         </div>
-        <div class="research_check">
-        <%= f.check_box :subject_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 75 %><label for="q_subject_eq_any_75" class="checkbox02" checked="checked">国語</label>
-        <%= f.check_box :subject_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 76 %><label for="q_subject_eq_any_76" class="checkbox02" checked="checked">算数・数学</label>
-        <%= f.check_box :subject_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 77 %><label for="q_subject_eq_any_77" class="checkbox02" checked="checked">理科</label>
-        <%= f.check_box :subject_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 78 %><label for="q_subject_eq_any_78" class="checkbox02" checked="checked">社会</label>
-        <%= f.check_box :subject_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 79 %><label for="q_subject_eq_any_79" class="checkbox02" checked="checked">音楽</label>
-        <%= f.check_box :subject_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 80 %><label for="q_subject_eq_any_80" class="checkbox02" checked="checked">技術</label>
-        <%= f.check_box :subject_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 81 %><label for="q_subject_eq_any_81" class="checkbox02" checked="checked">家庭科</label>
-        <%= f.check_box :subject_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 82 %><label for="q_subject_eq_any_82" class="checkbox02" checked="checked">体育</label>
-        <%= f.check_box :subject_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 83 %><label for="q_subject_eq_any_83" class="checkbox02" checked="checked">保健</label>
-        <%= f.check_box :subject_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 84 %><label for="q_subject_eq_any_84" class="checkbox02" checked="checked">なし（小学校教員）</label>
-        <%= f.check_box :subject_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 85 %><label for="q_subject_eq_any_85" class="checkbox02" checked="checked">その他（特別支援など）</label>
-        </div>
+        <% if params[:q].present? %>
+          <%= f.collection_check_boxes(:subject_eq_any, User.subjects, :last, :first, checked: params[:q][:subject_eq_any]) do |b| %>
+          <%= b.label(class: "checkbox02 #{ 'checked' if params[:q][:subject_eq_any].map{ |a| a.to_i }&.include?(b.object.last)}") { b.check_box(class: "research_check_box") + b.text } %>
+        <% end %>
+        <% else %>
+            <%= f.collection_check_boxes(:subject_eq_any, User.subjects, :last, :first) do |b| %>
+            <%= b.label(class: "checkbox02 ") { b.check_box(class: "research_check_box") + b.text } %>
+          <% end %>
+        <% end %>
 
 
 
       <div class="research_title">
         <i class="fas fa-futbol"></i><%=" 部活（サークル）顧問" %>
         </div>
-        <div class="research_check">
-        <%= f.check_box :club_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 86 %><label for="q_club_eq_any_86" class="checkbox02" checked="checked">なし</label>
-        <%= f.check_box :club_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 87 %><label for="q_club_eq_any_87" class="checkbox02" checked="checked">サッカー</label>
-        <%= f.check_box :club_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 88 %><label for="q_club_eq_any_88" class="checkbox02" checked="checked">野球</label>
-        <%= f.check_box :club_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 89 %><label for="q_club_eq_any_89" class="checkbox02" checked="checked">バスケットボール</label>
-        <%= f.check_box :club_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 90 %><label for="q_club_eq_any_90" class="checkbox02" checked="checked">テニス</label>
-        <%= f.check_box :club_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 91 %><label for="q_club_eq_any_91" class="checkbox02" checked="checked">卓球</label>
-        <%= f.check_box :club_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 92 %><label for="q_club_eq_any_92" class="checkbox02" checked="checked">陸上</label>
-        <%= f.check_box :club_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 93 %><label for="q_club_eq_any_93" class="checkbox02" checked="checked">バトミントン</label>
-        <%= f.check_box :club_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 94 %><label for="q_club_eq_any_94" class="checkbox02" checked="checked">ハンドボール</label>
-        <%= f.check_box :club_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 95 %><label for="q_club_eq_any_95" class="checkbox02" checked="checked">体操</label>
-        <%= f.check_box :club_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 96 %><label for="q_club_eq_any_96" class="checkbox02" checked="checked">水泳</label>
-        <%= f.check_box :club_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 97 %><label for="q_club_eq_any_97" class="checkbox02" checked="checked">柔道</label>
-        <%= f.check_box :club_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 98 %><label for="q_club_eq_any_98" class="checkbox02" checked="checked">剣道</label>
-        <%= f.check_box :club_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 99 %><label for="q_club_eq_any_99" class="checkbox02" checked="checked">弓道</label>
-        <%= f.check_box :club_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 100 %><label for="q_club_eq_any_100" class="checkbox02" checked="checked">茶道</label>
-        <%= f.check_box :club_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 101 %><label for="q_club_eq_any_101" class="checkbox02" checked="checked">美術</label>
-        <%= f.check_box :club_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 102 %><label for="q_club_eq_any_102" class="checkbox02" checked="checked">書道</label>
-        <%= f.check_box :club_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 103 %><label for="q_club_eq_any_103" class="checkbox02" checked="checked">合唱</label>
-        <%= f.check_box :club_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 104 %><label for="q_club_eq_any_104" class="checkbox02" checked="checked">吹奏楽</label>
-        <%= f.check_box :club_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 105 %><label for="q_club_eq_any_105" class="checkbox02" checked="checked">その他</label>
-      </div>
+        <% if params[:q].present? %>
+          <%= f.collection_check_boxes(:club_eq_any, User.clubs, :last, :first, checked: params[:q][:club_eq_any]) do |b| %>
+          <%= b.label(class: "checkbox02 #{ 'checked' if params[:q][:club_eq_any].map{ |a| a.to_i }&.include?(b.object.last)}") { b.check_box(class: "research_check_box") + b.text } %>
+        <% end %>
+        <% else %>
+            <%= f.collection_check_boxes(:club_eq_any, User.clubs, :last, :first) do |b| %>
+            <%= b.label(class: "checkbox02 ") { b.check_box(class: "research_check_box") + b.text } %>
+          <% end %>
+        <% end %>
 
       <div class="research_title">
         <i class="fas fa-transgender-alt"></i><%= " 性別" %>
       </div>
-      <div class="research_check">
-      <%= f.check_box :sex_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 1 %><label for="q_sex_eq_any_1" class="checkbox02" checked="checked">男性</label>
-      <%= f.check_box :sex_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 2 %><label for="q_sex_eq_any_2" class="checkbox02">女性</label>
-      <%= f.check_box :sex_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 3 %><label for="q_sex_eq_any_3" class="checkbox02">その他</label>
-    </div>
+        <% if params[:q].present? %>
+          <%= f.collection_check_boxes(:sex_eq_any, User.sexes, :last, :first, checked: params[:q][:sex_eq_any]) do |b| %>
+          <%= b.label(class: "checkbox02 #{ 'checked' if params[:q][:sex_eq_any].map{ |a| a.to_i }&.include?(b.object.last)}") { b.check_box(class: "research_check_box") + b.text } %>
+        <% end %>
+        <% else %>
+            <%= f.collection_check_boxes(:sex_eq_any, User.sexes, :last, :first) do |b| %>
+            <%= b.label(class: "checkbox02 ") { b.check_box(class: "research_check_box") + b.text } %>
+          <% end %>
+        <% end %>
 
 
     <%= f.submit "検索" , :class => 'research_button',:id=>'research_button'%>
@@ -324,176 +268,111 @@
 
         <%= f.search_field :name_or_uni_or_free_profile_cont , placeholder: "大学名、プロフィール内容", class: "research_text"%>
 
-  　<!--検索機能　チェックボックス-->
+　<!--検索機能　チェックボックス-->
+
 
 
        <div class="research_title">
             <i class="fas fa-briefcase"></i><%= " 職業" %>
           </div>
 
-        <div class="research_check">
-          <%= f.check_box :work_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 4 %><label for="q_work_eq_any_4" class="checkbox02" checked="checked">幼稚園教員</label>
-          <%= f.check_box :work_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 5 %><label for="q_work_eq_any_5" class="checkbox02" checked="checked">保育園教員</label>
-          <%= f.check_box :work_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 6 %><label for="q_work_eq_any_6" class="checkbox02" checked="checked">公立小学教員</label>
-          <%= f.check_box :work_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 7 %><label for="q_work_eq_any_7" class="checkbox02" checked="checked">私立小学教員</label>
-          <%= f.check_box :work_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 8 %><label for="q_work_eq_any_8" class="checkbox02" checked="checked">公立中学教員</label>
-          <%= f.check_box :work_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 9 %><label for="q_work_eq_any_9" class="checkbox02" checked="checked">私立中学教員</label>
-          <%= f.check_box :work_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 10 %><label for="q_work_eq_any_10" class="checkbox02" checked="checked">公立高校教員</label>
-          <%= f.check_box :work_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 11 %><label for="q_work_eq_any_11" class="checkbox02" checked="checked">私立高校教員</label>
-          <%= f.check_box :work_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 12 %><label for="q_work_eq_any_12" class="checkbox02" checked="checked">大学教員</label>
-          <%= f.check_box :work_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 13 %><label for="q_work_eq_any_13" class="checkbox02" checked="checked">塾講師</label>
-          <%= f.check_box :work_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 14 %><label for="q_work_eq_any_14" class="checkbox02" checked="checked">教材開発</label>
-          <%= f.check_box :work_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 15 %><label for="q_work_eq_any_15" class="checkbox02" checked="checked">学生</label>
-          <%= f.check_box :work_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 16 %><label for="q_work_eq_any_16" class="checkbox02" checked="checked">NPO団体</label>
-          <%= f.check_box :work_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 17 %><label for="q_work_eq_any_17" class="checkbox02" checked="checked">メーカー</label>
-          <%= f.check_box :work_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 18 %><label for="q_work_eq_any_18" class="checkbox02" checked="checked">事務職員</label>
-          <%= f.check_box :work_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 19 %><label for="q_work_eq_any_19" class="checkbox02" checked="checked">その他</label>
+      <div class="research_check">
+        <% if params[:q].present? %>
+          <%= f.collection_check_boxes(:work_eq_any, User.works, :last, :first, checked: params[:q][:work_eq_any]) do |b| %>
+          <%= b.label(class: "checkbox02 #{ 'checked' if params[:q][:work_eq_any].map{ |a| a.to_i }&.include?(b.object.last)}") { b.check_box(class: "research_check_box") + b.text } %>
+        <% end %>
+        <% else %>
+            <%= f.collection_check_boxes(:work_eq_any, User.works, :last, :first) do |b| %>
+            <%= b.label(class: "checkbox02 ") { b.check_box(class: "research_check_box") + b.text } %>
+          <% end %>
+        <% end %>
       </div>
-
-
-
 
       <div class="research_title">
         <i class="fas fa-user-check"></i><%= " 職位" %>
         </div>
-        <div class="research_check">
-        <%= f.check_box :position_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 108 %><label for="q_position_eq_any_108" class="checkbox02" checked="checked">校長</label>
-        <%= f.check_box :position_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 109 %><label for="q_position_eq_any_109" class="checkbox02" checked="checked">副校長</label>
-        <%= f.check_box :position_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 110 %><label for="q_position_eq_any_110" class="checkbox02" checked="checked">教頭</label>
-        <%= f.check_box :position_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 111 %><label for="q_position_eq_any_111" class="checkbox02" checked="checked">教務部</label>
-        <%= f.check_box :position_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 112 %><label for="q_position_eq_any_112" class="checkbox02" checked="checked">生徒指導部</label>
-        <%= f.check_box :position_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 113 %><label for="q_position_eq_any_113" class="checkbox02" checked="checked">進路指導部</label>
-        <%= f.check_box :position_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 114 %><label for="q_position_eq_any_114" class="checkbox02" checked="checked">保健安全指導部</label>
-        <%= f.check_box :position_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 115 %><label for="q_position_eq_any_115" class="checkbox02" checked="checked">総務部</label>
-        <%= f.check_box :position_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 116 %><label for="q_position_eq_any_116" class="checkbox02" checked="checked">教育相談部</label>
-        <%= f.check_box :position_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 117 %><label for="q_position_eq_any_117" class="checkbox02" checked="checked">生活指導部</label>
-        <%= f.check_box :position_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 118 %><label for="q_position_eq_any_118" class="checkbox02" checked="checked">その他</label>
-        </div>
+
+      <div class="research_check">
+        <% if params[:q].present? %>
+          <%= f.collection_check_boxes(:position_eq_any, User.positions, :last, :first, checked: params[:q][:position_eq_any]) do |b| %>
+          <%= b.label(class: "checkbox02 #{ 'checked' if params[:q][:position_eq_any].map{ |a| a.to_i }&.include?(b.object.last)}") { b.check_box(class: "research_check_box") + b.text } %>
+        <% end %>
+        <% else %>
+            <%= f.collection_check_boxes(:position_eq_any, User.positions, :last, :first) do |b| %>
+            <%= b.label(class: "checkbox02 ") { b.check_box(class: "research_check_box") + b.text } %>
+          <% end %>
+        <% end %>
+      </div>
 
 
       <div class="research_title">
         <i class="fas fa-house-user"></i><%= " お住まい" %>
         </div>
-        <div class="research_check">
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 20 %><label for="q_location_eq_any_20" class="checkbox02" checked="checked">北海道</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 21 %><label for="q_location_eq_any_21" class="checkbox02" checked="checked">青森県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 22 %><label for="q_location_eq_any_22" class="checkbox02" checked="checked">岩手県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 23 %><label for="q_location_eq_any_23" class="checkbox02" checked="checked">宮城県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 24 %><label for="q_location_eq_any_24" class="checkbox02" checked="checked">秋田県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 25 %><label for="q_location_eq_any_25" class="checkbox02" checked="checked">山形県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 26 %><label for="q_location_eq_any_26" class="checkbox02" checked="checked">福島県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 27 %><label for="q_location_eq_any_27" class="checkbox02" checked="checked">茨城県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 28 %><label for="q_location_eq_any_28" class="checkbox02" checked="checked">栃木県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 29 %><label for="q_location_eq_any_29" class="checkbox02" checked="checked">群馬県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 30 %><label for="q_location_eq_any_30" class="checkbox02" checked="checked">埼玉県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 31 %><label for="q_location_eq_any_31" class="checkbox02" checked="checked">千葉県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 32 %><label for="q_location_eq_any_32" class="checkbox02" checked="checked">東京都</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 33 %><label for="q_location_eq_any_33" class="checkbox02" checked="checked">神奈川県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 34 %><label for="q_location_eq_any_34" class="checkbox02" checked="checked">新潟県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 35 %><label for="q_location_eq_any_35" class="checkbox02" checked="checked">富山県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 36 %><label for="q_location_eq_any_36" class="checkbox02" checked="checked">石川県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 37 %><label for="q_location_eq_any_37" class="checkbox02" checked="checked">福井県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 38 %><label for="q_location_eq_any_38" class="checkbox02" checked="checked">山梨県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 39 %><label for="q_location_eq_any_39" class="checkbox02" checked="checked">長野県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 40 %><label for="q_location_eq_any_40" class="checkbox02" checked="checked">岐阜県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 41 %><label for="q_location_eq_any_41" class="checkbox02" checked="checked">静岡県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 42 %><label for="q_location_eq_any_42" class="checkbox02" checked="checked">愛知県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 43 %><label for="q_location_eq_any_43" class="checkbox02" checked="checked">三重県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 44 %><label for="q_location_eq_any_44" class="checkbox02" checked="checked">滋賀県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 45 %><label for="q_location_eq_any_45" class="checkbox02" checked="checked">京都府</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 46 %><label for="q_location_eq_any_46" class="checkbox02" checked="checked">大阪府</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 47 %><label for="q_location_eq_any_47" class="checkbox02" checked="checked">兵庫県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 48 %><label for="q_location_eq_any_48" class="checkbox02" checked="checked">奈良県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 49 %><label for="q_location_eq_any_49" class="checkbox02" checked="checked">和歌山県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 50 %><label for="q_location_eq_any_50" class="checkbox02" checked="checked">鳥取県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 51 %><label for="q_location_eq_any_51" class="checkbox02" checked="checked">岡山県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 52 %><label for="q_location_eq_any_52" class="checkbox02" checked="checked">広島県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 53 %><label for="q_location_eq_any_53" class="checkbox02" checked="checked">山口県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 54 %><label for="q_location_eq_any_54" class="checkbox02" checked="checked">徳島県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 55 %><label for="q_location_eq_any_55" class="checkbox02" checked="checked">香川県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 56 %><label for="q_location_eq_any_56" class="checkbox02" checked="checked">愛媛県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 57 %><label for="q_location_eq_any_57" class="checkbox02" checked="checked">高知県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 58 %><label for="q_location_eq_any_58" class="checkbox02" checked="checked">福岡県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 59 %><label for="q_location_eq_any_59" class="checkbox02" checked="checked">佐賀県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 60 %><label for="q_location_eq_any_60" class="checkbox02" checked="checked">長崎県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 61 %><label for="q_location_eq_any_61" class="checkbox02" checked="checked">熊本県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 62 %><label for="q_location_eq_any_62" class="checkbox02" checked="checked">大分県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 63 %><label for="q_location_eq_any_63" class="checkbox02" checked="checked">宮崎県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 64 %><label for="q_location_eq_any_64" class="checkbox02" checked="checked">鹿児島県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 65 %><label for="q_location_eq_any_65" class="checkbox02" checked="checked">沖縄県</label>
-        <%= f.check_box :location_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 66 %><label for="q_location_eq_any_66" class="checkbox02" checked="checked">海外</label>
-
-        
-      </div>
+ <% if params[:q].present? %>
+          <%= f.collection_check_boxes(:location_eq_any, User.locations, :last, :first, checked: params[:q][:location_eq_any]) do |b| %>
+          <%= b.label(class: "checkbox02 #{ 'checked' if params[:q][:location_eq_any].map{ |a| a.to_i }&.include?(b.object.last)}") { b.check_box(class: "research_check_box") + b.text } %>
+        <% end %>
+        <% else %>
+            <%= f.collection_check_boxes(:location_eq_any, User.locations, :last, :first) do |b| %>
+            <%= b.label(class: "checkbox02 ") { b.check_box(class: "research_check_box") + b.text } %>
+          <% end %>
+        <% end %>
 
 
       <div class="research_title">
       <i class="fas fa-clock"></i><%= " 年次" %>
         </div>
-        <div class="research_check">
-      <%= f.check_box :annual_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 68 %><label for="q_annual_eq_any_68" class="checkbox02" checked="checked">0年目（学生）</label>
-      <%= f.check_box :annual_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 69 %><label for="q_annual_eq_any_69" class="checkbox02" checked="checked">1年目</label>
-      <%= f.check_box :annual_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 70 %><label for="q_annual_eq_any_70" class="checkbox02" checked="checked">2-5年目</label>
-      <%= f.check_box :annual_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 71 %><label for="q_annual_eq_any_71" class="checkbox02" checked="checked">6-10年目</label>
-      <%= f.check_box :annual_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 72 %><label for="q_annual_eq_any_72" class="checkbox02" checked="checked">11-20年目</label>
-      <%= f.check_box :annual_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 73 %><label for="q_annual_eq_any_73" class="checkbox02" checked="checked">21-30年目</label>
-      <%= f.check_box :annual_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 74 %><label for="q_annual_eq_any_74" class="checkbox02" checked="checked">31年目以上</label>
-    </div>
+        <% if params[:q].present? %>
+          <%= f.collection_check_boxes(:annual_eq_any, User.annuals, :last, :first, checked: params[:q][:annual_eq_any]) do |b| %>
+          <%= b.label(class: "checkbox02 #{ 'checked' if params[:q][:annual_eq_any].map{ |a| a.to_i }&.include?(b.object.last)}") { b.check_box(class: "research_check_box") + b.text } %>
+        <% end %>
+        <% else %>
+            <%= f.collection_check_boxes(:annual_eq_any, User.annuals, :last, :first) do |b| %>
+            <%= b.label(class: "checkbox02 ") { b.check_box(class: "research_check_box") + b.text } %>
+          <% end %>
+        <% end %>
 
 
       <div class="research_title">
         <i class="fas fa-book-open"></i><%= " 専門科目" %>
         </div>
-        <div class="research_check">
-        <%= f.check_box :subject_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 75 %><label for="q_subject_eq_any_75" class="checkbox02" checked="checked">国語</label>
-        <%= f.check_box :subject_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 76 %><label for="q_subject_eq_any_76" class="checkbox02" checked="checked">算数・数学</label>
-        <%= f.check_box :subject_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 77 %><label for="q_subject_eq_any_77" class="checkbox02" checked="checked">理科</label>
-        <%= f.check_box :subject_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 78 %><label for="q_subject_eq_any_78" class="checkbox02" checked="checked">社会</label>
-        <%= f.check_box :subject_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 79 %><label for="q_subject_eq_any_79" class="checkbox02" checked="checked">音楽</label>
-        <%= f.check_box :subject_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 80 %><label for="q_subject_eq_any_80" class="checkbox02" checked="checked">技術</label>
-        <%= f.check_box :subject_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 81 %><label for="q_subject_eq_any_81" class="checkbox02" checked="checked">家庭科</label>
-        <%= f.check_box :subject_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 82 %><label for="q_subject_eq_any_82" class="checkbox02" checked="checked">体育</label>
-        <%= f.check_box :subject_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 83 %><label for="q_subject_eq_any_83" class="checkbox02" checked="checked">保健</label>
-        <%= f.check_box :subject_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 84 %><label for="q_subject_eq_any_84" class="checkbox02" checked="checked">なし（小学校教員）</label>
-        <%= f.check_box :subject_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 85 %><label for="q_subject_eq_any_85" class="checkbox02" checked="checked">その他（特別支援など）</label>
-        </div>
+        <% if params[:q].present? %>
+          <%= f.collection_check_boxes(:subject_eq_any, User.subjects, :last, :first, checked: params[:q][:subject_eq_any]) do |b| %>
+          <%= b.label(class: "checkbox02 #{ 'checked' if params[:q][:subject_eq_any].map{ |a| a.to_i }&.include?(b.object.last)}") { b.check_box(class: "research_check_box") + b.text } %>
+        <% end %>
+        <% else %>
+            <%= f.collection_check_boxes(:subject_eq_any, User.subjects, :last, :first) do |b| %>
+            <%= b.label(class: "checkbox02 ") { b.check_box(class: "research_check_box") + b.text } %>
+          <% end %>
+        <% end %>
 
 
 
       <div class="research_title">
         <i class="fas fa-futbol"></i><%=" 部活（サークル）顧問" %>
         </div>
-        <div class="research_check">
-        <%= f.check_box :club_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 86 %><label for="q_club_eq_any_86" class="checkbox02" checked="checked">なし</label>
-        <%= f.check_box :club_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 87 %><label for="q_club_eq_any_87" class="checkbox02" checked="checked">サッカー</label>
-        <%= f.check_box :club_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 88 %><label for="q_club_eq_any_88" class="checkbox02" checked="checked">野球</label>
-        <%= f.check_box :club_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 89 %><label for="q_club_eq_any_89" class="checkbox02" checked="checked">バスケットボール</label>
-        <%= f.check_box :club_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 90 %><label for="q_club_eq_any_90" class="checkbox02" checked="checked">テニス</label>
-        <%= f.check_box :club_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 91 %><label for="q_club_eq_any_91" class="checkbox02" checked="checked">卓球</label>
-        <%= f.check_box :club_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 92 %><label for="q_club_eq_any_92" class="checkbox02" checked="checked">陸上</label>
-        <%= f.check_box :club_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 93 %><label for="q_club_eq_any_93" class="checkbox02" checked="checked">バトミントン</label>
-        <%= f.check_box :club_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 94 %><label for="q_club_eq_any_94" class="checkbox02" checked="checked">ハンドボール</label>
-        <%= f.check_box :club_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 95 %><label for="q_club_eq_any_95" class="checkbox02" checked="checked">体操</label>
-        <%= f.check_box :club_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 96 %><label for="q_club_eq_any_96" class="checkbox02" checked="checked">水泳</label>
-        <%= f.check_box :club_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 97 %><label for="q_club_eq_any_97" class="checkbox02" checked="checked">柔道</label>
-        <%= f.check_box :club_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 98 %><label for="q_club_eq_any_98" class="checkbox02" checked="checked">剣道</label>
-        <%= f.check_box :club_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 99 %><label for="q_club_eq_any_99" class="checkbox02" checked="checked">弓道</label>
-        <%= f.check_box :club_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 100 %><label for="q_club_eq_any_100" class="checkbox02" checked="checked">茶道</label>
-        <%= f.check_box :club_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 101 %><label for="q_club_eq_any_101" class="checkbox02" checked="checked">美術</label>
-        <%= f.check_box :club_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 102 %><label for="q_club_eq_any_102" class="checkbox02" checked="checked">書道</label>
-        <%= f.check_box :club_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 103 %><label for="q_club_eq_any_103" class="checkbox02" checked="checked">合唱</label>
-        <%= f.check_box :club_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 104 %><label for="q_club_eq_any_104" class="checkbox02" checked="checked">吹奏楽</label>
-        <%= f.check_box :club_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 105 %><label for="q_club_eq_any_105" class="checkbox02" checked="checked">その他</label>
-      </div>
+        <% if params[:q].present? %>
+          <%= f.collection_check_boxes(:club_eq_any, User.clubs, :last, :first, checked: params[:q][:club_eq_any]) do |b| %>
+          <%= b.label(class: "checkbox02 #{ 'checked' if params[:q][:club_eq_any].map{ |a| a.to_i }&.include?(b.object.last)}") { b.check_box(class: "research_check_box") + b.text } %>
+        <% end %>
+        <% else %>
+            <%= f.collection_check_boxes(:club_eq_any, User.clubs, :last, :first) do |b| %>
+            <%= b.label(class: "checkbox02 ") { b.check_box(class: "research_check_box") + b.text } %>
+          <% end %>
+        <% end %>
 
       <div class="research_title">
         <i class="fas fa-transgender-alt"></i><%= " 性別" %>
       </div>
-      <div class="research_check">
-      <%= f.check_box :sex_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 1 %><label for="q_sex_eq_any_1" class="checkbox02" checked="checked">男性</label>
-      <%= f.check_box :sex_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 2 %><label for="q_sex_eq_any_2" class="checkbox02">女性</label>
-      <%= f.check_box :sex_eq_any, { multiple: true, include_hidden: false ,class: "research_check_box"}, 3 %><label for="q_sex_eq_any_3" class="checkbox02">その他</label>
-    </div>
+        <% if params[:q].present? %>
+          <%= f.collection_check_boxes(:sex_eq_any, User.sexes, :last, :first, checked: params[:q][:sex_eq_any]) do |b| %>
+          <%= b.label(class: "checkbox02 #{ 'checked' if params[:q][:sex_eq_any].map{ |a| a.to_i }&.include?(b.object.last)}") { b.check_box(class: "research_check_box") + b.text } %>
+        <% end %>
+        <% else %>
+            <%= f.collection_check_boxes(:sex_eq_any, User.sexes, :last, :first) do |b| %>
+            <%= b.label(class: "checkbox02 ") { b.check_box(class: "research_check_box") + b.text } %>
+          <% end %>
+        <% end %>
 
 
     <%= f.submit "検索" , :class => 'research_button',:id=>'research_button'%>
