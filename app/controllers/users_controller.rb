@@ -28,7 +28,7 @@ before_action :authenticate_user!, :only => [:show]
         @user = User.find_by(id: params[:id])
         @user.destroy
         flash[:success] = 'ユーザーを削除しました。'
-        redirect_to("/")
+        redirect_to("/")  
     end
 
 

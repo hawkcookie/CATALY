@@ -19,7 +19,7 @@
 　<!--検索機能　ボックス-->
 
   <div class="research_title">
-    <%= search_form_for @q,url:"/" do |f| %>
+    <%= search_form_for @q,url: root_path(anchor: "research_first") do |f| %>
     <i class="fas fa-pencil-alt"></i><%= f.label :name_cont, " フリーワード" %>
   </div>
 
@@ -144,7 +144,7 @@
   <!--ユーザー一覧-->
   <div class="all_users">
 
-    <div class="user_midashi">
+   <div class="user_midashi" id="research_first">
       <b><i class="fas fa-users"></i>ユーザー一覧</b>
     </div>
 
@@ -179,7 +179,7 @@
         <%= link_to "ログアウト", destroy_user_session_path, method: :delete %> /<!-- ログアウトをする -->
         <%= link_to "利用規約", "https://www.kiyac.app/termsOfService/IrzxsMlYy79dPm8Re1OX", target: :_blank%>/ 
         <br><%= link_to "プライバシーポリシー", "https://www.kiyac.app/plivacypolicy/H6rB0RKR7nEDnfaNb3TJ" ,target: :_blank %> /
-        <%= link_to '退会', user_path(current_user), method: :delete %>/
+        <%= link_to '退会', user_path(current_user), method: :delete, data: {confirm: "本当に退会しますか？退会するとデータは元には戻りません。"} %>/
         <%= link_to "お問い合わせ", "https://docs.google.com/forms/d/e/1FAIpQLSeF8TVUKlYUpzIUQHzXn9_q7nx8c6jjis266VydmizX40f69w/viewform?vc=0&c=0&w=1&flr=0&gxids=7628" ,target: :_blank %> /
         
 
@@ -262,7 +262,7 @@
   　<!--検索機能　ボックス-->
 
   <div class="research_title">
-    <%= search_form_for @q,url:"/" do |f| %>
+    <%= search_form_for @q,url: root_path(anchor: "research_first") do |f| %>
     <i class="fas fa-pencil-alt"></i><%= f.label :name_cont, " フリーワード" %>
   </div>
 
@@ -387,7 +387,7 @@
     <!--ユーザー一覧-->
     <div class="all_users">
 
-    <div class="user_midashi">
+    <div class="user_midashi" id="research_first">
       <b><i class="fas fa-users"></i>ユーザー一覧</b>
     </div>
 

@@ -66,9 +66,11 @@
       <div class="my_profile_content">
       <%= f.label :sex %><br />
       </div>
-      <label><%= f.radio_button :sex, :"男性" %>男性</label>
-      <label><%= f.radio_button :sex, :"女性" %>女性</label>
-      <label><%= f.radio_button :sex, :"その他" %>その他</label>
+      <div class="label_css">
+        <label><%= f.radio_button :sex, :"男性" %>男性</label>
+        <label><%= f.radio_button :sex, :"女性" %>女性</label>
+        <label><%= f.radio_button :sex, :"その他" %>その他</label>
+      </div>
    </div>
 
 
@@ -76,6 +78,7 @@
      <div class="my_profile_content">
      <%= f.label :annual %><br />
      </div>
+     <div class="label_css">
      <label><%= f.radio_button :annual, :"0年目（学生）" %>0年目（学生）</label>
      <label><%= f.radio_button :annual, :"1年目" %>1年目</label>
      <label><%= f.radio_button :annual, :"2-5年目" %>2-5年目</label>
@@ -83,12 +86,14 @@
      <label><%= f.radio_button :annual, :"11-20年目" %>11-20年目</label>
      <label><%= f.radio_button :annual, :"21-30年目" %>21-30年目</label>
      <label><%= f.radio_button :annual, :"31年目以上" %>31年目以上</label>
+     </div>
   </div>
 
    <div class="field">
      <div class="my_profile_content">
      <%= f.label :work %><br />
      </div>
+     <div class="label_css">
      <label><%= f.radio_button :work, :"幼稚園教員" %>幼稚園教員</label>
      <label><%= f.radio_button :work, :"保育園教員" %>保育園教員</label>
      <label><%= f.radio_button :work, :"公立小学教員" %>公立小学教員</label>
@@ -105,12 +110,14 @@
      <label><%= f.radio_button :work, :"メーカー" %>メーカー</label>
      <label><%= f.radio_button :work, :"事務職員" %>事務職員</label>
      <label><%= f.radio_button :work, :"その他" %>その他</label>
+     </div>
   </div>
 
    <div class="field">
      <div class="my_profile_content">
      <%= f.label :position %><br />
      </div>
+     <div class="label_css">
      <label><%= f.radio_button :position, :"校長" %>校長</label>
      <label><%= f.radio_button :position, :"副校長" %>副校長</label>
      <label><%= f.radio_button :position, :"教頭" %>教頭</label>
@@ -122,12 +129,14 @@
      <label><%= f.radio_button :position, :"教育相談部" %>教育相談部</label>
      <label><%= f.radio_button :position, :"生活指導部" %>生活指導部</label>
      <label><%= f.radio_button :position, :"その他" %>その他</label>
+     </div>
   </div>
 
   <div class="field">
     <div class="my_profile_content">
     <%= f.label :location %><br />
     </div>
+    <div class="label_css">
     <label><%= f.radio_button :location, :"北海道" %>北海道</label>
     <label><%= f.radio_button :location, :"青森県" %>青森県</label>
     <label><%= f.radio_button :location, :"岩手県" %>岩手県</label>
@@ -175,6 +184,7 @@
     <label><%= f.radio_button :location, :"鹿児島県" %>鹿児島県</label>
     <label><%= f.radio_button :location, :"沖縄県" %>沖縄県</label>
     <label><%= f.radio_button :location, :"海外" %>海外</label>
+    </div>
  </div>
 
 
@@ -182,6 +192,7 @@
    <div class="my_profile_content">
      <%= f.label :subject %><br />
     </div>
+    <div class="label_css">
    <label><%= f.radio_button :subject, :"国語" %>国語</label>
    <label><%= f.radio_button :subject, :"算数・数学" %>算数・数学</label>
    <label><%= f.radio_button :subject, :"理科" %>理科</label>
@@ -193,12 +204,14 @@
    <label><%= f.radio_button :subject, :"保健" %>保健</label>
    <label><%= f.radio_button :subject, :"保健" %>なし（小学校教員）</label>
    <label><%= f.radio_button :subject, :"その他" %>その他（特別支援など）</label>
+   </div>
 </div>
 
 <div class="field">
   <div class="my_profile_content">
     <label><%= f.label :club %><br />
   </div>
+  <div class="label_css">
   <label><%= f.radio_button :club, :"なし" %>なし</label>
   <label><%= f.radio_button :club, :"サッカー" %>サッカー</label>
   <label><%= f.radio_button :club, :"野球" %>野球</label>
@@ -219,6 +232,7 @@
   <label><%= f.radio_button :club, :"合唱" %>合唱</label>
   <label><%= f.radio_button :club, :"吹奏楽" %>吹奏楽</label>
   <label><%= f.radio_button :club, :"その他" %>その他</label>
+  </div>
 
 </div>
 
@@ -227,8 +241,10 @@
   <div class="my_profile_content">
     <%= f.label :free_profile %>
   </div>
+  <div class="label_css">
   <%= f.text_area :free_profile %>
       <br>※ご自身のキャリアやご経験された学級などご記載ください。<br/>
+  </div>
 </div>
 
 
@@ -237,9 +253,11 @@
   <div class="my_profile_content">
     <label><%= f.label :ユーザー一覧へ表示しますか？ %><br />
   </div>
+  <div class="label_css">
   <label><%= f.radio_button :consalting, :"はい" %>はい</label>
   <label><%= f.radio_button :consalting, :"いいえ" %>いいえ</label>
 <br>※進路に悩んでいる教育学部の学生や視野・知識を広げたい先生から連絡が受け取れる状態になります。
+</div>
 
 </div>
 
