@@ -41,7 +41,7 @@
       <% if m.user.name == current_user.name %>
           <div class="my_message">
               <div class="my_content">
-                <%= simple_format(m.content) %>
+                <%= safe_join(m.content.split("\n"), tag(:br)) %>
               </div>
 
             <div class="user_right">
@@ -53,7 +53,7 @@
       <% else %>
             <div class="your_message">
               <div class="your_content">
-                <%= simple_format(m.content) %>
+                <%= safe_join(m.content.split("\n"), tag(:br)) %>
               </div>
               <div class="user_right">
                 <%= m.created_at.strftime('%Y/%m/%d %H:%M') %>
