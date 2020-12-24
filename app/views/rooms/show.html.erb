@@ -9,13 +9,13 @@
   <h5>
   <a href="/users/<%= e.user.id %>">
 
-    <% if e.user.sex == "男性" %>
-      <br><img src=<%= e.user.image %> class = "icon_image_men"></br>
-    <% elsif e.user.sex == "女性"%>
-      <br><img src=<%= e.user.image %> class = "icon_image_women"></br>
-    <%else%>
-      <br><img src=<%= e.user.image %> class = "icon_image_other"></br>
-    <% end %>
+      <% if e.user.sex == "男性" %>
+          <br><img src=<%= e.user.image %> class = "icon_image_men"></br>
+        <% elsif e.user.sex == "女性"%>
+          <br><img src=<%= e.user.image %> class = "icon_image_women"></br>
+        <%else%>
+         <br><img src=<%= e.user.image %> class = "icon_image_other"></br>
+      <% end %>
 
   <%= e.user.name%>さん/
   <%= e.user.work%>/
@@ -78,15 +78,23 @@
 
 
 
-      <div class="send">
-        <%= form_for @message do |f| %>
-          <%= f.text_area :content, :placeholder => "メッセージを入力して下さい" , :size => 70 %>
-          <%= f.hidden_field :room_id, :value => @room.id %>
-          <%= button_tag :type => "submit", :class =>"btn_send",:id=>'btn_send' do %>
-          <i class="fas fa-paper-plane"></i>
-        <% end %>
-      </div>
-  <% end %>
+    <div class="send">
+
+<% if @room.entries.size > 1 %>
+    
+
+          <%= form_for @message do |f| %>
+            <%= f.text_area :content, :placeholder => "メッセージを入力して下さい" , :size => 70 %>
+            <%= f.hidden_field :room_id, :value => @room.id %>
+            <%= button_tag :type => "submit", :class =>"btn_send",:id=>'btn_send' do %>
+              <i class="fas fa-paper-plane"></i>
+            <% end %>
+          <% end %>
+
+
+
+      <% end %> 
+    </div>
 
   </div>
 

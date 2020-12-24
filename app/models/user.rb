@@ -28,7 +28,7 @@ class User < ApplicationRecord
     validates :position, presence: true #追記
 
 #プロフィール画像
-  mount_uploader :image, ImageUploader
+  mount_uploader :image, ImageUploader, dependent: :destroy
 
 
 #DM機能
@@ -41,6 +41,6 @@ class User < ApplicationRecord
 
   has_many :rooms, through: :entries, dependent: :destroy
 
-mount_uploader :image, ImageUploader
+  mount_uploader :image, ImageUploader, dependent: :destroy
 
 end

@@ -36,7 +36,7 @@ def opponent_user(room)
   # 中間テーブルから相手ユーザーのデータを取得
   entry = room.entries.where.not(user_id: current_user)
   # 相手ユーザーの名前を取得
-  name = entry.first&.user.present? ? entry.first.user.name : ""
+  name = entry.first&.user.present? ? entry.first.user.name : "退会済みユーザー"
   # 名前を表示
   tag.p "#{name}", class: "dm_list__content__link__box__name"
 end
@@ -45,7 +45,7 @@ end
 def image_user(room)
   # 中間テーブルから相手ユーザーのデータを取得
   entry = room.entries.where.not(user_id: current_user)
-  image = entry.first&.user.present? ? entry.first.user.image : ""
+  image = entry.first&.user.present? ? entry.first.user.image : "no_image.png"
   # 相手ユーザーの画像を表示
   if entry.first&.user&.sex == "男性"
     image_tag "#{image}", class: "icon_image_men_dm"
@@ -54,7 +54,7 @@ def image_user(room)
   elsif entry.first&.user&.sex == "その他"
     image_tag "#{image}", class: "icon_image_other_dm"
   else 
-    image_tag "#{image}"
+    image_tag "#{image}", class: "icon_image_remove_dm"
   end
 end
 end
