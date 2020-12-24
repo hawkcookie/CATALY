@@ -45,18 +45,16 @@ end
 def image_user(room)
   # 中間テーブルから相手ユーザーのデータを取得
   entry = room.entries.where.not(user_id: current_user)
-
-  # 相手ユーザーの画像を取得
   image = entry.first&.user.present? ? entry.first.user.image : "no_image.png"
-
-
   # 相手ユーザーの画像を表示
-  if entry[0].user.sex == "男性"
+  if entry.first&.user.sex == "男性"
     image_tag "#{image}", class: "icon_image_men_dm"
-  elsif entry[0].user.sex == "女性"
+  elsif entry.first&.user.sex == "女性"
     image_tag "#{image}", class: "icon_image_women_dm"
-  else entry[0].user.sex == "その他"
+  elsif entry.first&.user.sex == "その他"
     image_tag "#{image}", class: "icon_image_other_dm"
+  else 
+    image_tag "#{image}"
   end
 end
 end
