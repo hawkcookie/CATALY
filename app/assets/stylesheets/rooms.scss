@@ -373,4 +373,16 @@ margin-right:30px;
   border: 5px solid 	#86F9C5;
 }
 
+// icon画像の条件分岐（退会ユーザー）
+.icon_image_remove_dm{
+  width: 60px;
+  height: 60px;
+  /*サイズ指定*/
+  border-radius: 80px;
+  /*画像を丸くする*/
+  object-fit: cover;
+  /*タテヨコ比を変えないままトリミング*/
+  border: 5px solid 	#808080;
+}
+
       }
