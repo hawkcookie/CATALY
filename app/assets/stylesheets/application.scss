@@ -764,11 +764,17 @@ label{
       margin-left: 100px;
       margin-top:50px;
       margin-bottom: 30px;
+      appearance: none;
+      border: none;
+      border-raduis: none;
     }
 
     .research_button:hover {
       color: #ffffff;
       background-color: #91C191	;
+      appearance: none;
+      border: none;
+      border-raduis: none;
   }
 
      }
