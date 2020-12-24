@@ -47,7 +47,7 @@ def image_user(room)
   entry = room.entries.where.not(user_id: current_user)
 
   # 相手ユーザーの画像を取得
-  image = entry.present? ? entry.first.user.image : "no_image.png"
+  image = entry.first&.user.present? ? entry.first.user.image : "no_image.png"
 
 
   # 相手ユーザーの画像を表示
