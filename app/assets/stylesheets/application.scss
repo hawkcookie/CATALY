@@ -778,4 +778,32 @@ label{
       border-raduis: none;
   }
 
+
+  .btn_new{
+    background:#1AAB8A;
+    color:#fff;
+    border:none;
+    position:relative;
+    height:50px;
+    font-size:30px;
+    padding:0 2em;
+    cursor:pointer;
+    transition:800ms ease all;
+    outline:none;
+    border-radius: 10px;
+    display: block;
+     margin-top:50px;
+     appearance: none;
+     border: none;
+     border-raduis: none;
+  }
+  .btn_new:hover {
+      color: #ffffff;
+      background-color: #1AAB8A	;
+      cursor: pointer;
+      appearance: none;
+      border: none;
+      border-raduis: none;
+  }
+
      }
