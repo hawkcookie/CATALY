@@ -94,7 +94,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   #パスワードリセット関連設定
-config.action_mailer.default_url_options = { host: host }
+config.action_mailer.default_url_options = { :host => 'https://www.rep-rikkyo.com/' }
 #↑を設定したらサーバー再起動
 #gmailを使ったメール送信機能
 config.action_mailer.raise_delivery_errors = true
@@ -108,4 +108,5 @@ config.action_mailer.smtp_settings = {
   :password => "siknnghxnhunqezh",
   :authentication => 'login'
 }
+
 end
