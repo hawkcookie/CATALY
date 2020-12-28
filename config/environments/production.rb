@@ -92,4 +92,20 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  #パスワードリセット関連設定
+config.action_mailer.default_url_options = { host: host }
+#↑を設定したらサーバー再起動
+#gmailを使ったメール送信機能
+config.action_mailer.raise_delivery_errors = true
+config.action_mailer.delivery_method = :smtp
+config.action_mailer.smtp_settings = {
+  :enable_starttls_auto => true,
+  :address => "smtp.gmail.com",
+  :port => 587,
+  :domain => 'smtp.gmail.com',
+  :user_name => "cataly.contact@gmail.com",
+  :password => "siknnghxnhunqezh",
+  :authentication => 'login'
+}
 end
