@@ -23,7 +23,7 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'mini_racer', platforms: :ruby
 
 gem 'font-awesome-sass'
-gem 'bootstrap', '~> 4.1.1'
+
 gem 'dotenv-rails'
 
 gem 'rails-i18n'
@@ -51,7 +51,7 @@ gem "jquery-rails"
 # gem 'capistrano-rails', group: :development
 
 # Reduces boot times through caching; required in config/boot.rb
-gem 'bootsnap', '>= 1.1.0', require: false
+
 
 
 gem 'fog-aws'

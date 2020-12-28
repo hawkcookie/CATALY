@@ -12,7 +12,7 @@
 
     <div class="field">
       <div class="my_profile_content">
-        <%= f.label :email %><br />
+        <%= f.label :email %>  　<div class="mandatory">必須</div><br />
       </div>
       <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
     </div>
@@ -20,7 +20,7 @@
 
     <div class="field">
       <div class="my_profile_content">
-      <%= f.label :name %> <br />
+      <%= f.label :name %>　<div class="mandatory1">必須</div> <br />
       </div>
       <%= f.text_field :name %>
     </div>
@@ -33,14 +33,14 @@
       <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> 文字以上で設定してください。)</em>
       <% end %><br />
-      <%= f.password_field :password, autocomplete: "new-password" %>
+      <%= f.password_field :password, autocomplete: "new-password" %>　<div class="mandatory2">必須</div>
     </div>
 
     <div class="field">
       <div class="my_profile_content">
       <%= f.label :password_confirmation %><br />
       </div>
-      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>　<div class="mandatory2">必須</div>
     </div>
 
 
@@ -101,10 +101,9 @@
      <label><%= f.radio_button :work, :"私立高校教員" %>私立高校教員</label>
      <label><%= f.radio_button :work, :"大学教員" %>大学教員</label>
      <label><%= f.radio_button :work, :"塾講師" %>塾講師</label>
-     <label><%= f.radio_button :work, :"教材開発" %>教材開発</label>
+     <label><%= f.radio_button :work, :"民間企業" %>民間企業</label>
      <label><%= f.radio_button :work, :"学生" %>学生</label>
      <label><%= f.radio_button :work, :"NPO団体" %>NPO団体</label>
-     <label><%= f.radio_button :work, :"メーカー" %>メーカー</label>
      <label><%= f.radio_button :work, :"事務職員" %>事務職員</label>
      <label><%= f.radio_button :work, :"その他" %>その他</label>
     </div>
@@ -142,7 +141,7 @@
     <label><%= f.radio_button :location, :"群馬県" %>群馬県</label>
     <label><%= f.radio_button :location, :"埼玉県" %>埼玉県</label>
     <label><%= f.radio_button :location, :"千葉県" %>千葉県</label>
-    <label><%= f.radio_button :location, :"東京県" %>東京県</label>
+    <label><%= f.radio_button :location, :"東京都" %>東京都</label>
     <label><%= f.radio_button :location, :"神奈川県" %>神奈川県</label>
     <label><%= f.radio_button :location, :"新潟県" %>新潟県</label>
     <label><%= f.radio_button :location, :"富山県" %>富山県</label>
@@ -192,7 +191,7 @@
    <label><%= f.radio_button :subject, :"家庭科" %>家庭科</label>
    <label><%= f.radio_button :subject, :"体育" %>体育</label>
    <label><%= f.radio_button :subject, :"保健" %>保健</label>
-   <label><%= f.radio_button :subject, :"なし（小学校教員）" %>なし（小学校教員）</label>
+   <label><%= f.radio_button :subject, :"なし（小学校教員など）" %>なし（小学校教員など）</label>
    <label><%= f.radio_button :subject, :"その他（特別支援など）" %>その他（特別支援など）</label>
   </div>
 
@@ -232,7 +231,7 @@
   </div>
   <div class="label_css">
   <%= f.text_area :free_profile %>
-      <br>※ご自身のキャリアやご経験された学級などご記載ください。<br/>
+      <br>※ご経験された学級や、ご相談したい内容等をご記入下さい。<br/>
   </div>
 </div>
 
@@ -245,7 +244,7 @@
   <div class="label_css">
   <label><%= f.radio_button :consalting, :"はい" %>はい</label>
   <label><%= f.radio_button :consalting, :"いいえ" %>いいえ</label>
-<br>※進路に悩んでいる教育学部の学生や視野・知識を広げたい先生から連絡が受け取れる状態になります。
+<br>※他の方からの連絡が受け取れる状態になります。
 </div>
 
 </div>

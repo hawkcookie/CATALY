@@ -16,7 +16,42 @@
  @import 'font-awesome-sprockets';
  @import 'font-awesome';
 
-　　　　　　　　　
+
+ .mandatory {
+   font-weight: 900;
+   font-size: 10px;
+  color:#1AAB8A;/*文字色*/
+  border: solid 1px white;/*線*/
+  border-radius: 1px;/*角の丸み*/
+  display: inline-block;
+  background:white;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+.mandatory1 {
+  font-size: 10px;
+ color:white;/*文字色*/
+ border: solid 1px white;/*線*/
+ border-radius: 1px;/*角の丸み*/
+ display: inline-block;
+ background:#1AAB8A;
+ padding-left: 3px;
+ padding-right: 3px;
+}
+
+.mandatory2 {
+  font-size: 10px;
+ color:white;/*文字色*/
+ border: solid 1px white;/*線*/
+ border-radius: 3px;/*角の丸み*/
+ display: inline-block;
+ background:#1AAB8A;
+ padding-left: 3px;
+ padding-right: 3px;
+}
+
+ 　　
  input{
    font-size: 16px;
  }
@@ -410,6 +445,7 @@ color:#707070;
 
 .field {
 font-size:16px;
+color:#707070;
 }
 
 // ヘッダー_メッセージアイコン

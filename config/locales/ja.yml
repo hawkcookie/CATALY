@@ -2,7 +2,7 @@ ja:
   activerecord:
     attributes:
       user:
-        name: 名前
+        name: ユーザー名
         image: トップ画像
         sex: 性別
         work: 職業
