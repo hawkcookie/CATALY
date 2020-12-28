@@ -20,51 +20,51 @@
 
     <div class="field">
       <div class="my_profile_content">
-      <%= f.label :name %>　<div class="mandatory1">必須</div> <br />
-      </div>
-      <%= f.text_field :name %>
-    </div>
-
-
-    <div class="field">
-      <div class="my_profile_content">
-      <%= f.label :password %>
+      <%= f.label :password %>  　<div class="mandatory">必須</div>
       </div>
       <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> 文字以上で設定してください。)</em>
       <% end %><br />
-      <%= f.password_field :password, autocomplete: "new-password" %>　<div class="mandatory2">必須</div>
+      <%= f.password_field :password, autocomplete: "new-password" %>
     </div>
 
     <div class="field">
       <div class="my_profile_content">
-      <%= f.label :password_confirmation %><br />
+      <%= f.label :password_confirmation %>  　<div class="mandatory">必須</div><br />
       </div>
-      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>　<div class="mandatory2">必須</div>
-    </div>
-
-
-    <!--出身大学-->
-    <div class="field">
-      <div class="my_profile_content">
-      <%= f.label :出身大学 %> <br />
-      </div>
-      <%= f.text_field :uni %>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
     </div>
 
     <!--画像登録-->
     <div class="field">
       <div class="my_profile_content">
-      <%= f.label :トップ画像 %><br/>
+      <%= f.label :トップ画像 %>  　<div class="mandatory">必須</div><br/>
       </div>
       <%= f.file_field :image %>
     </div>
+
+
+    <div class="field">
+      <div class="my_profile_content">
+      <%= f.label :name %>  　<div class="mandatory">必須</div> <br />
+      </div>
+      <%= f.text_field :name %>
+    </div>
+
+    <!--出身大学-->
+    <div class="field">
+      <div class="my_profile_content">
+      <%= f.label :出身大学 %>  　<div class="mandatory">必須</div> <br />
+      </div>
+      <%= f.text_field :uni %>
+    </div>
+
 
 　<!--チェックボックス-->
 
     <div class="field">
       <div class="my_profile_content">
-      <%= f.label :sex %><br />
+      <%= f.label :sex %>  　<div class="mandatory">必須</div><br />
       </div>
       <div class="label_css">
         <label><%= f.radio_button :sex, :"男性" %>男性</label>
@@ -76,7 +76,7 @@
 
        <div class="field">
        <div class="my_profile_content">
-         <%= f.label :年次 %><br />
+         <%= f.label :年次 %>  　<div class="mandatory">必須</div><br />
        </div>
      <label><%= f.radio_button :annual, :"0年目（学生）" %>0年目（学生）</label>
      <label><%= f.radio_button :annual, :"1年目" %>1年目</label>
@@ -89,7 +89,7 @@
 
      <div class="field">
        <div class="my_profile_content">
-         <%= f.label :職業 %><br />
+         <%= f.label :職業 %>  　<div class="mandatory">必須</div><br />
        </div>
      <label><%= f.radio_button :work, :"幼稚園教員" %>幼稚園教員</label>
      <label><%= f.radio_button :work, :"保育園教員" %>保育園教員</label>
@@ -110,7 +110,7 @@
 
    <div class="field">
      <div class="my_profile_content">
-     <%= f.label :職位 %><br />
+     <%= f.label :職位 %>  　<div class="mandatory">必須</div><br />
      </div>
      <label><%= f.radio_button :position, :"校長" %>校長</label>
      <label><%= f.radio_button :position, :"副校長" %>副校長</label>
@@ -127,7 +127,7 @@
 
     <div class="field">
       <div class="my_profile_content">
-        <%= f.label :お住まい %><br />
+        <%= f.label :お住まい %>  　<div class="mandatory">必須</div><br />
       </div>
     <label><%= f.radio_button :location, :"北海道" %>北海道</label>
     <label><%= f.radio_button :location, :"青森県" %>青森県</label>
@@ -180,7 +180,7 @@
 
    <div class="field">
      <div class="my_profile_content">
-       <%= f.label :専門科目 %><br />
+       <%= f.label :専門科目 %>  　<div class="mandatory">必須</div><br />
      </div>
    <label><%= f.radio_button :subject, :"国語" %>国語</label>
    <label><%= f.radio_button :subject, :"算数・数学" %>算数・数学</label>
@@ -197,7 +197,7 @@
 
   <div class="field">
     <div class="my_profile_content">
-      <%= f.label :部活動 %><br />
+      <%= f.label :部活動 %>  　<div class="mandatory">必須</div><br />
     </div>
 
   <label><%= f.radio_button :club, :"なし" %>なし</label>
@@ -227,7 +227,7 @@
 <!--自由記述欄-->
 <div class="field">
   <div class="my_profile_content">
-    <%= f.label :free_profile %>
+    <%= f.label :free_profile %>  　<div class="mandatory">任意</div>
   </div>
   <div class="label_css">
   <%= f.text_area :free_profile %>
@@ -239,7 +239,7 @@
 
 <div class="field">
   <div class="my_profile_content">
-    <label><%= f.label :ユーザー一覧へ表示しますか？ %><br />
+    <label><%= f.label :ユーザー一覧へ表示しますか？ %>  　<div class="mandatory">必須</div><br />
   </div>
   <div class="label_css">
   <label><%= f.radio_button :consalting, :"はい" %>はい</label>

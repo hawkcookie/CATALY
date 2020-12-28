@@ -4,6 +4,12 @@
     <h2>ログイン画面</h2>
   </div>
 
+  <div class="default_login">
+    <% flash.each do |key, value| %>
+      <%= content_tag(:div, value, class: "#{key}") %>
+    <% end %>
+  </div>
+
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <div class="my_profile_content">
@@ -18,7 +24,8 @@
     </div>
     <%= f.password_field :password, autocomplete: "current-password" %>
   </div>
-
+<br>
+  <%= link_to "※パスワードをお忘れの方はこちら", new_user_password_path %>
 
   <div class="actions">
     <%= f.submit "ログイン" ,:class => 'research_button',:id=>'research_button'%>
