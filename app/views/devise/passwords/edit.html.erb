@@ -1,11 +1,19 @@
-<h2>Change your password</h2>
 
+
+<div class="login_page">
+<div class="button">
+  <div class="research_title">
+
+<h2>新しいパスワードを設定</h2>
+</div>
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
   <%= f.hidden_field :reset_password_token %>
 
   <div class="field">
-    <%= f.label :password, "New password" %><br />
+  <div class="my_profile_content">
+    <%= f.label :password, "新しいパスワード" %><br />
+  </div>
     <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> 文字以上で設定してください。)</em><br />
     <% end %>
@@ -13,13 +21,17 @@
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation, "Confirm new password" %><br />
+  <div class="my_profile_content">
+    <%= f.label :password_confirmation, "新しいパスワード（確認用）" %><br />
+    </div>
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Change my password" %>
+    <%= f.submit "更新",:class => 'research_button',:id=>'research_button' %>
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+
+</div>
+</div>
