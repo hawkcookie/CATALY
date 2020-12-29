@@ -105,7 +105,7 @@ config.action_mailer.smtp_settings = {
   :port => 587,
   :domain => 'smtp.gmail.com',
   :user_name => "cataly.contact@gmail.com",
-  :password => "siknnghxnhunqezh",
+  :password => ENV['pass'],
   :authentication => 'login'
 }
 

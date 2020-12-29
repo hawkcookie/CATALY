@@ -24,7 +24,6 @@ gem 'uglifier', '>= 1.3.0'
 
 gem 'font-awesome-sass'
 gem 'bootstrap', '~> 4.1.1'
-gem 'dotenv-rails'
 
 gem 'rails-i18n'
 gem 'carrierwave'
