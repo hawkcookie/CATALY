@@ -88,6 +88,11 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'kaminari'
 
+#　ER図作成ツール
+group :development, :test do
+  gem 'rails-erd'
+end
+
 # 以下、heroku練習用
 group :production do
   gem 'pg'
