@@ -10,7 +10,6 @@ class MessagesController < ApplicationController
      @room=@message.room
      # ここまでを追加
       if @message.save
-
        # ここから
        @roommembernotme=Entry.where(room_id: @room.id).where.not(user_id: current_user.id)
        @theid=@roommembernotme.find_by(room_id: @room.id)
@@ -21,6 +20,11 @@ class MessagesController < ApplicationController
            visitor_id: current_user.id,
            action: 'dm'
        )
+
+       # メッセージを送った際にメールで伝える。
+       NotificationMailer.send_mail(notification.visited).deliver_now
+
+
        # 自分の投稿に対するコメントの場合は、通知済みとする
           if notification.visitor_id == notification.visited_id
            notification.checked = true
