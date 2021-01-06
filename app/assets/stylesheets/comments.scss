@@ -30,13 +30,12 @@
 .research_check_box{
   margin-right: 20px;
   display: inline-block;
+  display: none;
 }
 
 // ここからチェックボックスを足掻いています
 
-input[type=checkbox] {
-  display: none;
-}
+
 .checkbox02 {
 box-sizing: border-box;
 cursor: pointer;

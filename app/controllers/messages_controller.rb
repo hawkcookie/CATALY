@@ -2,6 +2,7 @@ class MessagesController < ApplicationController
   before_action :authenticate_user!, :only => [:create]
 
   def create
+    
     if Entry.where(:user_id => current_user.id, :room_id => params[:message][:room_id]).present?
       @message = Message.create(params.require(:message).permit(:user_id, :content, :room_id).merge(:user_id => current_user.id))
       redirect_to "/rooms/#{@message.room_id}"
@@ -21,9 +22,11 @@ class MessagesController < ApplicationController
            action: 'dm'
        )
 
+       @user=notification.visited
+       if @user.send_mail
        # メッセージを送った際にメールで伝える。
-       NotificationMailer.send_mail(notification.visited).deliver_now
-
+        NotificationMailer.send_mail(notification.visited).deliver_now
+      end
 
        # 自分の投稿に対するコメントの場合は、通知済みとする
           if notification.visitor_id == notification.visited_id
