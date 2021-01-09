@@ -78,40 +78,21 @@
 
     <div class="send">
 
-<% if @room.entries.size > 1 %>
-    
-
+      <% if @room.entries.size > 1 %>
           <%= form_for @message do |f| %>
-            <%= f.text_area :content, :placeholder => "メッセージを入力して下さい" , :size => 70 %>
-            <%= f.hidden_field :room_id, :value => @room.id %>
+              <%= f.text_area :content, :placeholder => "メッセージを入力して下さい" , :size => 70 %>
+              <%= f.hidden_field :room_id, :value => @room.id %>
             <%= button_tag :type => "submit", :class =>"btn_send",:id=>'btn_send',
-    data: { disable_with: '...<i class="fas fa-paper-plane"></i>' }  do %>
-              <i class="fas fa-paper-plane"></i>
+                data: { disable_with: '...<i class="fas fa-paper-plane"></i>' } do %>
+                <i class="fas fa-paper-plane"></i>
             <% end %>
           <% end %>
-
-
-
       <% end %> 
+
     </div>
 
+    <h3 id="final"></h3>
+
   </div>
-
-
-
-
-<!--<%= link_to "DM一覧", "/rooms/:id/index" %>-->
-
-<!--<%= link_to "ユーザー一覧に戻る", "/" %>-->
-
-
-
-
-<script type="text/javascript">
-$(function(){
-var targetOffset = $('#btn_send').offset().top;
-$('html,body').animate({scrollTop: targetOffset}, "slow");
-});
-</script>
 
 

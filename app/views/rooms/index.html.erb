@@ -3,11 +3,12 @@
 <div class="dm_list">
 <% @rooms.each do |room| %>
     <div class="dm_list__content">
-      <%= link_to room_path(room), class: "dm_list__content__link"  do%>
-          <div class="dm_list__content__link__box">
-            <p class="dm_list__content__link__box__image">
-              <%= image_user(room) %></p>
-          </div>
+      <%= link_to room_path(room, anchor: 'final'), class: "dm_list__content__link"  do%>
+          　<div class="dm_list__content__link__box">
+           　 <p class="dm_list__content__link__box__image">
+              　<%= image_user(room) %>
+              </p>
+          　</div>
       <%end%>
 
 <% if room.notifications.where(visited_id: current_user, checked: false).present? %>
