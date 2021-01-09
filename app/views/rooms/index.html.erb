@@ -1,37 +1,41 @@
 
 
 <div class="dm_list">
-  <% @rooms.each do |room| %>
+<% @rooms.each do |room| %>
     <div class="dm_list__content">
-  　  <div class="dm_list__content__link__box">
-        <p class="dm_list__content__link__box__image">
-        <%= link_to room_path(room , anchor: 'final') do %>
-      　  <%= image_user(room) %>
-        <% end %>
-        </p>
-    　</div>
-      <% if room.notifications.where(visited_id: current_user, checked: false).present? %>
-        <div class="chat_name_messege">
-          <p class="dm_list__content__link__box__name">
-          <%= opponent_user(room) %>
-          </p>
+      <%= link_to room_path(room, anchor:'final'), class: "dm_list__content__link"  do%>
+          <div class="dm_list__content__link__box">
+            <p class="dm_list__content__link__box__image">
+              <%= image_user(room) %></p>
+          </div>
+      <%end%>
+
+<% if room.notifications.where(visited_id: current_user, checked: false).present? %>
+      <div class="chat_name_messege">
+        <p class="dm_list__content__link__box__name">
+          <%= opponent_user(room) %></p>
+        <p class="dm_list__content_time__link__box__name">
+          <b><%= most_new_message_preview(room) %></b></p>
+      </div>
+
+      <%else%>
+
+      <div class="chat_name_messege">
+        <p class="dm_list__content__link__box__name">
+          <%= opponent_user(room) %></p>
           <p class="dm_list__content_time__link__box__name">
-          <b><%= most_new_message_preview(room) %></b>
-          </p>
-        </div>
-      <% else %>
-        <div class="chat_name_messege">
-          <p class="dm_list__content__link__box__name">
-          <%= opponent_user(room) %>
-          </p>
-          <p class="dm_list__content_time__link__box__name">
-          <%= most_new_message_preview(room) %>
-          </p>
-        </div>
-      <% end %>
+            <%= most_new_message_preview(room) %></p>
+</div>
+<% end %>
+
+
       <div class="chat_time">
         <%= most_new_message_time(room) %>
       </div>
-    </div>
-  <% end %>
+
+  </div>
+<%end%>
+
+
+
 </div>
