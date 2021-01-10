@@ -233,14 +233,6 @@
     <br>※他の方からの連絡が受け取れる状態になります。
   </div>
 
-  <div class="field">
-    <div class="my_profile_content">
-      <%= f.label :メール通知を受け取りますか？ %><br/>
-    </div>
-
-      <label> <%= f.check_box :send_mail %>受け取ります。</label>
-
-  </div>
 
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
