@@ -10,12 +10,6 @@ Rails.application.routes.draw do
 #通知機能
   get "/users/notifications" => "notifications#index"
 
-
-
-
-# 編集内容のルーティング
-  get "users/edit" =>"users#edit"
-
 #チャットルームのルーティング
   resources :users, :only => [:index, :show, :destroy]
   resources :messages, :only => [:create]

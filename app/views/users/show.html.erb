@@ -1,93 +1,95 @@
-
 <div class="user_profile">
-<div class="my_profile">
-  <div class="research_title">
-    <h2>プロフィール</h2>
-  </div>
+  <div class="my_profile">
+    <div class="research_title">
+      <h2>プロフィール</h2>
+    </div>
 
 
 
 
-<% if @user.id == current_user.id %>
-  <%= link_to "編集", "/users/edit" , class: 'btn_edit_my_profile'%> <!-- 編集ページに遷移する -->
-<% end%>
+    <% if @user.id == current_user.id %>
+    <%= link_to "編集", edit_user_registration_path , class: 'btn_edit_my_profile'%>
+    <!-- 編集ページに遷移する -->
+    <% end%>
 
-<div class="my_profile_content">
-  <h4>ユーザー名</h4>
-</div>
-<%= @user.name %>
-
-  <% if @user.sex == "男性" %>
-    <br><img src=<%= @user.image %> class = "icon_image_men"></br>
-  <% elsif @user.sex == "女性"%>
-    <br><img src=<%= @user.image %> class = "icon_image_women"></br>
-  <%else%>
-    <br><img src=<%= @user.image %> class = "icon_image_other"></br>
-  <% end %>
-
-  <div class="my_profile_content">
-    <h4>性別</h4>
-  </div>
-  <%= @user.sex %>
-  <div class="my_profile_content">
-    <h4>職業</h4>
-  </div>
-  <%= @user.work %>
     <div class="my_profile_content">
-    <h4>職位</h4>
-  </div>
-  <%= @user.position %>
-  <div class="my_profile_content">
-    <h4>出身大学</h4>
-  </div>
-  <%= @user.uni %>
+      <h4>ユーザー名</h4>
+    </div>
+    <%= @user.name %>
 
-  <div class="my_profile_content">
-    <h4>年次</h4>
-  </div>
-  <%= @user.annual %>
-  <div class="my_profile_content">
-    <h4>お住まい</h4>
-  </div>
-  <%= @user.location %>
-  <div class="my_profile_content">
-    <h4>専門科目</h4>
-  </div>
-  <%= @user.subject %>
-  <div class="my_profile_content">
-    <h4>部活（サークル）顧問</h4>
-  </div>
-  <%= @user.club %>
-  <div class="my_profile_content">
-    <h4>自由記述欄</h4>
-  </div>
+    <% if @user.sex == "男性" %>
+    <br><img src=<%= @user.image %> class="icon_image_men"></br>
+    <% elsif @user.sex == "女性"%>
+    <br><img src=<%= @user.image %> class="icon_image_women"></br>
+    <%else%>
+    <br><img src=<%= @user.image %> class="icon_image_other"></br>
+    <% end %>
+
+    <div class="my_profile_content">
+      <h4>性別</h4>
+    </div>
+    <%= @user.sex %>
+    <div class="my_profile_content">
+      <h4>職業</h4>
+    </div>
+    <%= @user.work %>
+    <div class="my_profile_content">
+      <h4>職位</h4>
+    </div>
+    <%= @user.position %>
+    <div class="my_profile_content">
+      <h4>出身大学</h4>
+    </div>
+    <%= @user.uni %>
+
+    <div class="my_profile_content">
+      <h4>年次</h4>
+    </div>
+    <%= @user.annual %>
+    <div class="my_profile_content">
+      <h4>お住まい</h4>
+    </div>
+    <%= @user.location %>
+    <div class="my_profile_content">
+      <h4>専門科目</h4>
+    </div>
+    <%= @user.subject %>
+    <div class="my_profile_content">
+      <h4>部活（サークル）顧問</h4>
+    </div>
+    <%= @user.club %>
+    <div class="my_profile_content">
+      <h4>自由記述欄</h4>
+    </div>
     <%= safe_join(@user.free_profile.split("\n"), tag(:br)) %>
 
 
 
 
 
-<% if @user.consalting == "はい" %>
+    <% if @user.consalting == "はい" %>
 
-<% if @user.id == current_user.id %>
+    <% if @user.id == current_user.id %>
 
-  <% else %>
-      <% if @isRoom == true %>
-        <div class="first_send_button">
-          <p><a href="/rooms/<%= @roomId %>"><font-color="white">チャットへ</font></a>
-        </div>
-      <% else %>
-        <%= form_for @room do |f| %>
-          <%= fields_for @entry do |e| %>
-          <%= e.hidden_field :user_id, :value=> @user.id %>
-        <% end %>
-        <div class="send_new_button">
-          <%= f.submit "メッセージを送る" %>
-        </div>
-      <% end %>
-   <% end %>
-<% end %>
+    <% else %>
+    <% if @isRoom == true %>
+    <div class="first_send_button">
+      <p><a href="/rooms/<%= @roomId %>">
+          <font-color="white">チャットへ</font>
+        </a>
+    </div>
+    <% else %>
+    <%= form_for @room do |f| %>
+    <%= fields_for @entry do |e| %>
+    <%= e.hidden_field :user_id, :value=> @user.id %>
+    <% end %>
+    <div class="send_new_button">
+      <%= f.submit "メッセージを送る" %>
+    </div>
+    <% end %>
+    <% end %>
+    <% end %>
 
-  <% end %>
+    <% end %>
   </div>
 </div>

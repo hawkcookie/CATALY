@@ -136,7 +136,7 @@
   </div>
 
   <% users.each do |user| %>
-  <%= link_to "/users/#{user.id}/show" do %>
+  <%= link_to user_path(id: user.id) do %>
   <div class="all_users_user">
     <% if user.sex == "男性" %>
     <br><img src=<%= user.image %> class="icon_image_men"></br>
