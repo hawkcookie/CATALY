@@ -1,0 +1,159 @@
+<!-- ユーザーがログインしていた時の処理 -->
+
+<div class="button">
+  <div class="research_title">
+    <h2><i class="fas fa-search"></i>検索</h2>
+  </div>
+  　
+  <!--検索機能　ボックス-->
+
+  <div class="research_title">
+    <%= search_form_for q,url: root_path(anchor: "research_first") do |f| %>
+    <i class="fas fa-pencil-alt"></i><%= f.label :name_cont, " フリーワード" %>
+  </div>
+
+  <%= f.search_field :name_or_uni_or_free_profile_cont , placeholder: "大学名、プロフィール内容等", class: "research_text"%>
+
+  <!--検索機能　チェックボックス-->
+
+  <div class="research_title">
+    <i class="fas fa-briefcase"></i><%= " 職業" %>
+  </div>
+
+  <div class="research_check">
+    <% if params[:q].present? %>
+    <%= f.collection_check_boxes(:work_eq_any, User.works, :last, :first, checked: params[:q][:work_eq_any]) do |b| %>
+    <%= b.label(class: "checkbox02 #{ 'checked' if params[:q][:work_eq_any].map{ |a| a.to_i }&.include?(b.object.last)}") { b.check_box(class: "research_check_box") + b.text } %>
+    <% end %>
+    <% else %>
+    <%= f.collection_check_boxes(:work_eq_any, User.works, :last, :first) do |b| %>
+    <%= b.label(class: "checkbox02 ") { b.check_box(class: "research_check_box") + b.text } %>
+    <% end %>
+    <% end %>
+  </div>
+
+  <div class="research_title">
+    <i class="fas fa-user-check"></i><%= " 職位" %>
+  </div>
+
+  <div class="research_check">
+    <% if params[:q].present? %>
+    <%= f.collection_check_boxes(:position_eq_any, User.positions, :last, :first, checked: params[:q][:position_eq_any]) do |b| %>
+    <%= b.label(class: "checkbox02 #{ 'checked' if params[:q][:position_eq_any].map{ |a| a.to_i }&.include?(b.object.last)}") { b.check_box(class: "research_check_box") + b.text } %>
+    <% end %>
+    <% else %>
+    <%= f.collection_check_boxes(:position_eq_any, User.positions, :last, :first) do |b| %>
+    <%= b.label(class: "checkbox02 ") { b.check_box(class: "research_check_box") + b.text } %>
+    <% end %>
+    <% end %>
+  </div>
+
+
+  <div class="research_title">
+    <i class="fas fa-house-user"></i><%= " お住まい" %>
+  </div>
+  <% if params[:q].present? %>
+  <%= f.collection_check_boxes(:location_eq_any, User.locations, :last, :first, checked: params[:q][:location_eq_any]) do |b| %>
+  <%= b.label(class: "checkbox02 #{ 'checked' if params[:q][:location_eq_any].map{ |a| a.to_i }&.include?(b.object.last)}") { b.check_box(class: "research_check_box") + b.text } %>
+  <% end %>
+  <% else %>
+  <%= f.collection_check_boxes(:location_eq_any, User.locations, :last, :first) do |b| %>
+  <%= b.label(class: "checkbox02 ") { b.check_box(class: "research_check_box") + b.text } %>
+  <% end %>
+  <% end %>
+
+
+  <div class="research_title">
+    <i class="fas fa-clock"></i><%= " 年次" %>
+  </div>
+  <% if params[:q].present? %>
+  <%= f.collection_check_boxes(:annual_eq_any, User.annuals, :last, :first, checked: params[:q][:annual_eq_any]) do |b| %>
+  <%= b.label(class: "checkbox02 #{ 'checked' if params[:q][:annual_eq_any].map{ |a| a.to_i }&.include?(b.object.last)}") { b.check_box(class: "research_check_box") + b.text } %>
+  <% end %>
+  <% else %>
+  <%= f.collection_check_boxes(:annual_eq_any, User.annuals, :last, :first) do |b| %>
+  <%= b.label(class: "checkbox02 ") { b.check_box(class: "research_check_box") + b.text } %>
+  <% end %>
+  <% end %>
+
+
+  <div class="research_title">
+    <i class="fas fa-book-open"></i><%= " 専門科目" %>
+  </div>
+  <% if params[:q].present? %>
+  <%= f.collection_check_boxes(:subject_eq_any, User.subjects, :last, :first, checked: params[:q][:subject_eq_any]) do |b| %>
+  <%= b.label(class: "checkbox02 #{ 'checked' if params[:q][:subject_eq_any].map{ |a| a.to_i }&.include?(b.object.last)}") { b.check_box(class: "research_check_box") + b.text } %>
+  <% end %>
+  <% else %>
+  <%= f.collection_check_boxes(:subject_eq_any, User.subjects, :last, :first) do |b| %>
+  <%= b.label(class: "checkbox02 ") { b.check_box(class: "research_check_box") + b.text } %>
+  <% end %>
+  <% end %>
+
+
+
+  <div class="research_title">
+    <i class="fas fa-futbol"></i><%=" 部活（サークル）顧問" %>
+  </div>
+  <% if params[:q].present? %>
+  <%= f.collection_check_boxes(:club_eq_any, User.clubs, :last, :first, checked: params[:q][:club_eq_any]) do |b| %>
+  <%= b.label(class: "checkbox02 #{ 'checked' if params[:q][:club_eq_any].map{ |a| a.to_i }&.include?(b.object.last)}") { b.check_box(class: "research_check_box") + b.text } %>
+  <% end %>
+  <% else %>
+  <%= f.collection_check_boxes(:club_eq_any, User.clubs, :last, :first) do |b| %>
+  <%= b.label(class: "checkbox02 ") { b.check_box(class: "research_check_box") + b.text } %>
+  <% end %>
+  <% end %>
+
+  <div class="research_title">
+    <i class="fas fa-transgender-alt"></i><%= " 性別" %>
+  </div>
+  <% if params[:q].present? %>
+  <%= f.collection_check_boxes(:sex_eq_any, User.sexes, :last, :first, checked: params[:q][:sex_eq_any]) do |b| %>
+  <%= b.label(class: "checkbox02 #{ 'checked' if params[:q][:sex_eq_any].map{ |a| a.to_i }&.include?(b.object.last)}") { b.check_box(class: "research_check_box") + b.text } %>
+  <% end %>
+  <% else %>
+  <%= f.collection_check_boxes(:sex_eq_any, User.sexes, :last, :first) do |b| %>
+  <%= b.label(class: "checkbox02 ") { b.check_box(class: "research_check_box") + b.text } %>
+  <% end %>
+  <% end %>
+
+
+  <%= f.submit "検索" , :class => 'research_button',:id=>'research_button'%>
+
+
+
+</div>
+
+<% end %>
+
+
+<!--ユーザー一覧-->
+<div class="all_users">
+
+  <div class="user_midashi" id="research_first">
+    <b><i class="fas fa-users"></i>ユーザー一覧</b>
+  </div>
+
+  <% users.each do |user| %>
+  <%= link_to "/users/#{user.id}/show" do %>
+  <div class="all_users_user">
+    <% if user.sex == "男性" %>
+    <br><img src=<%= user.image %> class="icon_image_men"></br>
+    <% elsif user.sex == "女性"%>
+    <br><img src=<%= user.image %> class="icon_image_women"></br>
+    <%else%>
+    <br><img src=<%= user.image %> class="icon_image_other"></br>
+    <% end %>
+
+    <br><i class="fas fa-file-signature"></i> <%= user.name %></br>
+    <br><i class="fas fa-briefcase"></i> <%= user.work %></br>
+    <br><i class="fas fa-clock"></i> <%= user.annual %></br>
+  </div>
+  <% end %>
+  <% end %>
+</div>
+
+<div class="kaminari">
+  <%= paginate users, theme: 'my_custom_theme' %>
+</div>

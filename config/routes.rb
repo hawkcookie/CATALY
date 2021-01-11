@@ -4,19 +4,14 @@ Rails.application.routes.draw do
   root 'comments#index'
   get 'comments/index'
   devise_for :users, controllers: { registrations: 'users/registrations' }
-  get 'users/show'
 
-  resource 'users_show_path'
 
-# マイページ？
-  get "users/:id/show" => "users#show"
 
 #通知機能
   get "/users/notifications" => "notifications#index"
 
 
-#ログインユーザーのDM一覧
-   get "rooms/:id/index"=>"rooms#index"
+
 
 # 編集内容のルーティング
   get "users/edit" =>"users#edit"
