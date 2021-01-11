@@ -29,7 +29,7 @@
 
         <div class="menu">
 
-            <%= link_to "/" do %>
+            <%= link_to root_path do %>
             <%= image_tag 'cataly_logo.png', class: 'logo'%>
             <% end %>β版
 
@@ -37,7 +37,7 @@
             <div class="float_basic_information">
 
                 <div class="envelope">
-                    <%= link_to  "/rooms/:id/index" do %>
+                    <%= link_to rooms_path do %>
                     <div class="envelope_normal">
                         <i class="far fa-envelope"></i>
                     </div>
@@ -51,7 +51,7 @@
                     <% end %>
                 </div>
 
-                <%= link_to "/users/#{current_user.id}/show" do %>
+                <%= link_to user_path(id: current_user.id) do %>
                 <!-- マイページに遷移する -->
                 <% if current_user.sex == "男性" %>
                 <img src=<%= current_user.image %> class="icon_image_men_header">
