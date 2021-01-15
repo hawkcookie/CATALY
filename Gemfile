@@ -7,9 +7,12 @@ ruby '2.6.5'
 gem 'rails', '~> 5.2.4', '>= 5.2.4.2'
 # Use sqlite3 as the database for Active Record
 
-#以下、heroku練習用にコメントアウト
+gem 'rubocop', require: false
+gem 'rubocop-rails', require: false
 
-#gem 'sqlite3'
+# 以下、heroku練習用にコメントアウト
+
+# gem 'sqlite3'
 
 gem 'dotenv-rails'
 # gem "asset_sync"
@@ -22,12 +25,12 @@ gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
 
-gem 'font-awesome-sass'
 gem 'bootstrap', '~> 4.1.1'
+gem 'font-awesome-sass'
 
-gem 'rails-i18n'
 gem 'carrierwave'
-#gem 'rmagick'
+gem 'rails-i18n'
+# gem 'rmagick'
 gem 'mini_magick'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
@@ -41,8 +44,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'devise'
+gem 'jquery-rails'
 gem 'ransack'
-gem "jquery-rails"
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
@@ -52,24 +55,20 @@ gem "jquery-rails"
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
-
 gem 'fog-aws'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-#以下、heroku練習用
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  # 以下、heroku練習用
   # gem 'sqlite3' #do ~ end内部に追加。他のgemは残してください。
   gem 'pg'
 end
 
-
-
-
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
-  gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'web-console', '>= 3.3.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
@@ -84,11 +83,11 @@ group :test do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 gem 'kaminari'
 
-#　ER図作成ツール
+# 　ER図作成ツール
 group :development, :test do
   gem 'rails-erd'
 end

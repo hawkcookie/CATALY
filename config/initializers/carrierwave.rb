@@ -14,23 +14,18 @@ if Rails.env.production?
       region: 'ap-northeast-1',
       path_style: true
     }
-    config.fog_directory  = 'cataly-backet'
-
+    config.fog_directory = 'cataly-backet'
   end
 end
 
+# aws_access_key_id: ENV['AKIAUSMSHC3D57R5AU3Q'],
+# aws_secret_access_key: ENV['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'],
+# region: ENV['ap-northeast-1'],
 
-
-
-    # aws_access_key_id: ENV['AKIAUSMSHC3D57R5AU3Q'],
-    # aws_secret_access_key: ENV['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'],
-    # region: ENV['ap-northeast-1'],
-
-
-    # aws_access_key_id: Rails.application.secrets.aws_access_key_id,
-    # aws_secret_access_key: Rails.application.secrets.aws_secret_access_key,
-    # region: 'ap-northeast-1'
-    #
-    # config.fog_directory  = 'cataly-backet'
-    # config.asset_host = 'https://s3-ap-northeast1.amazonaws.com/cataly-backet' #url間違い
-    # config.asset_host = 'https://cataly-backet.s3.amazonaws.com' #このように修正
+# aws_access_key_id: Rails.application.secrets.aws_access_key_id,
+# aws_secret_access_key: Rails.application.secrets.aws_secret_access_key,
+# region: 'ap-northeast-1'
+#
+# config.fog_directory  = 'cataly-backet'
+# config.asset_host = 'https://s3-ap-northeast1.amazonaws.com/cataly-backet' #url間違い
+# config.asset_host = 'https://cataly-backet.s3.amazonaws.com' #このように修正

@@ -5,5 +5,4 @@ class Room < ApplicationRecord
   has_many :users, through: :entries
 
   has_many :notifications, dependent: :destroy
-
 end
