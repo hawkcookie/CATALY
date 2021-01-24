@@ -24,6 +24,11 @@ class MessagesController < ApplicationController
 
         @user = notification.visited
 
+        if @user.send_mail
+        # メッセージを送った際にメールで伝える。
+         NotificationMailer.send_mail(notification.visited).deliver_now
+       end
+
         # 自分の投稿に対するコメントの場合は、通知済みとする
         notification.checked = true if notification.visitor_id == notification.visited_id
         notification.save if notification.valid?
