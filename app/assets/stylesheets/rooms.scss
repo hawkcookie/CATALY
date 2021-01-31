@@ -27,6 +27,11 @@
     border-radius: 10px;
   }
 
+  .dm_list__content:hover{
+    background-color: #EEEEEE	;
+    cursor: pointer;
+  }
+
   // DM一覧の名前と最新メッセージ
     .chat_name_messege{
         width: 90%;
@@ -101,7 +106,17 @@
     
     // メッセージページの相手ユーザーのプロフィール
     .chat_profile{
-        font-size:18px;
+    font-size:18px;
+    background: #f0eee4;
+    position: sticky;
+    top: 0px;
+
+    }
+    
+    .chat_profile_content{
+      margin-right: auto;//ここで中央寄せを指定する。
+      margin-left : auto;
+      width:800px;
     }
 
         // dm送信エリア（文字記載場所）
@@ -283,7 +298,17 @@ margin: auto;
     // メッセージページの相手ユーザーのプロフィール
     .chat_profile{
         font-size:15px;
+        background: #f0eee4;
+        position: sticky;
+        top: 0px;
     }
+
+      
+      .chat_profile_content{
+        margin-right: auto;//ここで中央寄せを指定する。
+        margin-left : auto;
+        width:360px;
+      }
 
     // dm送信エリア（文字記載場所）
     .send{

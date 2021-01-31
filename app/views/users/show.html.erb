@@ -1,14 +1,57 @@
 <div class="user_profile">
+
+
+  <!--非公開情報-->
+
+  <% if @user.id == current_user.id %>
   <div class="my_profile">
     <div class="research_title">
-      <h2>プロフィール</h2>
+      <h2>非公開情報</h2>
     </div>
 
+    <% if @user.id == current_user.id %>
+    <%= link_to "編集", edit_user_registration_path(anchor: 'edit_no_open') , class: 'btn_edit_my_profile'%>
+    <!-- 編集ページに遷移する -->
+    <% end%>
+
+    <div class="my_profile_content">
+      <h4>メールアドレス</h4>
+    </div>
+    <%= @user.email %>
+
+    <div class="my_profile_content">
+      <h4>ユーザー一覧へ表示しますか？</h4>
+    </div>
+    <%= @user.consalting %>
+
+    <div class="my_profile_content">
+      <h4>メール通知を受け取りますか？</h4>
+    </div>
+
+    <% if @user.send_mail == true %>
+    <%= "受け取ります" %>
+    <% else %>
+    <%= "受け取りません" %>
+    <% end %>
+  </div>
+  <% end%>
 
 
+
+  <div class="my_profile">
+
+
+
+
+
+    <!--公開情報-->
+
+    <div class="research_title">
+      <h2>公開情報</h2>
+    </div>
 
     <% if @user.id == current_user.id %>
-    <%= link_to "編集", edit_user_registration_path , class: 'btn_edit_my_profile'%>
+    <%= link_to "編集", edit_user_registration_path(anchor: 'edit_open') , class: 'btn_edit_my_profile'%>
     <!-- 編集ページに遷移する -->
     <% end%>
 

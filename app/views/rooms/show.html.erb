@@ -1,98 +1,89 @@
-<div class="DM_all">
-
-<% @entries.each do |e| %>
-<% if e.user.name == current_user.name %>
-<% else %>
-
-<div class="chat_profile">
-
-  <h5>
-  <a href="/users/<%= e.user.id %>">
-
-      <% if e.user.sex == "男性" %>
-          <br><img src=<%= e.user.image %> class = "icon_image_men"></br>
+  <% @entries.each do |e| %>
+  <% if e.user.name == current_user.name %>
+  <% else %>
+  <hr>
+  <div class="chat_profile">
+    <div class="chat_profile_content">
+      <a href="/users/<%= e.user.id %>">
+        <% if e.user.sex == "男性" %>
+        <br><img src=<%= e.user.image %> class="icon_image_men"></br>
         <% elsif e.user.sex == "女性"%>
-          <br><img src=<%= e.user.image %> class = "icon_image_women"></br>
+        <br><img src=<%= e.user.image %> class="icon_image_women"></br>
         <%else%>
-         <br><img src=<%= e.user.image %> class = "icon_image_other"></br>
-      <% end %>
-
-  <%= e.user.name%>さん/
-  <%= e.user.work%>/
-  <%= e.user.uni%>/
-  <%= e.user.annual%>/
-  <%= e.user.location%>/
-  <%= e.user.subject%>/
-  <%= e.user.club%>/
-
-</a></h5>
-
-</div>
-
-<% end %>
-<% end %>
-
-
-<hr>
-<% if @messages.present? %>
-    <% @messages.each do |m| %>
-<div class="all_message">
-
-      <% if m.user.name == current_user.name %>
-          <div class="my_message">
-              <div class="my_content">
-                <%= safe_join(m.content.split("\n"), tag(:br)) %>
-              </div>
-
-            <div class="user_right">
-              <%= m.created_at.strftime('%Y/%m/%d %H:%M') %>
-            </div>
-
-        </div>
-
-      <% else %>
-            <div class="your_message">
-              <div class="your_content">
-                <%= safe_join(m.content.split("\n"), tag(:br)) %>
-              </div>
-              <div class="user_right">
-                <%= m.created_at.strftime('%Y/%m/%d %H:%M') %>
-              </div>
-            </div>
-            
-      <% end %>
-    <% end %>
-
-<% else %>
-
-     <div class ="attention">
-          <h3 class="text-center">メッセージはまだありません。</h3>
-          <br>教育に関わる交流以外を目的としたマッチングやメッセージ、迷惑行為は禁止しております。
-          <br>違反する事実や申し出がある場合は、お問い合わせフォームからご連絡ください。
-          <br>健全なサービス提供のため、運営がメッセージ内容を確認することがあります。
-     </div>
-
-<% end %>
-
-
-
-    <div class="send">
-
-      <% if @room.entries.size > 1 %>
-          <%= form_for @message do |f| %>
-              <%= f.text_area :content, :placeholder => "メッセージを入力して下さい" , :size => 70 %>
-              <%= f.hidden_field :room_id, :value => @room.id %>
-            <%= button_tag :type => "submit", :class =>"btn_send",:id=>'btn_send',
-                data: { disable_with: '...<i class="fas fa-paper-plane"></i>' } do %>
-                <i class="fas fa-paper-plane"></i>
-            <% end %>
-          <% end %>
-      <% end %> 
+        <br><img src=<%= e.user.image %> class="icon_image_other"></br>
+        <% end %>
+        <%= e.user.name%>さん/
+        <%= e.user.work%>/
+        <%= e.user.uni%>/
+        <%= e.user.annual%>/
+        <%= e.user.location%>/
+        <%= e.user.subject%>/
+        <%= e.user.club%>/
+      </a>
 
     </div>
-
-    <h3 id="final"></h3>
-
   </div>
+  <hr>
+  <% end %>
+  <% end %>
+
+  <div class="DM_all">
+    <% if @messages.present? %>
+    <% @messages.each do |m| %>
+    <div class="all_message">
+
+      <% if m.user.name == current_user.name %>
+      <div class="my_message">
+        <div class="my_content">
+          <%= safe_join(m.content.split("\n"), tag(:br)) %>
+        </div>
+
+        <div class="user_right">
+          <%= m.created_at.strftime('%Y/%m/%d %H:%M') %>
+        </div>
+
+      </div>
+
+      <% else %>
+      <div class="your_message">
+        <div class="your_content">
+          <%= safe_join(m.content.split("\n"), tag(:br)) %>
+        </div>
+        <div class="user_right">
+          <%= m.created_at.strftime('%Y/%m/%d %H:%M') %>
+        </div>
+      </div>
+
+      <% end %>
+      <% end %>
+
+      <% else %>
+
+      <div class="attention">
+        <h3 class="text-center">メッセージはまだありません。</h3>
+        <br>教育に関わる交流以外を目的としたマッチングやメッセージ、迷惑行為は禁止しております。
+        <br>違反する事実や申し出がある場合は、お問い合わせフォームからご連絡ください。
+        <br>健全なサービス提供のため、運営がメッセージ内容を確認することがあります。
+      </div>
+
+      <% end %>
 
 
+
+      <div class="send">
+        <% if @room.entries.size > 1 %>
+        <%= form_for @message do |f| %>
+        <%= f.text_area :content, :placeholder => "メッセージを入力して下さい" , :size => 70 %>
+        <%= f.hidden_field :room_id, :value => @room.id %>
+        <%= button_tag :type => "submit", :class =>"btn_send",:id=>'btn_send',
+                data: { disable_with: '...<i class="fas fa-paper-plane"></i>' } do %>
+        <i class="fas fa-paper-plane"></i>
+        <% end %>
+        <% end %>
+        <% end %>
+
+      </div>
+
+      <h3 id="final"></h3>
+
+    </div>

@@ -16,3 +16,11 @@
 //= require_tree .
 //= require jquery
 //= require jquery_ujs
+
+
+const store = (name,age) => {
+  console.log(`${name}さん、ありがとうございます！${age}才です`);
+};
+
+store("田中","23");
+store("佐藤","2222");
