@@ -104,20 +104,40 @@
     font-size:8px;
     }
     
+
+
+
     // メッセージページの相手ユーザーのプロフィール
     .chat_profile{
     font-size:18px;
     background: #f0eee4;
     position: sticky;
     top: 0px;
-
+    
     }
     
     .chat_profile_content{
       margin-right: auto;//ここで中央寄せを指定する。
       margin-left : auto;
       width:800px;
+      display: flex;
     }
+    .chat_profile_name{
+font-size:40px;
+    }
+
+
+    .chat_profile_icon{
+    }
+
+    .chat_profile_sentence{
+      margin-left: 25px;
+    }
+
+
+
+
+
 
         // dm送信エリア（文字記載場所）
     .send{
@@ -373,6 +393,7 @@ margin-right:30px;
   object-fit: cover;
   /*タテヨコ比を変えないままトリミング*/
   border: 5px solid #8EB8FF;
+  margin-top:5px;
 }
 
 // icon画像の条件分岐（女性・男性・その他
@@ -385,6 +406,7 @@ margin-right:30px;
   object-fit: cover;
   /*タテヨコ比を変えないままトリミング*/
   border: 5px solid 	#FFABCE;
+  margin-top:5px;
 }
 
 // icon画像の条件分岐（女性・男性・その他
@@ -397,6 +419,7 @@ margin-right:30px;
   object-fit: cover;
   /*タテヨコ比を変えないままトリミング*/
   border: 5px solid 	#86F9C5;
+  margin-top:5px;
 }
 
 // icon画像の条件分岐（退会ユーザー）
@@ -409,6 +432,35 @@ margin-right:30px;
   object-fit: cover;
   /*タテヨコ比を変えないままトリミング*/
   border: 5px solid 	#808080;
+  margin-top:5px;
 }
+
+    // メッセージページの相手ユーザーのプロフィール
+    .chat_profile{
+      background: #f0eee4;
+      position: sticky;
+      top: 0px;
+      
+      }
+
+      .chat_profile_name{
+        font-size:22px;
+      }
+  
+      .chat_prifile_detail{
+        font-size: 6px;
+      }
+  
+      .chat_profile_icon{
+      }
+  
+      .chat_profile_sentence{
+        margin-left: 10px;
+      }
+
+
+
+
+
 
       }
