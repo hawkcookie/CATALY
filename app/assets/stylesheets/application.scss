@@ -652,42 +652,7 @@ label{
           font-size: 35px;
         }
 
-    // icon画像の条件分岐（女性・男性・その他）
-        .icon_image_men{
-          width: 55px;
-          height: 55px;
-          /*サイズ指定*/
-          border-radius: 80px;
-          /*画像を丸くする*/
-          object-fit: cover;
-          /*タテヨコ比を変えないままトリミング*/
-          border: 5px solid #8EB8FF;
-        }
 
-      // icon画像の条件分岐（女性・男性・その他
-        .icon_image_women{
-          width: 55px;
-          height: 55px;
-          /*サイズ指定*/
-          border-radius: 80px;
-          /*画像を丸くする*/
-          object-fit: cover;
-          /*タテヨコ比を変えないままトリミング*/
-          border: 5px solid 	#FFABCE;
-        }
-
-        // icon画像の条件分岐（女性・男性・その他
-        .icon_image_other{
-         width: 55px;
-         height: 55px;
-         /*サイズ指定*/
-         border-radius: 80px;
-          /*画像を丸くする*/
-          object-fit: cover;
-          /*タテヨコ比を変えないままトリミング*/
-          border: 5px solid 	#86F9C5;
-        }
-        
         .icon_image_men_header{
           width: 44px;
           height: 44px;

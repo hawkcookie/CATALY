@@ -6,13 +6,13 @@
     <div class="chat_profile_content">
       <a href="/users/<%= e.user.id %>">
         <% if e.user.sex == "男性" %>
-        <br><img src=<%= e.user.image %> class="icon_image_men"></br>
+        <br><img src=<%= e.user.image %> class="icon_image_men_dm">
         <% elsif e.user.sex == "女性"%>
-        <br><img src=<%= e.user.image %> class="icon_image_women"></br>
+        <br><img src=<%= e.user.image %> class="icon_image_women_dm">
         <%else%>
-        <br><img src=<%= e.user.image %> class="icon_image_other"></br>
+        <br><img src=<%= e.user.image %> class="icon_image_other_dm">
         <% end %>
-        <%= e.user.name%>さん/
+        <br><%= e.user.name%>さん/
         <%= e.user.work%>/
         <%= e.user.uni%>/
         <%= e.user.annual%>/
