@@ -46,11 +46,11 @@
     <div class="my_profile_all_name">
 
       <% if @user.sex == "男性" %>
-      <br><img src=<%= @user.image %> class="icon_image_men"></br>
+      <br><img src=<%= @user.image %> class="icon_image_men">
       <% elsif @user.sex == "女性"%>
-      <br><img src=<%= @user.image %> class="icon_image_women"></br>
+      <br><img src=<%= @user.image %> class="icon_image_women">
       <%else%>
-      <br><img src=<%= @user.image %> class="icon_image_other"></br>
+      <br><img src=<%= @user.image %> class="icon_image_other">
       <% end %>
 
       <div class="my_profile_name_message">
@@ -62,7 +62,7 @@
         <% else %>
         <% if @isRoom == true %>
         <div class="first_send_button">
-          <p><a href="/rooms/<%= @roomId %>">
+          <p><a href="/rooms/<%= @roomId %>#final">
               <div class="envelope">
                 <i class="far fa-envelope"></i>
               </div>
