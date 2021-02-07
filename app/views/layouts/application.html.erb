@@ -2,18 +2,18 @@
 <html>
 
 <head>
-    <title>CATALY</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+  <title>CATALY</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= favicon_link_tag('favicon_icon.png') %>
-    <%= favicon_link_tag 'apple-touch-icon.png', rel: 'apple-touch-icon', sizes: '180x180', type: 'image/png' %>
-    <%= favicon_link_tag 'apple-touch-icon.png', rel: 'android-touch-icon', sizes: '192x192', type: 'image/png' %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= favicon_link_tag('favicon_icon.png') %>
+  <%= favicon_link_tag 'apple-touch-icon.png', rel: 'apple-touch-icon', sizes: '180x180', type: 'image/png' %>
+  <%= favicon_link_tag 'apple-touch-icon.png', rel: 'android-touch-icon', sizes: '192x192', type: 'image/png' %>
 
 
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
 
 
 </head>
@@ -23,84 +23,87 @@
 
 <body>
 
-    <% if user_signed_in? %>
-    <!-- ログイン時に下記を表示する -->
-    <div class="header">
+  <% if user_signed_in? %>
+  <!-- ログイン時に下記を表示する -->
+  <div class="header">
 
-        <div class="menu">
+    <div class="menu">
 
-            <%= link_to root_path do %>
-            <%= image_tag 'cataly_logo.png', class: 'logo'%>
-            <% end %>β版
-
-
-            <div class="float_basic_information">
-
-                <div class="envelope">
-                    <%= link_to rooms_path do %>
-                    <div class="envelope_normal">
-                        <i class="far fa-envelope"></i>
-                    </div>
-                    <% end %>
-                    <!-- DM一覧に遷移する -->
-
-                    <% if unchecked_notifications.any? %>
-                    <div class="notification_circle">
-                        <i class="fa fa-circle"></i>
-                    </div>
-                    <% end %>
-                </div>
-
-                <%= link_to user_path(id: current_user.id) do %>
-                <!-- マイページに遷移する -->
-                <% if current_user.sex == "男性" %>
-                <img src=<%= current_user.image %> class="icon_image_men_header">
-                <% elsif current_user.sex  == "女性"%>
-                <img src=<%= current_user.image %> class="icon_image_women_header">
-                <%else%>
-                <img src=<%= current_user.image %> class="icon_image_other_header">
-                <% end %>
-                <% end %>
-
-            </div>
-        </div>
-    </div>
-
-    <% else %>
-    <div class="header">
-        <div class="menu">
-            <%= link_to "/" do %>
-            <%= image_tag 'cataly_logo.png', class: 'logo'%>
-            <% end %>β版
+      <%= link_to root_path do %>
+      <%= image_tag 'cataly_logo.png', class: 'logo'%>
+      <% end %>β版
 
 
-            <div class="login_new">
-                <div class="login">
-                    <%= link_to "ログイン", new_user_session_path, class: 'post' %>
-                    <!-- ログイン画面に移行する -->
-                </div>
-                <div class="new">
-                    <%= link_to "新規登録", new_user_registration_path, class: 'post' %>
-                    <!-- 新規登録画面に移行する -->
-                </div>
+      <div class="float_basic_information">
 
-                <div class="twitter">
-                    <%= link_to  "https://twitter.com/Cataly_teacher",target: :_blank do %>
-                    <i class="fab fa-twitter-square"></i>
-                </div>
-                <% end %>
-                <!-- twitterに遷移する -->
-            </div>
+        <div class="envelope">
+          <%= link_to rooms_path do %>
+          <div class="envelope_normal">
+            <i class="far fa-envelope"></i>
+          </div>
+          <% end %>
+          <!-- DM一覧に遷移する -->
+
+          <% if unchecked_notifications.any? %>
+          <div class="notification_circle">
+            <i class="fa fa-circle"></i>
+          </div>
+          <% end %>
         </div>
 
+        <%= link_to user_path(id: current_user.id) do %>
+        <!-- マイページに遷移する -->
+        <% if current_user.sex == "男性" %>
+        <img src=<%= current_user.image %> class="icon_image_men_header">
+        <% elsif current_user.sex  == "女性"%>
+        <img src=<%= current_user.image %> class="icon_image_women_header">
+        <%else%>
+        <img src=<%= current_user.image %> class="icon_image_other_header">
+        <% end %>
+        <% end %>
+
+      </div>
     </div>
+  </div>
+
+  <% else %>
+
+  <div class="header">
+    <div class="menu">
+      <%= link_to "/" do %>
+      <%= image_tag 'cataly_logo.png', class: 'logo'%>
+      <% end %>β版
+
+
+      <div class="login_new">
+
+        <div class="login">
+          <%= link_to "ログイン", new_user_session_path, class: 'post' %>
+          <!-- ログイン画面に移行する -->
+        </div>
+
+        <div class="new">
+          <%= link_to "新規登録", new_user_registration_path, class: 'post' %>
+          <!-- 新規登録画面に移行する -->
+        </div>
+
+        <div class="twitter">
+          <%= link_to  "https://twitter.com/Cataly_teacher",target: :_blank do %>
+          <i class="fab fa-twitter-square"></i>
+          <% end %>
+        </div>
+        <!-- twitterに遷移する -->
+      </div>
     </div>
 
+  </div>
+  </div>
 
 
-    <% end %>
 
-    <%= yield %>
+  <% end %>
+
+  <%= yield %>
 </body>
 
 </html>

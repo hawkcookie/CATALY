@@ -8,8 +8,8 @@ ja:
         work: 職業
         location: お住まい
         annual: 年次
-        subject: 専門科目
-        club: 部活（サークル）顧問
-        free_profile: 自由記述欄
+        subject: 担当科目
+        club: 部活顧問
+        free_profile: 自己紹介
         email: メールアドレス
         position: 職位

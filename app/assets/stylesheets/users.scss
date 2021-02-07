@@ -27,6 +27,20 @@
   width:800px;
 }
 
+.my_profile_all_name{
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.my_profile_name_message{
+  margin-left:20px;
+  margin-top:10px;
+}
+
+.my_profile_name{
+  font-size: 30px;
+}
+
 // プロフィール画面
 .my_profile{
   padding: 20px 30px;
@@ -47,36 +61,54 @@
   // プロフィールの各大項目
   .my_profile_content{
     margin-top: 20px;
-      margin-bottom:20px;
-      background:#1AAB8A;
+    margin-bottom:20px;
+    background:#EEEEEE;
+    padding: 10px;
+    border-radius: 0px;
+    font-size:15px;
+    color: #707070;
+    display: block;
+  }
+  
+  .my_profile_content2{
+    margin-top: 0px;
+      margin-bottom:0px;
+      background:#EEEEEE;
       padding: 10px;
-      border-radius: 10px;
+      border-radius: 0px;
       font-size:15px;
-      color: #ffffff;
+      color: #707070;
+      display: block;
   }
 
-  
+  .my_profile_content3{
+      background:white;
+      padding: 10px;
+      border-radius: 0px;
+      font-size:15px;
+      color: #707070;
+      display: block;
+  }
 
 
   // プロフィール編集ボタン
   .btn_edit_my_profile{
-    background:#1AAB8A;
+    background:#707070;
     color:#fff;
     border:none;
-    height:50px;
-    font-size:25px;
+    font-size:20px;
     padding:10px;
-    margin-top:20px;
+    margin-top:10px;
+    margin-bottom: 10px;
     cursor:pointer;
     outline:none;
     border-radius: 10px;
-  
-    display: inline;
+    display: inline-block;
   }
   
   .btn_edit_my_profile:hover {
       color: #ffffff;
-      background-color: #A4C6FF	;
+      background-color: #A6C0C2	;
       cursor: pointer;
   }
 

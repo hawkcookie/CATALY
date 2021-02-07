@@ -16,6 +16,15 @@
  @import 'font-awesome-sprockets';
  @import 'font-awesome';
 
+ button{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  appearance: none;
+}
+
  .default_login{
    color:#707070;
  }
@@ -27,7 +36,7 @@ h2{
  .mandatory {
    font-weight: 900;
    font-size: 10px;
-  color:#1AAB8A;/*文字色*/
+  color:#A6C0C2;/*文字色*/
   border-radius: 1px;/*角の丸み*/
   display: inline-block;
   background:white;
@@ -42,7 +51,7 @@ h2{
  }
 
 body{
-  background-color: #f4f5f0;
+  background-color: white;
   display: flex;
   flex-flow: column;
   min-height: 100vh;
@@ -68,35 +77,6 @@ body{
   font-size: 20px;
 }
 
-/*ログイン・新規登録ボタン*/
-.login_new{
-  float: right;
-  display: inline-block;
-}
-
-.login{
-  display: inline-block;
-  padding: 5px;
-  background: #f0eee4;
-  border: solid 2px #707070;/*線*/
-  border-radius: 6px;/*角の丸み*/
-  margin-right: auto;//ここで中央寄せを指定する。
-  margin-left : auto;
-  margin-top:20px;
-  font-size: 18px;
-}
-
-.new{
-  display: inline-block;
-  padding: 5px;
-  background: #f0eee4;
-  border: solid 2px #707070;/*線*/
-  border-radius: 6px;/*角の丸み*/
-  margin-right: auto;//ここで中央寄せを指定する。
-  margin-left : auto;
-  margin-top:20px;
-  font-size: 18px;
-}
 
 
 /*新規登録ページ全体*/
@@ -115,12 +95,7 @@ body{
    cursor: pointer;
  }
 
-/*ロゴ右寄せ（共通）*/
-.float_basic_information{
-  float:right;
-  margin-top: 10px;
-  word-spacing: 15px;
-}
+
 
 /*ヘッダーのアイコンイメージ*/
 .icon_image_header{
@@ -143,7 +118,7 @@ body{
   /*画像を丸くする*/
   object-fit: cover;
   /*タテヨコ比を変えないままトリミング*/
-  border: 5px solid #8EB8FF;
+  border: 3px solid #8EB8FF;
 }
 
 // icon画像の条件分岐（女性・男性・その他
@@ -155,7 +130,7 @@ body{
   /*画像を丸くする*/
   object-fit: cover;
   /*タテヨコ比を変えないままトリミング*/
-  border: 5px solid 	#FFABCE;
+  border: 3px solid 	#FFABCE;
 }
 
 // icon画像の条件分岐（女性・男性・その他
@@ -167,7 +142,7 @@ body{
   /*画像を丸くする*/
   object-fit: cover;
   /*タテヨコ比を変えないままトリミング*/
-  border: 5px solid 	#86F9C5;
+  border: 3px solid 	#86F9C5;
 }
 
 .icon_image_men_header{
@@ -178,7 +153,9 @@ body{
   /*画像を丸くする*/
   object-fit: cover;
   /*タテヨコ比を変えないままトリミング*/
-  border: 5px solid #8EB8FF;
+  border: 3px solid #8EB8FF;
+  vertical-align: middle;
+  
 }
 
 // icon画像の条件分岐（女性・男性・その他
@@ -190,7 +167,7 @@ body{
   /*画像を丸くする*/
   object-fit: cover;
   /*タテヨコ比を変えないままトリミング*/
-  border: 5px solid 	#FFABCE;
+  border: 3px solid 	#FFABCE;
 }
 
 // icon画像の条件分岐（女性・男性・その他
@@ -202,20 +179,16 @@ body{
   /*画像を丸くする*/
   object-fit: cover;
   /*タテヨコ比を変えないままトリミング*/
-  border: 5px solid 	#86F9C5;
+  border: 3px solid 	#86F9C5;
 }
 
 
 /*上のヘッダー部分全て*/
 .header{
-  background: #f0eee4;
+  background: white;
   height:80px;
   box-shadow: 0 2px 4px #c1ced7;
   
-}
-
-.icon_image{
-
 }
 
 
@@ -251,7 +224,6 @@ margin:auto;
     height: auto;
 
 }
-
 
 
 
@@ -311,7 +283,7 @@ color:#707070;
 /*一番下の一覧*/
 .under{
   width: 100%;
-    background: #f0eee4;
+    background: #F8F8F8;
   color: #fff;
   text-align: center;
   padding: 30px 0;
@@ -325,7 +297,7 @@ color:#707070;
 
 // チャットの送信ボタン
 .btn_new{
-  background:#1AAB8A;
+  background:#707070;
   color:#fff;
   border:none;
   position:relative;
@@ -338,10 +310,13 @@ color:#707070;
   border-radius: 10px;
   display: block;
    margin-top:50px;
+   margin-left:auto;
+   margin-right:auto;
 }
+
 .btn_new:hover {
     color: #ffffff;
-    background-color: #A4C6FF	;
+    background-color: #A6C0C2;
     cursor: pointer;
 }
 
@@ -349,7 +324,7 @@ color:#707070;
 
 // ユーザーの検索ボタン
 .research_button{
-  background:#A5B4D6;
+  background:#707070;
   color:#fff;
   border:none;
   height:50px;
@@ -360,33 +335,23 @@ color:#707070;
   outline:none;
   border-radius: 10px;
   display: block;
-  margin: 50px;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .research_button:hover {
     color: #ffffff;
-    background-color: #91C191	;
+    background-color: #A6C0C2;
     cursor: pointer;
 }
 
-.first_send__button{
-  background:#A5B4D6;
-  color:#fff;
-  border:none;
-  height:50px;
-  font-size:30px;
-  padding:0 2em;
-  cursor:pointer;
-  transition:800ms ease all;
-  outline:none;
-  border-radius: 10px;
-  display: block;
-  margin: 50px;
+.first_send_button{
+
 }
 
 .first_send_button:hover {
     color: #ffffff;
-    background-color: #91C191	;
     cursor: pointer;
 }
 
@@ -406,25 +371,15 @@ color:#707070;
   bottom: 0;
   width: 100%;
   height: 4px;
-  background: -webkit-repeating-linear-gradient(-45deg, #A5B4D6, #A5B4D6 2px, #fff 2px, #fff 4px);
-  background: repeating-linear-gradient(-45deg, #A5B4D6, #A5B4D6 2px, #fff 2px, #fff 4px);
+  background: -webkit-repeating-linear-gradient(-45deg, #A6C0C2, #A6C0C2 2px, #fff 2px, #fff 4px);
+  background: repeating-linear-gradient(-45deg, #A6C0C2, #A6C0C2 2px, #fff 2px, #fff 4px);
 }
-
-
-// クリック時のカラー変更
-// .field {
-//   padding: 25px;
-//   transition: background 0.5s ease;
-//   &:focus-within {
-//     background: #EEE8AA;
-//   }
-// }
 
 
 .beta, .kiyaku{
   margin-left:auto;
   margin-right:auto;
-  color:#91C191;
+  color:#707070;
   width:800px;
   font-size:15px;
 }
@@ -435,11 +390,12 @@ color:#707070;
 }
 
 // ヘッダー_メッセージアイコン
-.envelope, .bell{
-  font-size: 50px;
+.envelope{
+  position:  relative;  
+  font-size: 55px;
   display: inline-block;
-
-  position:  relative;
+  vertical-align: middle;
+  
 }
 
 .envelope :hover{
@@ -447,21 +403,58 @@ color:#707070;
   transition: 0.2s ;
 }
 
+/*ロゴ右寄せ（共通）*/
+.float_basic_information{
+  float:right;
+  margin-top: 10px;
+  word-spacing: 15px;
+  vertical-align: middle;
+}
+
+/*ログイン・新規登録ボタン*/
+.login_new{
+  float: right;
+}
+
+.login{
+  display: inline-block;
+  padding: 5px;
+  background: white;
+  border: solid 2px #707070;/*線*/
+  border-radius: 6px;/*角の丸み*/
+  margin-right: 20px;
+  margin-top:20px;
+
+  font-size: 18px;
+}
+
+.new{
+  display: inline-block;
+  padding: 5px;
+  background: white;
+  border: solid 2px #707070;/*線*/
+  border-radius: 6px;/*角の丸み*/
+  margin-right: auto;//ここで中央寄せを指定する。
+  margin-left : auto;
+  margin-top:20px;
+  font-size: 18px;
+}
+
 .twitter{
   font-size: 30px;
   display: inline-block;
   padding-left:15px;
   color: #00aced ;
+  vertical-align: middle;
 }
 .twitter :hover{
   color: #00aced;
   transition: 0.2s ;
 }
 
-
 .twitter_end {
   font-size: 30px;
-  display: inline-block;
+  display: inline;
   padding-left:15px;
   color: #00aced ;
 }
@@ -480,7 +473,7 @@ color:#707070;
   position: absolute;
   bottom: 0px;
   right: 0px;
-  color: #91C191;
+  color: #A6C0C2;
   font-size: 20px;
 }
 
@@ -510,13 +503,11 @@ a {
 label{
   cursor: pointer;
   white-space: nowrap;
+  margin-right:5px;
 }
 
 
-.send_new_button{
-  margin-top:100px;
 
- }
 
 
 // =========================================================================
@@ -590,7 +581,7 @@ label{
       .login , .new{
         display: inline-block;
         padding: 5px;
-        background: #f0eee4;
+
         border: solid 1.8px black;/*線*/
         border-radius: 6px;/*角の丸み*/
         margin-right: auto;//ここで中央寄せを指定する。
@@ -625,7 +616,7 @@ label{
       .beta, .kiyaku{
         margin-left:auto;
         margin-right:auto;
-        color:#91C191;
+
         width:350px;
         font-size:8px;
       }
@@ -659,7 +650,7 @@ label{
           /*画像を丸くする*/
           object-fit: cover;
           /*タテヨコ比を変えないままトリミング*/
-          border: 5px solid #8EB8FF;
+          border: 2px solid #8EB8FF;
           margin-right: 20px;
         }
         
@@ -672,7 +663,7 @@ label{
           /*画像を丸くする*/
           object-fit: cover;
           /*タテヨコ比を変えないままトリミング*/
-          border: 3px solid 	#FFABCE;
+          border: 2px solid 	#FFABCE;
           margin-right: 20px;
         }
         
@@ -685,7 +676,7 @@ label{
           /*画像を丸くする*/
           object-fit: cover;
           /*タテヨコ比を変えないままトリミング*/
-          border: 3px solid 	#86F9C5;
+          border: 2px solid 	#86F9C5;
           margin-right: 20px;
         }
 
@@ -693,7 +684,6 @@ label{
         .login , .new{
           display: inline-block;
           padding: 5px;
-          background: #f0eee4;
           border: solid 1.8px black;/*線*/
           border-radius: 6px;/*角の丸み*/
           margin-right: auto;//ここで中央寄せを指定する。
@@ -765,7 +755,6 @@ label{
 
     .first_send_button{
       background: white;
-      border: solid 2px #91C191;
       font-size:13px;
       padding:10px;
       cursor:pointer;
@@ -773,19 +762,16 @@ label{
       outline:none;
       border-radius: 10px;
       display: block;
-      margin-top: 50px;
+      margin-top: 10px;
       height:20px;
       width:70px;
     }
 
 
-    .send_new_button{
-      margin-top:50px;
-     }
+
 
      .research_button{
-      background:#91C191;
-      margin-left: 100px;
+
       margin-top:50px;
       margin-bottom: 30px;
       appearance: none;
@@ -795,7 +781,6 @@ label{
 
     .research_button:hover {
       color: #ffffff;
-      background-color: #91C191	;
       appearance: none;
       border: none;
       border-raduis: none;
@@ -803,7 +788,7 @@ label{
 
 
   .btn_new{
-    background:#1AAB8A;
+    background:#707070;
     color:#fff;
     border:none;
     position:relative;
@@ -822,7 +807,7 @@ label{
   }
   .btn_new:hover {
       color: #ffffff;
-      background-color: #1AAB8A	;
+      background-color: #A6C0C2;
       cursor: pointer;
       appearance: none;
       border: none;
@@ -832,7 +817,6 @@ label{
   /*一番下の一覧*/
 .under{
   width: 100%;
-    background: #f0eee4;
   color: #fff;
   text-align: center;
   padding: 15px 0;

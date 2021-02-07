@@ -1,6 +1,5 @@
 <div class="user_profile">
 
-
   <!--非公開情報-->
 
   <% if @user.id == current_user.id %>
@@ -14,32 +13,28 @@
     <!-- 編集ページに遷移する -->
     <% end%>
 
-    <div class="my_profile_content">
-      <h4>メールアドレス</h4>
-    </div>
-    <%= @user.email %>
-
-    <div class="my_profile_content">
-      <h4>ユーザー一覧へ表示しますか？</h4>
-    </div>
-    <%= @user.consalting %>
-
-    <div class="my_profile_content">
-      <h4>メール通知を受け取りますか？</h4>
+    <div class="my_profile_content2">
+      メールアドレス　　：　<%= @user.email %>
     </div>
 
-    <% if @user.send_mail == true %>
-    <%= "受け取ります" %>
-    <% else %>
-    <%= "受け取りません" %>
-    <% end %>
+    <div class="my_profile_content3">
+      メール通知　　　　：　 <% if @user.send_mail == true %>
+      <%= "受け取ります" %>
+      <% else %>
+      <%= "受け取りません" %>
+      <% end %>
+    </div>
+
+    <div class="my_profile_content2">
+      ユーザー一覧へ表示しますか？　：　<%= @user.consalting %>
+    </div>
+
   </div>
   <% end%>
 
 
 
   <div class="my_profile">
-
 
 
 
@@ -55,84 +50,88 @@
     <!-- 編集ページに遷移する -->
     <% end%>
 
-    <div class="my_profile_content">
-      <h4>ユーザー名</h4>
-    </div>
-    <%= @user.name %>
 
-    <% if @user.sex == "男性" %>
-    <br><img src=<%= @user.image %> class="icon_image_men"></br>
-    <% elsif @user.sex == "女性"%>
-    <br><img src=<%= @user.image %> class="icon_image_women"></br>
-    <%else%>
-    <br><img src=<%= @user.image %> class="icon_image_other"></br>
-    <% end %>
+    <br>
 
-    <div class="my_profile_content">
-      <h4>性別</h4>
-    </div>
-    <%= @user.sex %>
-    <div class="my_profile_content">
-      <h4>職業</h4>
-    </div>
-    <%= @user.work %>
-    <div class="my_profile_content">
-      <h4>職位</h4>
-    </div>
-    <%= @user.position %>
-    <div class="my_profile_content">
-      <h4>出身大学</h4>
-    </div>
-    <%= @user.uni %>
 
-    <div class="my_profile_content">
-      <h4>年次</h4>
+    <div class="my_profile_all_name">
+
+      <% if @user.sex == "男性" %>
+      <br><img src=<%= @user.image %> class="icon_image_men"></br>
+      <% elsif @user.sex == "女性"%>
+      <br><img src=<%= @user.image %> class="icon_image_women"></br>
+      <%else%>
+      <br><img src=<%= @user.image %> class="icon_image_other"></br>
+      <% end %>
+
+      <div class="my_profile_name_message">
+        <div class="my_profile_name">
+          <%= @user.name %>
+        </div>
+        <% if @user.consalting == "はい" %>
+        <% if @user.id == current_user.id %>
+        <% else %>
+        <% if @isRoom == true %>
+        <div class="first_send_button">
+          <p><a href="/rooms/<%= @roomId %>">
+              <div class="envelope">
+                <i class="far fa-envelope"></i>
+              </div>
+            </a>
+        </div>
+        <% else %>
+        <%= form_for @room do |f| %>
+        <%= fields_for @entry do |e| %>
+        <%= e.hidden_field :user_id, :value=> @user.id %>
+        <% end %>
+
+        <%= button_tag :type => "submit" do %>
+        <div class="envelope">
+          <i class="far fa-envelope"></i>
+        </div>
+        <% end %>
+        <% end %>
+        <% end %>
+        <% end %>
+      </div>
     </div>
-    <%= @user.annual %>
-    <div class="my_profile_content">
-      <h4>お住まい</h4>
+
+    <div class="my_profile_content2">
+      性別　　　：　<%= @user.sex %>
     </div>
-    <%= @user.location %>
-    <div class="my_profile_content">
-      <h4>専門科目</h4>
+
+    <div class="my_profile_content3">
+      職業　　　：　<%= @user.work %>
     </div>
-    <%= @user.subject %>
-    <div class="my_profile_content">
-      <h4>部活（サークル）顧問</h4>
+
+    <div class="my_profile_content2">
+      職位　　　：　<%= @user.position %>
     </div>
-    <%= @user.club %>
-    <div class="my_profile_content">
-      <h4>自由記述欄</h4>
+
+    <div class="my_profile_content3">
+      出身大学　：　<%= @user.uni %>
+    </div>
+
+    <div class="my_profile_content2">
+      年次　　　：　<%= @user.annual %>
+    </div>
+
+    <div class="my_profile_content3">
+      お住まい　：　<%= @user.location %>
+    </div>
+
+    <div class="my_profile_content2">
+      担当科目　：　<%= @user.subject %>
+    </div>
+
+    <div class="my_profile_content3">
+      部活顧問　：　<%= @user.club %>
+    </div>
+
+    <div class="my_profile_content2">
+      自己紹介
     </div>
     <%= safe_join(@user.free_profile.split("\n"), tag(:br)) %>
-
-
-
-
-
-    <% if @user.consalting == "はい" %>
-
-    <% if @user.id == current_user.id %>
-
-    <% else %>
-    <% if @isRoom == true %>
-    <div class="first_send_button">
-      <p><a href="/rooms/<%= @roomId %>">
-          <font-color="white">チャットへ</font>
-        </a>
-    </div>
-    <% else %>
-    <%= form_for @room do |f| %>
-    <%= fields_for @entry do |e| %>
-    <%= e.hidden_field :user_id, :value=> @user.id %>
-    <% end %>
-    <div class="send_new_button">
-      <%= f.submit "メッセージを送る" %>
-    </div>
-    <% end %>
-    <% end %>
-    <% end %>
-
     <% end %>
   </div>
 </div>

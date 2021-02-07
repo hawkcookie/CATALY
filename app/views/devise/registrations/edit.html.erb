@@ -19,18 +19,18 @@
 
     <div class="field">
       <div class="my_profile_content">
+        <%= f.label :メール通知を受け取りますか？ %><br />
+      </div>
+      <label> <%= f.check_box :send_mail %>受け取ります。</label>
+    </div>
+
+    <div class="field">
+      <div class="my_profile_content">
         <label><%= f.label :ユーザー一覧へ表示しますか？ %><br />
       </div>
       <label><%= f.radio_button :consalting, :"はい" %>はい</label>
       <label><%= f.radio_button :consalting, :"いいえ" %>いいえ</label>
       <br>※他の方からの連絡が受け取れる状態になります。
-    </div>
-
-    <div class="field">
-      <div class="my_profile_content">
-        <%= f.label :メール通知を受け取りますか？ %><br />
-      </div>
-      <label> <%= f.check_box :send_mail %>受け取ります。</label>
     </div>
 
     <%= f.submit "更新" ,:class => 'research_button',:id=>'research_button'%>
@@ -108,9 +108,9 @@
       <label><%= f.radio_button :work, :"私立高校教員" %>私立高校教員</label>
       <label><%= f.radio_button :work, :"大学教員" %>大学教員</label>
       <label><%= f.radio_button :work, :"塾講師" %>塾講師</label>
-      <label><%= f.radio_button :work, :"民間企業" %>民間企業</label>
+      <label><%= f.radio_button :work, :"会社員" %>会社員</label>
       <label><%= f.radio_button :work, :"学生" %>学生</label>
-      <label><%= f.radio_button :work, :"NPO団体" %>NPO団体</label>
+      <label><%= f.radio_button :work, :"NPO団体職員" %>NPO団体職員</label>
       <label><%= f.radio_button :work, :"事務職員" %>事務職員</label>
       <label><%= f.radio_button :work, :"その他" %>その他</label>
     </div>
@@ -187,7 +187,7 @@
 
     <div class="field">
       <div class="my_profile_content">
-        <%= f.label :専門科目 %><br />
+        <%= f.label :担当科目 %><br />
       </div>
       <label><%= f.radio_button :subject, :"国語" %>国語</label>
       <label><%= f.radio_button :subject, :"算数・数学" %>算数・数学</label>
@@ -204,7 +204,7 @@
 
     <div class="field">
       <div class="my_profile_content">
-        <%= f.label :部活動 %><br />
+        <%= f.label :部活顧問 %><br />
       </div>
 
       <label><%= f.radio_button :club, :"なし" %>なし</label>
@@ -230,10 +230,10 @@
 
     </div>
 
-    <!--自由記述欄-->
+    <!--自己紹介-->
     <div class="field">
       <div class="my_profile_content">
-        <%= f.label :自由記述 %><br />
+        <%= f.label :自己紹介 %><br />
       </div>
       <%= f.text_area :free_profile %>
       <br>※ご経験された学級や、ご相談したい内容等をご記入下さい。<br />

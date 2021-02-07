@@ -67,7 +67,7 @@
     .my_content{
     padding: 0.6em;
     border-radius: 10px;
-    background: #91C191;
+    background: #A6CCAE;
     display: inline-block;
     color:white;
     text-align: left;
@@ -110,10 +110,11 @@
     // メッセージページの相手ユーザーのプロフィール
     .chat_profile{
     font-size:18px;
-    background: #f0eee4;
+    background: white;
     position: sticky;
     top: 0px;
-    
+    margin-top:10px;
+    margin-bottom: 10px;
     }
     
     .chat_profile_content{
@@ -143,7 +144,7 @@ font-size:40px;
     .send{
      bottom: 0;
      text-align: center;
-     background: #f0eee4;
+     background: white;
      margin-right: auto;//ここで中央寄せを指定する。
      margin-left : auto;
      width:800px;
@@ -155,13 +156,13 @@ textarea {
     width: 500px;
     height: 100px;
     border-radius: 10px;
-    border-color: #eee;
+    border-color: black;
     font-size: 16px;
 }
 
 // チャットの送信ボタン
 .btn_send{
-background:#A5B4D6;
+background:#A6C0C2;
 color:#fff;
 border:none;
 position:relative;
@@ -174,10 +175,12 @@ outline:none;
 border-radius: 10px;
 display: block;
 margin: auto;
+margin-bottom: 30px;
 }
+
 .btn_send:hover {
   color: #ffffff;
-  background-color: #91C191	;
+  background-color: #A6C0C2;
   cursor: pointer;
 }
 
@@ -235,6 +238,9 @@ margin: auto;
   border: 5px solid 	#808080;
 }
 
+.chat_profile_detail{
+  margin-top: 10px;
+}
 
  // ========================================================================
   // =========================================================================
@@ -318,7 +324,7 @@ margin: auto;
     // メッセージページの相手ユーザーのプロフィール
     .chat_profile{
         font-size:15px;
-        background: #f0eee4;
+
         position: sticky;
         top: 0px;
     }
@@ -334,7 +340,7 @@ margin: auto;
     .send{
         bottom: 0;
         text-align: center;
-        background: #f0eee4;
+        background: white;
         margin-right: auto;//ここで中央寄せを指定する。
         margin-left : auto;
         width:360px;
@@ -347,7 +353,7 @@ textarea {
     width: 300px;
     height: 80px;
     border-radius: 10px;
-    border-color: #eee;
+    border-color: black;
     margin:10px;
     font-size: 16px;
 }
@@ -366,9 +372,8 @@ transition:800ms ease all;
 outline:none;
 border-radius: 10px;
 display: block;
-margin: 10px;
-float:right;
-margin-right:30px;
+
+
 }
 
 .btn_send:hover {
@@ -392,7 +397,7 @@ margin-right:30px;
   /*画像を丸くする*/
   object-fit: cover;
   /*タテヨコ比を変えないままトリミング*/
-  border: 5px solid #8EB8FF;
+  border: 2px solid #8EB8FF;
   margin-top:5px;
 }
 
@@ -405,7 +410,7 @@ margin-right:30px;
   /*画像を丸くする*/
   object-fit: cover;
   /*タテヨコ比を変えないままトリミング*/
-  border: 5px solid 	#FFABCE;
+  border: 2px solid 	#FFABCE;
   margin-top:5px;
 }
 
@@ -418,7 +423,7 @@ margin-right:30px;
   /*画像を丸くする*/
   object-fit: cover;
   /*タテヨコ比を変えないままトリミング*/
-  border: 5px solid 	#86F9C5;
+  border: 2px solid 	#86F9C5;
   margin-top:5px;
 }
 
@@ -431,13 +436,13 @@ margin-right:30px;
   /*画像を丸くする*/
   object-fit: cover;
   /*タテヨコ比を変えないままトリミング*/
-  border: 5px solid 	#808080;
+  border: 2px solid 	#808080;
   margin-top:5px;
 }
 
     // メッセージページの相手ユーザーのプロフィール
     .chat_profile{
-      background: #f0eee4;
+
       position: sticky;
       top: 0px;
       
