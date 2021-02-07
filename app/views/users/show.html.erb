@@ -8,11 +8,6 @@
       <h2>非公開情報</h2>
     </div>
 
-    <% if @user.id == current_user.id %>
-    <%= link_to "編集", edit_user_registration_path(anchor: 'edit_no_open') , class: 'btn_edit_my_profile'%>
-    <!-- 編集ページに遷移する -->
-    <% end%>
-
     <div class="my_profile_content2">
       メールアドレス　　：　<%= @user.email %>
     </div>
@@ -29,30 +24,24 @@
       ユーザー一覧へ表示しますか？　：　<%= @user.consalting %>
     </div>
 
+    <!-- 編集ページに遷移する -->
+    <br>
+    <% if @user.id == current_user.id %>
+    <%= link_to "編集", edit_user_registration_path(anchor: 'edit_no_open') , class: 'btn_edit_my_profile'%>
+    <!-- 編集ページに遷移する -->
+    <% end%>
+    <% end%>
   </div>
-  <% end%>
 
 
 
   <div class="my_profile">
-
-
-
-
     <!--公開情報-->
-
     <div class="research_title">
       <h2>公開情報</h2>
     </div>
 
-    <% if @user.id == current_user.id %>
-    <%= link_to "編集", edit_user_registration_path(anchor: 'edit_open') , class: 'btn_edit_my_profile'%>
-    <!-- 編集ページに遷移する -->
-    <% end%>
-
-
     <br>
-
 
     <div class="my_profile_all_name">
 
@@ -133,5 +122,13 @@
     </div>
     <%= safe_join(@user.free_profile.split("\n"), tag(:br)) %>
     <% end %>
+
+    <br>
+    <% if @user.id == current_user.id %>
+    <%= link_to "編集", edit_user_registration_path(anchor: 'edit_open') , class: 'btn_edit_my_profile'%>
+    <!-- 編集ページに遷移する -->
+    <% end%>
+
+
   </div>
 </div>

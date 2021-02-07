@@ -96,10 +96,10 @@
     background:#707070;
     color:#fff;
     border:none;
-    font-size:20px;
+    font-size:25px;
     padding:10px;
-    margin-top:10px;
-    margin-bottom: 10px;
+    margin-top:20px;
+    margin-left: 300px;
     cursor:pointer;
     outline:none;
     border-radius: 10px;
@@ -194,5 +194,15 @@
         font-size:18px;
       }
 
+        // プロフィール編集ボタン
+  .btn_edit_my_profile{
+    font-size: 20px;
+    margin-top:10px;
+    margin-left: 140px;
+    cursor:pointer;
+    outline:none;
+    border-radius: 10px;
+    display: inline-block;
+  }
 
      }

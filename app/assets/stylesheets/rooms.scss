@@ -110,11 +110,11 @@
     // メッセージページの相手ユーザーのプロフィール
     .chat_profile{
     font-size:18px;
-    background: white;
+    background: rgba(238, 238, 238, 0.9);
     position: sticky;
     top: 0px;
-    margin-top:10px;
-    margin-bottom: 10px;
+    padding-top:10px;
+    padding-bottom: 10px;
     }
     
     .chat_profile_content{
@@ -142,9 +142,10 @@ font-size:40px;
 
         // dm送信エリア（文字記載場所）
     .send{
+
      bottom: 0;
      text-align: center;
-     background: white;
+     background: rgba(238, 238, 238, 0.9);
      margin-right: auto;//ここで中央寄せを指定する。
      margin-left : auto;
      width:800px;
@@ -158,6 +159,7 @@ textarea {
     border-radius: 10px;
     border-color: black;
     font-size: 16px;
+    margin-top: 10px;
 }
 
 // チャットの送信ボタン
@@ -340,7 +342,6 @@ margin-bottom: 30px;
     .send{
         bottom: 0;
         text-align: center;
-        background: white;
         margin-right: auto;//ここで中央寄せを指定する。
         margin-left : auto;
         width:360px;
@@ -360,7 +361,7 @@ textarea {
 
 // チャットの送信ボタン
 .btn_send{
-background:#A5B4D6;
+background:#A6C0C2;
 color:#fff;
 border:none;
 position:relative;
@@ -462,6 +463,8 @@ display: block;
       .chat_profile_sentence{
         margin-left: 10px;
       }
-
+      .chat_profile_detail{
+        margin-top: 2px;
+      }
 
       }
