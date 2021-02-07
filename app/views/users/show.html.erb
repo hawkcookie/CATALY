@@ -9,19 +9,19 @@
     </div>
 
     <div class="my_profile_content2">
-      メールアドレス　　：　<%= @user.email %>
+      メールアドレス　　　：　<%= @user.email %>
     </div>
 
     <div class="my_profile_content3">
-      メール通知　　　　：　 <% if @user.send_mail == true %>
-      <%= "受け取ります" %>
+      メール通知　　　　　：　 <% if @user.send_mail == true %>
+      <%= "受け取る" %>
       <% else %>
-      <%= "受け取りません" %>
+      <%= "受け取らない" %>
       <% end %>
     </div>
 
     <div class="my_profile_content2">
-      ユーザー一覧へ表示しますか？　：　<%= @user.consalting %>
+      ユーザー一覧へ表示　：　<%= @user.consalting %>
     </div>
 
     <!-- 編集ページに遷移する -->
@@ -57,7 +57,7 @@
         <div class="my_profile_name">
           <%= @user.name %>
         </div>
-        <% if @user.consalting == "はい" %>
+        <% if @user.consalting == "する" %>
         <% if @user.id == current_user.id %>
         <% else %>
         <% if @isRoom == true %>

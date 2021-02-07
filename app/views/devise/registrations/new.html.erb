@@ -243,8 +243,8 @@
         <label><%= f.label :ユーザー一覧へ表示しますか？ %> 　<div class="mandatory">必須</div><br />
       </div>
       <div class="label_css">
-        <label><%= f.radio_button :consalting, :"はい" %>はい</label>
-        <label><%= f.radio_button :consalting, :"いいえ" %>いいえ</label>
+        <label><%= f.radio_button :consalting, :"する" %>する</label>
+        <label><%= f.radio_button :consalting, :"しない" %>しない</label>
         <br>※他の方からの連絡が受け取れる状態になります。アカウント作成後も変更できます。
       </div>
 
@@ -255,7 +255,7 @@
         <%= f.label :メール通知を受け取りますか？ %><br />
       </div>
 
-      <label> <%= f.check_box :send_mail %>受け取ります。</label>
+      <label> <%= f.check_box :send_mail %>受け取る</label>
 
     </div>
 
