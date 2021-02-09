@@ -281,9 +281,10 @@ opacity: 1;
       border-radius: 10px;
       display: inline-block;
       font-size:14px;
-                  white-space: nowrap;
-            text-overflow: ellipsis;
-            overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      padding-left: 38px;
     }
 
     .user_midashi{
