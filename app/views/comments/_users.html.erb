@@ -1,9 +1,9 @@
 <!-- ユーザーがログインしていた時の処理 -->
 
 <div class="button">
-  <div class="research_title">
-    <h2><i class="fas fa-search"></i>検索</h2>
-  </div>
+
+  <h2><i class="fas fa-search"></i>検索</h2>
+
   　
   <!--検索機能　ボックス-->
 
@@ -155,5 +155,5 @@
 </div>
 
 <div class="kaminari">
-  <%= paginate users, theme: 'my_custom_theme' %>
+  <%= paginate users, params: { anchor: 'research_first' } %>
 </div>

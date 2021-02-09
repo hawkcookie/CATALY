@@ -188,9 +188,17 @@ body{
   background: white;
   height:80px;
   box-shadow: 0 2px 4px #c1ced7;
-  
+  position:sticky;
+  top:0;
+  z-index:500;
 }
 
+.header_login{
+  background: white;
+  height:80px;
+  box-shadow: 0 2px 4px #c1ced7;
+
+}
 
 
 .all_index{
@@ -525,6 +533,10 @@ label{
         height:70px;
        }
 
+       .header_login{
+        height: 70px;
+      }
+
      /*catalyロゴ*/
       .logo {
         width: 314px;
@@ -626,7 +638,10 @@ label{
         .header{
           height:70px;
          }
-
+         .header_login{
+           height: 70px;
+         }
+         
        /*catalyロゴ*/
         .logo {
           width: 137.5px;

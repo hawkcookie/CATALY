@@ -4,10 +4,7 @@
 
   <% if @user.id == current_user.id %>
   <div class="my_profile">
-    <div class="research_title">
-      <h2>非公開情報</h2>
-    </div>
-
+    <h2>非公開情報</h2>
     <div class="my_profile_content2">
       メールアドレス　　　：　<%= @user.email %>
     </div>
@@ -21,7 +18,7 @@
     </div>
 
     <div class="my_profile_content2">
-      ユーザー一覧への表示：　<%= @user.consalting %>
+      一覧への表示：　<%= @user.consalting %>
     </div>
 
     <!-- 編集ページに遷移する -->
@@ -37,9 +34,9 @@
 
   <div class="my_profile">
     <!--公開情報-->
-    <div class="research_title">
-      <h2>公開情報</h2>
-    </div>
+
+    <h2>公開情報</h2>
+
 
     <br>
 
